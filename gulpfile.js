@@ -19,7 +19,7 @@ const lec = require('gulp-line-ending-corrector');
  * For development
  */
 function watchFiles(cb) {
-    gulp.watch("src/*.less", dev);
+    gulp.watch("src/**/*.less", dev);
 
     fs.access("./browser.js", (err) => {
         if (!err) {
@@ -44,7 +44,7 @@ function dev() {
         @author         ${pkg.author}
         @license        ${pkg.license}
         ==/UserStyle== */
-        @-moz-document domain('runescape.wiki') {
+        @-moz-document domain('runescape.wiki'), domain('localhost') {
         `.replace(/^\s*/gm, "");
 
     return gulp.src('./src/darkmode.less')

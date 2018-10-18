@@ -29,99 +29,84 @@
 //Buttons
 .button-styling(@type: "default") {
     & when (@type = "no-hover") {
-        color: @button-text;
+        color: @button-text-base;
         background-image: none;
-        background-color: @button-accept-bg;
-        border-color: @button-accept-bg;
+        background-color: @button-bg-progressive;
+        border-color: @button-bg-progressive;
         border-style: solid;
 
         &:hover,
         &:active,
         &.active {
-            color: @button-text;
+            color: @button-text-base;
             background-image: none;
-            background-color: @button-accept-bg;
-            border-color: @button-accept-bg;
+            background-color: @button-bg-progressive;
+            border-color: @button-bg-progressive;
         }
     }
     & when (@type = "cancel") {
-        color: @button-text;
+        color: @button-text-base;
         background-image: none;
-        border-color: @button-cancel-bg;
-        background-color: @button-cancel-bg;
+        border-color: @button-bg-base;
+        background-color: @button-bg-base;
         border-style: solid;
 
         &:hover,
         &:active,
         &.active {
-            color: @button-text;
+            color: @button-text-base;
             background-image: none;
-            border-color: darken(@button-cancel-bg, 5%);
-            background-color: darken(@button-cancel-bg, 5%);
+            border-color: darken(@button-bg-base, 5%);
+            background-color: darken(@button-bg-base, 5%);
         }
     } 
     & when (@type = "default") {
-        color: @button-text;
+        color: @button-text-base;
         background-image: none;
-        background-color: @button-accept-bg;
-        border-color: @button-accept-bg;
+        background-color: @button-bg-progressive;
+        border-color: @button-bg-progressive;
         border-style: solid;
 
         &:hover,
         &:active,
         &.active {
-            color: @button-text;
+            color: @button-text-base;
             background-image: none;
-            background-color: lighten(@button-accept-bg, 10%);
-            border-color: lighten(@button-accept-bg, 10%);
+            background-color: lighten(@button-bg-progressive, 10%);
+            border-color: lighten(@button-bg-progressive, 10%);
         }
     }
 }
 
 //Text
 .text-input-styling() {
-    background-color: @input-fields;
-    color: @theme-text;
-    border: solid 1px @theme-borders;
+    background-color: @input-fields-bg;
+    color: @input-fields-text;
+    border: solid 1px @input-fields-border;
     box-shadow: none;
 
     &::placeholder {
-        color: @placeholder;
+        color: @placeholder-text;
     }
 
     &:hover {
-        border-color: lighten(@theme-borders, 10%);
+        border-color: @input-fields-border--hover;
     }
 }
 
 // ===================
 //      Dropdowns
 // ===================
-.dropdown-styling(@type: "default") {
+.dropdown-styling() {
     background-color: @dropdown-bg;
-    border-color: @theme-borders;
+    border-color: @dropdown-border;
 
-    & when (@type = "ooui") {
-        .oo-ui-menuOptionWidget {
-            color: @theme-text;
-            
-            &.oo-ui-optionWidget-highlighted,
-            &.oo-ui-optionWidget-selected,
-            &.oo-ui-optionWidget-highlighted.oo-ui-optionWidget-selected {
-                color: @theme-text;
-                background-color: @dropdown-hover-item;
-            }
-        }
-    }
+    li > a {
+        color: @dropdown-text;
 
-    & when (@type = "default") {
-        li > a {
-            color: @theme-text;
-    
-            &:hover {
-                color: @theme-links;
-                background-color: @dropdown-hover-item;
-            }
+        &:hover {
+            color: @dropdown-text--hover;
+            background-color: @dropdown-bg-hover-item;
         }
     }
 }

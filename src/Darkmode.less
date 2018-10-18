@@ -1,97 +1,7 @@
-// ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-//      COLORS
-// ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
-// =======================
-//      Primay colors
-// =======================
-@theme-text          : #c5c5c5;
-@theme-borders       : #52555a;
-@theme-links         : #6bbaea;
-@theme-redlinks      : #ba0000;
-@theme-green         : #1e5400;
-@theme-green-lighter : lighten(@theme-green, 2.5%);
-@theme-grey          : #1e1e1e;
-@theme-grey-darker   : darken(@theme-grey, 3.5%);
-@theme-gray-lighter  : lighten(@theme-grey, 3%);
-@theme-gray-lighter-2: lighten(@theme-grey, 9%);
-@theme-grey-2        : lighten(@theme-grey, 8%);
-@theme-grey-2-darker : darken(@theme-grey-2, 3%);
-@theme-gray-2-lighter: lighten(@theme-grey-2, 20%);
-@theme-blue          : #265588;
-@theme-blue-lighter  : lighten(@theme-blue, 8%);
-
-// ==========================
-//      Secondary colors
-// ==========================
-//----- general -----//
-@main-page-bg           : @theme-grey;
-@homepage-module-bg     : @theme-grey-2;
-@sidebar                : lighten(@theme-grey, 3%);
-@pageheader-bg          : @theme-blue;
-@fandomheader-bg        : @main-page-bg;
-@table-data             : @theme-grey-2;
-@table-header           : @theme-grey-2-darker;
-@highlight-table-on     : @theme-green;
-@highlight-table-hover  : @theme-green-lighter;
-@documentation-bg       : @theme-gray-lighter;
-@categories             : @theme-grey-darker;
-@messageboxes           : @theme-grey-darker;
-@edit-area-bg           : #a9a9a9;
-@edit-area-sidebar-bg   : lighten(@main-page-bg, 7%);
-@edit-area-sidebar-shade: @main-page-bg;
-@rail-module-bg         : @theme-grey-2-darker;
-@dropdown-bg            : @theme-grey-2-darker;
-@dropdown-hover-item    : lighten(@dropdown-bg, 5%);
-@popup-bg               : @theme-grey;
-@popup-header-bg        : lighten(@popup-bg, 5%);
-@tooltip-bg             : @theme-gray-lighter;
-@button-accept-bg       : @theme-blue-lighter;
-@button-cancel-bg       : lighten(@theme-grey-2, 15%);
-@input-group-wrapper    : @theme-grey-darker;
-
-//----- scrollbar -----//
-@theme-scroll-bar     : hsl(0, 0%, 20%);
-@scroll-bar-main-color: @theme-scroll-bar;
-
-@scroll-bar-1-track: hsl(0, 0%, 15%);
-@scroll-bar-1-thumb: hsl(0, 0%, 25%);
-@scroll-bar-2-track: hsl(0, 0%, 50%);
-@scroll-bar-2-thumb: hsl(0, 0%, 20%);
-
-//----- basic htlm elements -----//
-@input-fields  : @theme-gray-lighter-2;
-@code-editor-bg: @documentation-bg;
-@pre-tag-bg    : @theme-gray-lighter-2;
-@code-tag-bg   : @theme-gray-lighter-2;
-
-//----- text -----//
-@positive-change: #06df2e;
-@negative-change: lighten(#c02614, 5%);
-@button-text    : lighten(@theme-text, 10%);
-@placeholder    : darken(@theme-text, 15%);
-
-//----- templates -----//
-@coins-positive : lighten(#5799c1, 2%);
-@coins-negative : lighten(#c02614, 5%);
-
-@red-bg          : darken(#861c10, 10%);
-@yellow-bg       : darken(#f3f0b0, 60%);
-@green-bg        : #1e5400;
-@green-lighter-bg: #006d13;
-
-@navbox-title-bg  : @theme-blue;
-@navbox-title-2-bg: @theme-blue-lighter;
-@navbox-group-bg  : @theme-grey-2-darker;
-
-@infobox-background     : @table-data;
-@infobox-header-color   : @theme-blue;//#246c97;
-@infobox-subheader-color: @theme-blue-lighter;//#6ba5c8;
-@infobox-cell-border    : @theme-borders;
-@infobox-header-border  : @table-data;
-
 // ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
 //      Imports
 // ≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡
+@import "Colors.less";
 @import "Mixins.less";
 @import "ooui/ooui.less";
 
@@ -275,13 +185,13 @@ div.vectorTabs {
     border-color: @theme-borders;
 
     li:hover {
-        background: @dropdown-hover-item;
+        background: @dropdown-bg-hover-item;
     }
 }
 
 //----- Searchbar -----//
 #mw-head #simpleSearch {
-    background: @input-fields;
+    background: @input-fields-bg;
 
     #searchInput {
         .text-input-styling();
@@ -330,7 +240,7 @@ div.vectorTabs {
 }
 
 .suggestions-result-current {
-    background: @dropdown-hover-item;
+    background: @dropdown-bg-hover-item;
     color: lighten(@theme-text, 10%);
 
     .special-label {

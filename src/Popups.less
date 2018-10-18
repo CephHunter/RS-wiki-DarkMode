@@ -212,20 +212,20 @@
 
     // border when hovering over an image
     .accent {
-        border-color: @button-accept-bg;
+        border-color: @button-bg-progressive;
     }
 
     // Modify/delete buttons
     .color1 {
-        background-color: @button-accept-bg;
+        background-color: @button-bg-progressive;
 
         a {
-            color: @button-text;
+            color: @button-text-base;
         }
     }
 
     // Background when dragging an image around
-    .WikiaPhotoGalleryPreviewDDPlaceholder {
+    .WikiaPhotoGalleryPreviewDDplaceholder-text {
         background-color: lighten(@popup-bg, 5%);
     }
 }
@@ -235,7 +235,7 @@
     border-color: @theme-borders;
 
     .accent {
-        border-color: @button-accept-bg;
+        border-color: @button-bg-progressive;
     }
 }
 
@@ -320,7 +320,7 @@
 
         .selected {
             color: @theme-links;
-            background-color: @dropdown-hover-item;
+            background-color: @dropdown-bg-hover-item;
         }
     }
 
@@ -378,13 +378,13 @@
     // Search input
     #global_shortcuts_search_field {
         // Inverted to get the background image to show properly
-        background-color: 255 - @input-fields;
+        background-color: 255 - @input-fields-bg;
         color: 255 - @theme-text;
         border: solid 1px (255 - @theme-borders);
         filter:invert(100);
 
-        &::placeholder {
-            color: 255 - @placeholder;
+        &::placeholder-text {
+            color: 255 - @placeholder-text;
         }
     }
 

@@ -1,48 +1,12 @@
 // ====================
 //      Text input
 // ====================
-.oo-ui-textInputWidget.oo-ui-widget-enabled input, 
-.oo-ui-textInputWidget.oo-ui-widget-enabled textarea,
 input[type="search"],
 input[type="text"],
 input[type="number"],
-.mw-ui-input {
+.mw-ui-input,
+.mw-ui-input-inline {
     .text-input-styling();
-}
-
-// =========================
-//      Dropdown select
-// =========================
-// Input bar
-.oo-ui-dropdownWidget.oo-ui-widget-enabled .oo-ui-dropdownWidget-handle {
-    .text-input-styling();
-
-    &:hover {
-        background: @input-fields;
-        color: @theme-text;
-    }
-
-    // .oo-ui-inputWidget-input {
-    //     border: none;
-    // }
-}
-
-// dropdown arrow
-.oo-ui-indicator-down {
-    filter: invert(1);
-}
-
-// Selected items
-// .oo-ui-tagItemWidget {
-//     .button-styling("cancel");
-// }
-.oo-ui-dropdownWidget.oo-ui-widget-enabled.oo-ui-dropdownWidget-open .oo-ui-dropdownWidget-handle {
-    .text-input-styling();
-}
-
-// Dropdown list
-.oo-ui-menuSelectWidget {
-    .dropdown-styling("ooui");
 }
 
 // =================
@@ -58,32 +22,4 @@ button {
     &.secondary {
         .button-styling("cancel");
     }
-}
-
-.oo-ui-buttonElement-framed.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
-    .button-styling();
-}
-
-.oo-ui-buttonElement-framed.oo-ui-widget-enabled > .oo-ui-buttonElement-button {
-    .button-styling("cancel");
-}
-
-// .oo-ui-buttonElement-button .oo-ui-iconElement-icon {
-//     filter: invert(0.6);
-// }
-
-// ====================
-//      Checkboxes
-// ====================
-.oo-ui-checkboxInputWidget [type='checkbox'] + span {
-    border-color: @theme-borders;
-    background-color: @input-fields;
-}
-
-// =========================
-//      Group of inputs
-// =========================
-.oo-ui-panelLayout-framed {
-    border-color: @theme-borders;
-    background-color: @input-group-wrapper;
 }

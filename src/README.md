@@ -1,10 +1,12 @@
 ## Filetype
-The final stylesheet [Darkmode.user.css](../Darkmode.user.css) is generated with use of the sass CSS preprocessor. For more information on the sass language head over to https://sass-lang.com/
+The final stylesheet [Darkmode.user.css](../Darkmode.user.css) is generated with use of the less CSS preprocessor. For more information on the less language head over to http://lesscss.org/#
 
 ## Filetree
 [Darkmode.user.css](../Darkmode.user.css) is the output of the combined files found in the src folder. Any changes made here will be overwritten later again when the result is recompiled, so don't edit this file directly.
-[src/Darkmode.scss](Darkmode.scss) is the main file where everything starts, all other `.scss` files are imported here. The main file should contain all used main colors in a variable so they can easily be changed if necessary. If you add to any of the files please add a comment describing what your css applies to.
-[src/Mixins.scss](Mixins.scss) contains a bunch of usefull mixins to styling similar elements easily.
+[src/Darkmode.less](Darkmode.less) is the main file where everything starts, all other `.less` files are imported here. 
+[src/Colors.less](Colors.less) should contain all used main colors in a variable so they can easily be changed if necessary. 
+[src/Mixins.less](Mixins.less) contains a bunch of usefull mixins to styling similar elements easily.
+If you add to any of the files please add a comment describing what your css applies to.
 
 ## Getting started
 ### First time setup

@@ -6,10 +6,10 @@
 #ca-addsection,     // Talk page add secton
 #ca-viewsource {
     .button-styling();
-    border-right-color: @button-text;
+    border-right-color: @button-text-base;
 
     &:hover {
-        border-right-color: @button-text;
+        border-right-color: @button-text-base;
     }
 
     // Pencil image
@@ -22,10 +22,10 @@
         // Button color
         .wds-button {
             .button-styling();
-            border-left-color: @button-text;
+            border-left-color: @button-text-base;
 
             &:hover {
-                border-left-color: @button-text;
+                border-left-color: @button-text-base;
             }
         }
 
@@ -50,7 +50,7 @@
 
         &:hover {
             color: @theme-links;
-            background-color: @dropdown-hover-item;
+            background-color: @dropdown-bg-hover-item;
         }
     }
 }
@@ -85,7 +85,7 @@
     }
 
     img.chevron {
-        border-top-color: @button-text ;
+        border-top-color: @button-text-base ;
     }
 
     ul {
@@ -99,7 +99,7 @@
                 color: @theme-text;
 
                 &:hover {
-                    background-color: @dropdown-hover-item;
+                    background-color: @dropdown-bg-hover-item;
                     color: @theme-links;
                 }
             }
@@ -187,7 +187,7 @@
 
     .wds-is-selected > a {
         color: @theme-links;
-        background-color: @dropdown-hover-item;
+        background-color: @dropdown-bg-hover-item;
     }
 }
 
@@ -199,7 +199,7 @@
 
     li:hover > a:not(.wds-button) {
         color: @theme-links;
-        background-color: @dropdown-hover-item;
+        background-color: @dropdown-bg-hover-item;
     }
 }
 
@@ -318,8 +318,8 @@
     background-color: @fandomheader-bg;
     color: @theme-text;
 
-    &::placeholder {
-        color: @placeholder;
+    &::placeholder-text {
+        color: @placeholder-text;
     }
 }
 

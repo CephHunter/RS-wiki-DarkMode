@@ -297,11 +297,11 @@ table.smwb-ifactbox {
     tr.smwb-propvalue,
     tr.smwb-ipropvalue {
         th {
-            .table-header(),
+            .table-header();
         }
 
         td {
-            .table-data(),
+            .table-data();
             background-color: @table-data,
         }
     }
@@ -378,14 +378,14 @@ table.smwb-ifactbox {
 
         .control .representation {
             background-image: none;
-            background-color: @button-accept-bg;
-            border-color: @button-accept-bg;
+            background-color: @button-bg-progressive;
+            border-color: @button-bg-progressive;
         }
 
         .control:hover .representation {
             background-image: none;
-            background-color: lighten(@button-accept-bg, 10%);
-            border-color: lighten(@button-accept-bg, 10%);
+            background-color: lighten(@button-bg-progressive, 10%);
+            border-color: lighten(@button-bg-progressive, 10%);
         }
     }
 }

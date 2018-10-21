@@ -1,44 +1,46 @@
 // ====================
 //      Transcript
 // ====================
-.ns-120 .mw-content-text,
+.ns-120 #mw-content-text .mw-parser-output,
 .transcript {
 
     > ul,
     > ul ul {
         li {
+            border-left-color: @list-indent-guide;
+
             b:first-child {
                 // First bold word should always be the character
-                color: #01c023;
+                color: @transcript-namespace-character-name;
             }
         }
 
-        li:hover {
-            background-color: lighten(@main-page-bg, 5%);
-            outline-color: @theme-borders;
+        // li:hover {
+        //     background-color: @transcript-namespace-section-hover;
+        //     outline: solid 1px @transcript-namespace-section-hover-border;
 
-            // alternating colours
-            li:hover,
-            li:hover li:hover li:hover,
-            li:hover li:hover li:hover li:hover li:hover,
-            li:hover li:hover li:hover li:hover li:hover li:hover li:hover {
-                background-color: lighten(@main-page-bg, 1%);
-            }
+        //     // alternating colours
+        //     li:hover,
+        //     li:hover li:hover li:hover,
+        //     li:hover li:hover li:hover li:hover li:hover,
+        //     li:hover li:hover li:hover li:hover li:hover li:hover li:hover {
+        //         background-color: @transcript-namespace-section-hover-2;
+        //     }
 
-            li:hover li:hover,
-            li:hover li:hover li:hover li:hover,
-            li:hover li:hover li:hover li:hover li:hover li:hover {
-                background-color: lighten(@main-page-bg, 5%);
-            }
-        }
+        //     li:hover li:hover,
+        //     li:hover li:hover li:hover li:hover,
+        //     li:hover li:hover li:hover li:hover li:hover li:hover {
+        //         background-color: @transcript-namespace-section-hover;
+        //     }
+        // }
     }
 }
 
 // quest actions for transcripts
-.quest-action:hover {
-    background-color: lighten(@main-page-bg, 5%);
-    outline-color: @theme-borders;
-}
+// .quest-action:hover {
+//     background-color: @transcript-namespace-section-hover;
+//     outline-color: @transcript-namespace-section-hover-border;
+// }
 
 // ==================
 //      Property
@@ -49,6 +51,12 @@ table.property-page-results {
     }
 
     .value-row:hover {
-        background-color: lighten(@main-page-bg, 5%);
+        background-color: @property-namespace-listitem-hover;
     }
+}
+
+// usage count indicator
+.smw-property-page-indicator {
+    color: @theme-text;
+    border-color: @theme-borders;
 }

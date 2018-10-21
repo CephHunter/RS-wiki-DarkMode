@@ -28,52 +28,48 @@
 // ======================
 //Buttons
 .button-styling(@type: "default") {
-    & when (@type = "no-hover") {
-        color: @button-text-base;
-        background-image: none;
-        background-color: @button-bg-progressive;
-        border-color: @button-bg-progressive;
-        border-style: solid;
-
-        &:hover,
-        &:active,
-        &.active {
-            color: @button-text-base;
-            background-image: none;
-            background-color: @button-bg-progressive;
-            border-color: @button-bg-progressive;
-        }
-    }
-    & when (@type = "cancel") {
+    & when (@type = "grey") {
         color: @button-text-base;
         background-image: none;
         border-color: @button-bg-base;
         background-color: @button-bg-base;
         border-style: solid;
 
-        &:hover,
+        &:hover {
+            color: @button-text-base;
+            background-image: none;
+            border-color: @button-bg-base--hover;
+            background-color: @button-bg-base--hover;
+        }
+
         &:active,
         &.active {
             color: @button-text-base;
             background-image: none;
-            border-color: darken(@button-bg-base, 5%);
-            background-color: darken(@button-bg-base, 5%);
+            border-color: @button-bg-base--active;
+            background-color: @button-bg-base--active;
         }
     } 
     & when (@type = "default") {
-        color: @button-text-base;
+        color: @button-text-primary;
         background-image: none;
         background-color: @button-bg-progressive;
         border-color: @button-bg-progressive;
         border-style: solid;
 
-        &:hover,
+        &:hover {
+            color: @button-text-primary;
+            background-image: none;
+            background-color: @button-bg-progressive--hover;
+            border-color: @button-bg-progressive--hover;
+        }
+
         &:active,
         &.active {
-            color: @button-text-base;
+            color: @button-text-primary;
             background-image: none;
-            background-color: lighten(@button-bg-progressive, 10%);
-            border-color: lighten(@button-bg-progressive, 10%);
+            background-color: @button-bg-progressive--active;
+            border-color: @button-bg-progressive--active;
         }
     }
 }
@@ -114,62 +110,62 @@
 // ====================
 //      Scroll bar
 // ====================
-.scroll-bar-styling(@style: "style-1") {
-    & when (@style = "style-1") {
-        &::-webkit-scrollbar {
-            width: 13px;
-        }
+// .scroll-bar-styling(@style: "style-1") {
+//     & when (@style = "style-1") {
+//         &::-webkit-scrollbar {
+//             width: 13px;
+//         }
 
-        &::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            background-color: @scroll-bar-1-track;
-            border: solid 1px lighten(@scroll-bar-1-track, 2%);
-        }
+//         &::-webkit-scrollbar-track {
+//             box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//             border-radius: 10px;
+//             background-color: @scroll-bar-1-track;
+//             border: solid 1px lighten(@scroll-bar-1-track, 2%);
+//         }
 
-        &::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            background-color: @scroll-bar-1-thumb;
-            border: 1px solid darken(@scroll-bar-1-track, 5%);
-        }
+//         &::-webkit-scrollbar-thumb {
+//             border-radius: 10px;
+//             box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//             background-color: @scroll-bar-1-thumb;
+//             border: 1px solid darken(@scroll-bar-1-track, 5%);
+//         }
 
-        &::-webkit-scrollbar-corner {
-            background-color: transparent;
-        }
-    }
-    & when (@style = "style-2") {
-        &::-webkit-scrollbar {
-            width: 13px;
-        }
+//         &::-webkit-scrollbar-corner {
+//             background-color: transparent;
+//         }
+//     }
+//     & when (@style = "style-2") {
+//         &::-webkit-scrollbar {
+//             width: 13px;
+//         }
 
-        &::-webkit-scrollbar-track {
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            border-radius: 10px;
-            background-color: @scroll-bar-2-track;
-            border: solid 1px darken(@scroll-bar-2-track, 2%);
-        }
+//         &::-webkit-scrollbar-track {
+//             box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//             border-radius: 10px;
+//             background-color: @scroll-bar-2-track;
+//             border: solid 1px darken(@scroll-bar-2-track, 2%);
+//         }
 
-        &::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-            background-color: @scroll-bar-2-thumb;
-        }
+//         &::-webkit-scrollbar-thumb {
+//             border-radius: 10px;
+//             box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//             background-color: @scroll-bar-2-thumb;
+//         }
 
-        &::-webkit-scrollbar-corner {
-            background-color: transparent;
-        }
-    }
+//         &::-webkit-scrollbar-corner {
+//             background-color: transparent;
+//         }
+//     }
 
-    & when (@style = "reset") {
-        &::-webkit-scrollbar,
-        &::-webkit-scrollbar-track,
-        &::-webkit-scrollbar-thumb,
-        &::-webkit-scrollbar-corner {
-            all: unset;
-        }
-    }
-}
+//     & when (@style = "reset") {
+//         &::-webkit-scrollbar,
+//         &::-webkit-scrollbar-track,
+//         &::-webkit-scrollbar-thumb,
+//         &::-webkit-scrollbar-corner {
+//             all: unset;
+//         }
+//     }
+// }
 
 // ======================
 //      Invert color

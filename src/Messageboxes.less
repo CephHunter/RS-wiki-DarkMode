@@ -44,8 +44,15 @@ table.wikipedia {
 //      Edit page notice
 // ==========================
 // Example: protected pages, [[https://runescape.wiki/w/Template:Clear?action=edit]]
-.editnotice {
+.editnotice,
+div.mw-warning-with-logexcerpt {
     background: @messageboxes;
     color: @theme-text;
     border-color: @theme-borders;
+    box-shadow: none;
+}
+
+#semiprotectedpagewarning {
+    border-color: @theme-borders !important;
+    background: lighten(@messageboxes, 2%);
 }

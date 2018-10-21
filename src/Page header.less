@@ -1,379 +1,83 @@
-// =====================
-//      Edit button
-// =====================
-#ca-edit,           // Source mode edit button
-#ca-ve-edit,        // Visual mode edit button
-#ca-addsection,     // Talk page add secton
-#ca-viewsource {
-    .button-styling();
-    border-right-color: @button-text-base;
+// ---------------------
+//      Page header
+// ---------------------
+div.vectorTabs {
+    padding: 0;
+    background: @vector-tabs;
+}
+
+#mw-head .vectorTabs ul li {
+    background-color: @vector-tabs;
+
+    &.selected {
+        background-color: @main-page-bg;
+        border: solid 1px @theme-borders;
+        border-bottom: none;
+
+        span {
+            position: relative;
+            top: -1px;
+        }
+
+        a {
+            color: @theme-text;
+        }
+    }
 
     &:hover {
-        border-right-color: @button-text-base;
-    }
-
-    // Pencil image
-    img {
-        filter: brightness(85%);
-    }
-
-    // Dropdown button
-    & + div.wds-dropdown {
-        // Button color
-        .wds-button {
-            .button-styling();
-            border-left-color: @button-text-base;
-
-            &:hover {
-                border-left-color: @button-text-base;
-            }
-        }
-
-        // Content colors
-        // .dropdown-pointer-styling();
-
-        .wds-dropdown__content {
-            .dropdown-styling();
-        }
+        background-color: @vector-tabs--hover;
     }
 }
 
-// Prevent button styling when the button is located in the dropdown list
-#ca-edit,
-#ca-ve-edit,
-#ca-addsection {
-    & + .wds-dropdown &,
-    & ~ .WikiaMenuElement & {
+//----- "More" dropdown -----//
+#mw-head #p-cactions.vectorMenu h3 {
+    background: @vector-tabs;
+
+    span {
         color: @theme-text;
-        background: none;
+
+        &:after {
+            .oo-ui-indicator-down();
+        }
+    }
+}
+
+#mw-head #p-cactions.vectorMenu:hover h3 {
+    background: @vector-tabs--hover;
+}
+
+#mw-head .vectorMenu .menu {
+    background: @dropdown-bg;
+    border-color: @theme-borders;
+
+    li:hover {
+        background: @dropdown-bg-hover-item;
+    }
+}
+
+//----- Searchbar -----//
+#mw-head #simpleSearch {
+    background: @input-fields-bg;
+
+    #searchInput {
+        .text-input-styling();
         border: none;
-
-        &:hover {
-            color: @theme-links;
-            background-color: @dropdown-bg-hover-item;
-        }
-    }
-}
-
-// [[Special:Images]]
-#page-header-add-new-photo {
-    .button-styling();
-
-    img {
-        filter: brightness(85%);
-    }
-}
-
-// For talk and share button button
-.wds-button.wds-is-secondary {
-    color: darken(@theme-text, 5%);
-    border-color: @theme-borders;
-
-    &:hover {
-        color: lighten(@theme-text, 10%);
-        border-color: lighten(@theme-borders, 15%);
-    }
-}
-
-// For profile edit button and module save button
-.wikia-menu-button {
-    border: none;
-
-    .codepage-publish-button,
-    .drop {
-        .button-styling();
     }
 
-    img.chevron {
-        border-top-color: @button-text-base ;
-    }
-
-    ul {
-        background-color: @dropdown-bg;
-        border-color: @theme-borders;
-
-        li {
-            border-top: 1px solid @theme-borders;
-
-            a {
-                color: @theme-text;
-
-                &:hover {
-                    background-color: @dropdown-bg-hover-item;
-                    color: @theme-links;
-                }
-            }
-
-            &:first-child {
-                border-top: none;
-            }
-
-            &:hover {
-                background-color: transparent;
-            }
-        }
-    }
-}
-
-// =========================
-//      Language select
-// =========================
-#PageHeader .page-header__languages {
-    // .dropdown-pointer-styling();
-
-    .wds-dropdown__content {
-        .dropdown-styling();
-
-        ul {
-            .scroll-bar-styling();
-        }
-    }
-}
-
-// ======================================
-//      Categories ovelflow dropdown
-// ======================================
-#PageHeader .page-header__categories-dropdown {
-    // .dropdown-pointer-styling();
-
-    .page-header__categories-dropdown-content {
-        .dropdown-styling();
-
-        ul {
-            .scroll-bar-styling();
-        }
-    }
-}
-
-// ==========================
-//      Wikiapage header
-// ==========================
-.wds-community-header {
-    // -------------------------------
-    //      Blue background color
-    // -------------------------------
-    background-color: @pageheader-bg;
-
-    &::before {
-        background-image: linear-gradient( 270deg, fadeout(@pageheader-bg, 50%) 0px, fadeout(@pageheader-bg, 50%) 200px, @pageheader-bg 430px );
-    }
-
-    // --------------------
-    //      Text color
-    // --------------------
-    &,
-    .wds-community-header__counter,
-    .wds-tabs__tab-label,
-    .wds-icon,
-    a {
-        color: lighten(@theme-text, 10%);
-    }
-
-    .wds-button.wds-is-secondary {
-        color: lighten(@theme-text, 10%);
-        border-color: lighten(@theme-text, 10%);
-
-        svg {
-            fill: lighten(@theme-text, 10%);
-        }
-    }
-}
-
-// -------------------
-//      Dropdowns
-// -------------------
-.wds-dropdown {
-    // .dropdown-pointer-styling();
-
-    .wds-is-selected > a {
-        color: @theme-links;
-        background-color: @dropdown-bg-hover-item;
-    }
-}
-
-.wds-dropdown__content {
-    &,
-    .wds-dropdown-level-2__content {
-        .dropdown-styling();
-    }
-
-    li:hover > a:not(.wds-button) {
-        color: @theme-links;
-        background-color: @dropdown-bg-hover-item;
-    }
-}
-
-// http://dev.wikia.com/wiki/UTCClock
-#DisplayClockJS {
-    color: lighten(@theme-text, 10%);
-}
-
-// Header bottom line
-.WikiaPage .page-header__separator {
-    background-color: @theme-borders;
-}
-
-// =======================
-//      Fandom header
-// =======================
-#globalNavigation {
-    box-shadow: 0 1px 0 0 darken(@fandomheader-bg, 10%);
-}
-
-// --------------------------
-//      Background color
-// --------------------------
-#globalNavigation,
-.wds-global-navigation__logo,
-.wds-global-navigation__link,
-.wds-global-navigation__wikis-menu,
-.wds-global-navigation__search,
-.wds-global-navigation__user-menu,
-.wds-global-navigation__account-menu,
-.wds-global-navigation__notifications-menu,
-.wds-global-navigation__start-a-wiki {
-    background-color: @fandomheader-bg;
-    color: @theme-text;
-}
-
-.wds-global-navigation__link,
-.wds-global-navigation__wikis-menu,
-.wds-global-navigation__user-menu,
-.wds-global-navigation__account-menu,
-.wds-global-navigation__notifications-menu {
-    &:hover {
-        color: lighten(@theme-text, 15%);
-    }
-}
-
-// --------------------
-//      Text color
-// --------------------
-//----- fandom logo -----//
-#wds-company-logo-fandom-white > g > path:last-child {
-    fill: @theme-text;
-}
-
-//----- notification icons -----//
-.wds-global-navigation__notifications-dropdown .wds-icon-small path {
-    fill: darken(@theme-text, 10%);
-}
-
-.wds-global-navigation__notifications-dropdown:hover .wds-icon-small path {
-    fill: darken(@theme-text, -5%);
-}
-
-//----- When logged in -----//
-.wds-global-navigation__user-menu.wds-global-navigation__user-logged-in .wds-avatar__image {
-    border-color: lighten(@fandomheader-bg, 10%);
-    fill: lighten(@fandomheader-bg, 10%);
-}
-
-.wds-global-navigation__user-menu:hover.wds-global-navigation__user-logged-in .wds-avatar__image {
-    border-color: lighten(@fandomheader-bg, 40%);
-    fill: lighten(@fandomheader-bg, 40%);
-}
-
-//----- When not logged in -----//
-.wds-global-navigation__user-menu li {
-    color: @theme-text;
-    border-color: @theme-borders;
-
-    .wds-button {
-        .button-styling();
-
-        &.wds-is-secondary {
-            .button-styling("cancel");
-        }
-    }
-}
-
-.wds-global-navigation__user-menu .wds-avatar__image {
-    border-color: lighten(@fandomheader-bg, 30%);
-    fill: lighten(@fandomheader-bg, 30%);
-}
-
-.wds-global-navigation__user-menu:hover .wds-avatar__image {
-    border-color: lighten(@fandomheader-bg, 50%);
-    fill: lighten(@fandomheader-bg, 50%);
-}
-
-//----- Dropdown chevrons -----//
-.wds-global-navigation-wrapper .wds-dropdown__toggle-chevron {
-    fill: #ff6a64;
-}
-
-// -------------------
-//      Searchbar
-// -------------------
-.wds-global-navigation__search-label {
-    background-color: @fandomheader-bg;
-
-    path {
-        fill: darken(@theme-text, 15%);
-    }
-}
-
-.wds-global-navigation__search-input {
-    background-color: @fandomheader-bg;
-    color: @theme-text;
-
-    &::placeholder-text {
-        color: @placeholder-text;
-    }
-}
-
-.wds-global-navigation__search-submit {
-    .button-styling();
-}
-
-.wds-global-navigation__search-close {
-    &,
-    &:hover {
+    #searchButton {
         background-color: transparent;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13"> <g fill="none" stroke="@{theme-text}" stroke-width="2"> <path d="M11.29 11.71l-4-4"/> <circle cx="5" cy="5" r="4"/> </g> </svg>');
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+    // hide button that appears briefly during page loading
+    #mw-searchButton {
+        display: none;
     }
 }
 
-.wds-global-navigation__search-input-wrapper {
-    border-bottom-color: @theme-borders;
-}
-
-// -------------------
-//      Dropdowns
-// -------------------
-// Account login/logout
-.wds-sign-out__button {
-    .button-styling();
-}
-
-#global-navigation-anon-sign-in {
-    .button-styling();
-}
-
-#global-navigation-anon-register {
-    .button-styling("cancel");
-}
-
-// Notifications
-.wds-notifications__dropdown-content {
-    color: @theme-text;
-
-    .wds-notifications__zero-state {
-        color: darken(@theme-text, 15%);
-    }
-}
-
-// Messages
-#GlobalNavigationWallNotifications {
-    .notification {
-        border: none;
-        color: @theme-text;
-        background: @dropdown-bg;
-
-        &.empty {
-            color: darken(@theme-text, 15%);
-        }
-    }
-
-    .dropdown-styling();
+//----- Notification icons -----//
+.mw-echo-notifications-badge::before {
+    filter: invert(1);
 }

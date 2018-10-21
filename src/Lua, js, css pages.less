@@ -3,189 +3,316 @@
 // ========================
 // These styles apply to lua, js and css pages
 
-// -----------------------
-//      Preview pages
-// -----------------------
-.source-lua,
-.source-css,
-.source-javascript {
-    background-color: @code-editor-bg;
-    color: darken(@theme-text, 5%);
+// ----------------
+//      Header
+// ----------------
+//----- Active buttons -----//
+.tool-button.tool-active,
+.tool.tool-active.oo-ui-buttonElement-frameless.oo-ui-iconElement {
+    background: @button-bg-base;
+    outline-color: @button-group-separator;
+    box-shadow: none;
 }
 
-// -------------------
-//      Edit page
-// -------------------
-.editpage-editarea {
-    background-color: @code-editor-bg;
-    color: darken(@theme-text, 5%);
-}
-
-// Row count sidebar
-.ace_gutter {
-    background-color: lighten(@code-editor-bg, 5%);
-    color: @theme-text;
-}
-
-// Active line highlight
-.ace_marker-layer .ace_active-line {
-    background-color: @code-editor-bg;
-    border-top: solid 2px lighten(@code-editor-bg, 6.5%);
-    border-bottom: solid 2px lighten(@code-editor-bg, 6.5%);
-}
-
-.ace_gutter-active-line {
-    background-color: lighten(@code-editor-bg, 8%);
-}
-
-// Selection highlight
-.ace_marker-layer .ace_selection {
-    background-color: fade(lighten(@code-editor-bg, 32.5%), 20%);
-}
-
-.ace_cursor {
-    color: @theme-text;
-}
-
-.EditPageEditor .editpage-editarea {
+// ----------------
+//      Footer
+// ----------------
+.codeEditor-status {
+    background: @edit-area-header-bg;
     border-color: @theme-borders;
 }
 
-// Scrollbar styling
-.ace_scrollbar,
-.ace_scrollbar-h {
-    .scroll-bar-styling();
+.codeEditor-status-message {
+    border-color: @theme-borders;
 }
 
-//----- Search bar in editor -----//
-// Popup
+// -------------------------------
+//      Search/replace window
+// -------------------------------
+// Window
 .ace_search {
-    background-color: darken(@code-editor-bg, 3%);
+    background: @code-editor-search-bg;
+    color: @theme-text;
     border-color: @theme-borders;
 }
 
-// Cancel button
-.ace_searchbtn_close {
-    background: none;
-
-    &::before {
-        content: "✖";
-        color: @button-text-base;
-        font-size: 0.8em;
-    }
-
-    &:hover {
-        background: @button-bg-base;
-    }
-}
-
-// Searchbar
-.ace_search_form {
+// Input fields
+.ace_search_field {
     .text-input-styling();
 }
 
-// Previous/next buttons
+// prev/next/replace/all buttons
 .ace_searchbtn {
-    background: lighten(@code-editor-bg, 20%);
-    border-color: lighten(@code-editor-bg, 10%);;
+    .button-styling('grey');
 
-    &.prev:before {
-        content: "▲";
-        color: @theme-text;
+    &:last-child {
+        border-right: none;
+        border-left-color: @button-group-separator;
     }
 
-    &.next:before {
-        content: "▼";
-        color: @theme-text;
+    &:not(:nth-child(2)):not(:last-child) {
+        border-right-color: @button-group-separator;
+        border-left-color: @button-group-separator;
     }
 
-    &:hover {
-        background: lighten(@code-editor-bg, 30%);
+    &.prev::after,
+    &.next::after {
+        border-color: @theme-text;
     }
 }
 
-// Search options
-.ace_search_options .ace_button {
-    color: @theme-text;
-    border-color: @theme-borders;
-
-    &:hover {
-        background-color: lighten(@code-editor-bg, 10%);
-    }
+// Expand/search option buttons
+.ace_button {
+    .button-styling('grey');
 
     &.checked {
-        background-color: lighten(@code-editor-bg, 20%);
+        border-color: @button-group-separator;
     }
 }
 
-// ---------------------------
-//      code highlighting
-// ---------------------------
-// variables and function declaration highlights
-.ace_storage,
-.kw0 {
-    color: #14dc1c;
-}
+// Close button
+.ace_searchbtn_close {
+    filter: brightness(1.5);
 
-// Dotted indent guide
-.ace_indent-guide {
-    filter: brightness(60%);
+    &:hover {
+        filter: brightness(1);
+    }
 }
-
-// function/variable call highlight
-.ace_entity.ace_name.ace_function,
-.ace_entity.ace_name.ace_tag,
-.ace_support.ace_function,
-.ace_variable,
-.ace_variable.ace_language,
-.me1,
-.kw3 {
-    color: lighten(#268BD2, 10%);
-}
-
-// keywords
-.ace_keyword,
-.ace_meta,
-.ace_support.ace_class,
-.ace_support.ace_type,
-.kw1 {
-    color: #c9e411;
-}
-
 
 // ===================
 //      Lua pages
 // ===================
-// ------------------------
-//      Module console
-// ------------------------
-#mw-scribunto-console,
-.mw-scribunto-console-fieldset {
-    color: @theme-text;
-    background-color: @edit-area-sidebar-bg;
-}
-
+//----- Module console -----//
+.mw-scribunto-console-fieldset,
 .mw-scribunto-message {
-    background: none;
-    color: darken(@theme-text, 10%);
+    background: @code-editor-console-bg;
+    color: @code-editor-console-message-text;
 }
 
-// Output area
-.mw-scribunto-input {
-    color: @theme-links;
-}
-
-.mw-scribunto-normalOutput,
 .mw-scribunto-print {
-    background: none;
-    color: @theme-text;
+    background: @code-editor-console-bg;
+    color: @code-editor-console-output-text;
 }
 
 .mw-scribunto-error {
-    background: none;
+    background: @code-editor-console-bg;
+    color: @code-editor-console-error-text;
 }
 
-// Text input area
-#mw-scribunto-input {
+.mw-scribunto-clear {
+    color: @code-editor-console-error-text;
+    border-bottom-color: @code-editor-console-error-text;
+}
+
+.mw-scribunto-input {
+    color: @code-editor-console-input-text;
+}
+
+textarea#mw-scribunto-input {
     .text-input-styling();
+}
+
+// ==========================================
+//      Page preview syntax highlighting
+// ==========================================
+// Generated with http://pygments.org/demo/
+//----- Monokai -----//
+.mw-highlight pre .hll { background-color: #49483e }
+.mw-highlight pre  { background: #272822; color: #f8f8f2 }
+.mw-highlight pre .c { color: #75715e } /* Comment */
+.mw-highlight pre .err { color: #960050; background-color: #1e0010 } /* Error */
+.mw-highlight pre .k { color: #66d9ef } /* Keyword */
+.mw-highlight pre .l { color: #ae81ff } /* Literal */
+.mw-highlight pre .n { color: #f8f8f2 } /* Name */
+.mw-highlight pre .o { color: #f92672 } /* Operator */
+.mw-highlight pre .p { color: #f8f8f2 } /* Punctuation */
+.mw-highlight pre .ch { color: #75715e } /* Comment.Hashbang */
+.mw-highlight pre .cm { color: #75715e } /* Comment.Multiline */
+.mw-highlight pre .cp { color: #75715e } /* Comment.Preproc */
+.mw-highlight pre .cpf { color: #75715e } /* Comment.PreprocFile */
+.mw-highlight pre .c1 { color: #75715e } /* Comment.Single */
+.mw-highlight pre .cs { color: #75715e } /* Comment.Special */
+.mw-highlight pre .gd { color: #f92672 } /* Generic.Deleted */
+.mw-highlight pre .ge { font-style: italic } /* Generic.Emph */
+.mw-highlight pre .gi { color: #a6e22e } /* Generic.Inserted */
+.mw-highlight pre .gs { font-weight: bold } /* Generic.Strong */
+.mw-highlight pre .gu { color: #75715e } /* Generic.Subheading */
+.mw-highlight pre .kc { color: #66d9ef } /* Keyword.Constant */
+.mw-highlight pre .kd { color: #66d9ef } /* Keyword.Declaration */
+.mw-highlight pre .kn { color: #f92672 } /* Keyword.Namespace */
+.mw-highlight pre .kp { color: #66d9ef } /* Keyword.Pseudo */
+.mw-highlight pre .kr { color: #66d9ef } /* Keyword.Reserved */
+.mw-highlight pre .kt { color: #66d9ef } /* Keyword.Type */
+.mw-highlight pre .ld { color: #e6db74 } /* Literal.Date */
+.mw-highlight pre .m { color: #ae81ff } /* Literal.Number */
+.mw-highlight pre .s { color: #e6db74 } /* Literal.String */
+.mw-highlight pre .na { color: #a6e22e } /* Name.Attribute */
+.mw-highlight pre .nb { color: #f8f8f2 } /* Name.Builtin */
+.mw-highlight pre .nc { color: #a6e22e } /* Name.Class */
+.mw-highlight pre .no { color: #66d9ef } /* Name.Constant */
+.mw-highlight pre .nd { color: #a6e22e } /* Name.Decorator */
+.mw-highlight pre .ni { color: #f8f8f2 } /* Name.Entity */
+.mw-highlight pre .ne { color: #a6e22e } /* Name.Exception */
+.mw-highlight pre .nf { color: #a6e22e } /* Name.Function */
+.mw-highlight pre .nl { color: #f8f8f2 } /* Name.Label */
+.mw-highlight pre .nn { color: #f8f8f2 } /* Name.Namespace */
+.mw-highlight pre .nx { color: #a6e22e } /* Name.Other */
+.mw-highlight pre .py { color: #f8f8f2 } /* Name.Property */
+.mw-highlight pre .nt { color: #f92672 } /* Name.Tag */
+.mw-highlight pre .nv { color: #f8f8f2 } /* Name.Variable */
+.mw-highlight pre .ow { color: #f92672 } /* Operator.Word */
+.mw-highlight pre .w { color: #f8f8f2 } /* Text.Whitespace */
+.mw-highlight pre .mb { color: #ae81ff } /* Literal.Number.Bin */
+.mw-highlight pre .mf { color: #ae81ff } /* Literal.Number.Float */
+.mw-highlight pre .mh { color: #ae81ff } /* Literal.Number.Hex */
+.mw-highlight pre .mi { color: #ae81ff } /* Literal.Number.Integer */
+.mw-highlight pre .mo { color: #ae81ff } /* Literal.Number.Oct */
+.mw-highlight pre .sa { color: #e6db74 } /* Literal.String.Affix */
+.mw-highlight pre .sb { color: #e6db74 } /* Literal.String.Backtick */
+.mw-highlight pre .sc { color: #e6db74 } /* Literal.String.Char */
+.mw-highlight pre .dl { color: #e6db74 } /* Literal.String.Delimiter */
+.mw-highlight pre .sd { color: #e6db74 } /* Literal.String.Doc */
+.mw-highlight pre .s2 { color: #e6db74 } /* Literal.String.Double */
+.mw-highlight pre .se { color: #ae81ff } /* Literal.String.Escape */
+.mw-highlight pre .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.mw-highlight pre .si { color: #e6db74 } /* Literal.String.Interpol */
+.mw-highlight pre .sx { color: #e6db74 } /* Literal.String.Other */
+.mw-highlight pre .sr { color: #e6db74 } /* Literal.String.Regex */
+.mw-highlight pre .s1 { color: #e6db74 } /* Literal.String.Single */
+.mw-highlight pre .ss { color: #e6db74 } /* Literal.String.Symbol */
+.mw-highlight pre .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.mw-highlight pre .fm { color: #a6e22e } /* Name.Function.Magic */
+.mw-highlight pre .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.mw-highlight pre .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.mw-highlight pre .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.mw-highlight pre .vm { color: #f8f8f2 } /* Name.Variable.Magic */
+.mw-highlight pre .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+
+// ===========================
+//      Ace editor colors
+// ===========================
+// This is taken from https://ace.c9.io/tool/mode_creator.html
+//----- Theme monokai -----//
+.ace-tm .ace_gutter {
+    background: #2F3129;
+    color: #8F908A;
+}
+
+.ace-tm .ace_print-margin {
+    width: 1px;
+    background: #555651
+}
+
+.ace-tm {
+    background-color: #272822;
+    color: #F8F8F2
+}
+
+.ace-tm .ace_cursor {
+    color: #F8F8F0
+}
+
+.ace-tm .ace_marker-layer .ace_selection {
+    background: #49483E
+}
+
+.ace-tm.ace_multiselect .ace_selection.ace_start {
+    box-shadow: 0 0 3px 0px #272822;
+}
+
+.ace-tm .ace_marker-layer .ace_step {
+    background: rgb(102, 82, 0)
+}
+
+.ace-tm .ace_marker-layer .ace_bracket {
+    margin: -1px 0 0 -1px;
+    border: 1px solid #49483E
+}
+
+.ace-tm .ace_marker-layer .ace_active-line {
+    background: #202020
+}
+
+.ace-tm .ace_gutter-active-line {
+    background-color: #272727
+}
+
+.ace-tm .ace_marker-layer .ace_selected-word {
+    border: 1px solid #49483E;
+    background: #49483E
+}
+
+.ace-tm .ace_invisible {
+    color: #52524d
+}
+
+.ace-tm .ace_entity.ace_name.ace_tag,
+.ace-tm .ace_keyword,
+.ace-tm .ace_meta.ace_tag,
+.ace-tm .ace_storage {
+    color: #F92672
+}
+
+.ace-tm .ace_punctuation,
+.ace-tm .ace_punctuation.ace_tag {
+    color: #fff
+}
+
+.ace-tm .ace_constant.ace_character,
+.ace-tm .ace_constant.ace_language,
+.ace-tm .ace_constant.ace_numeric,
+.ace-tm .ace_constant.ace_other {
+    color: #AE81FF
+}
+
+.ace-tm .ace_invalid {
+    color: #F8F8F0;
+    background-color: #F92672
+}
+
+.ace-tm .ace_invalid.ace_deprecated {
+    color: #F8F8F0;
+    background-color: #AE81FF
+}
+
+.ace-tm .ace_support.ace_constant,
+.ace-tm .ace_support.ace_function {
+    color: #66D9EF
+}
+
+.ace-tm .ace_fold {
+    background-color: #A6E22E;
+    border-color: #F8F8F2
+}
+
+.ace-tm .ace_storage.ace_type,
+.ace-tm .ace_support.ace_class,
+.ace-tm .ace_support.ace_type {
+    font-style: italic;
+    color: #66D9EF
+}
+
+.ace-tm .ace_entity.ace_name.ace_function,
+.ace-tm .ace_entity.ace_other,
+.ace-tm .ace_entity.ace_other.ace_attribute-name,
+.ace-tm .ace_variable {
+    color: #A6E22E
+}
+
+.ace-tm .ace_variable.ace_parameter {
+    font-style: italic;
+    color: #FD971F
+}
+
+.ace-tm .ace_string {
+    color: #E6DB74
+}
+
+.ace-tm .ace_comment {
+    color: #75715E
+}
+
+.ace-tm .ace_indent-guide {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEklEQVQImWPQ0FD0ZXBzd/wPAAjVAoxeSgNeAAAAAElFTkSuQmCC) right repeat-y
 }

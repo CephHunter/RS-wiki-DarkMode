@@ -7,17 +7,17 @@
 
 @import "Custom classes.less";
 @import "Media.less";
-// @import "GEcharts.less";
+@import "GEcharts.less";
 @import "HTML tags.less";
 @import "Interactive input.less";
-// @import "Lua, js, css pages.less";
+@import "Lua, js, css pages.less";
 @import "Messageboxes.less";
-// @import "Namespace specific styling.less";
-// @import "Page header.less";
+@import "Namespace specific styling.less";
+@import "Page header.less";
 @import "Page history.less";
 // @import "Page specific styles.less";
 // @import "Popups.less";
-// @import "Source editor.less";
+@import "Source editor.less";
 @import "Tables.less";
 @import "Templates.less";
 // @import "Visual editor.less";
@@ -60,9 +60,7 @@ div#mw-panel div.portal div.body ul li a {
 
 // Mediawiki help indicators
 #mw-indicator-mw-helplink a {
-    // filter: invert(0.8);
-    // .counter-inversion(color, @theme-links, 0.8);
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="@{theme-text}"> <path d="M12.001 2.085c-5.478 0-9.916 4.438-9.916 9.916 0 5.476 4.438 9.914 9.916 9.914 5.476 0 9.914-4.438 9.914-9.914 0-5.478-4.438-9.916-9.914-9.916zm.001 18c-4.465 0-8.084-3.619-8.084-8.083 0-4.465 3.619-8.084 8.084-8.084 4.464 0 8.083 3.619 8.083 8.084 0 4.464-3.619 8.083-8.083 8.083z"/> <path d="M11.766 6.688c-2.5 0-3.219 2.188-3.219 2.188l1.411.854s.298-.791.901-1.229c.516-.375 1.625-.625 2.219.125.701.885-.17 1.587-1.078 2.719-.953 1.186-1 3.655-1 3.655h1.969s.135-2.318 1.041-3.381c.603-.707 1.443-1.338 1.443-2.494s-1.187-2.437-3.687-2.437zM11 16h2v2h-2z"/> </svg>') left center no-repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="@{ooui-icon-base--inverted}"> <path d="M12.001 2.085c-5.478 0-9.916 4.438-9.916 9.916 0 5.476 4.438 9.914 9.916 9.914 5.476 0 9.914-4.438 9.914-9.914 0-5.478-4.438-9.916-9.914-9.916zm.001 18c-4.465 0-8.084-3.619-8.084-8.083 0-4.465 3.619-8.084 8.084-8.084 4.464 0 8.083 3.619 8.083 8.084 0 4.464-3.619 8.083-8.083 8.083z"/> <path d="M11.766 6.688c-2.5 0-3.219 2.188-3.219 2.188l1.411.854s.298-.791.901-1.229c.516-.375 1.625-.625 2.219.125.701.885-.17 1.587-1.078 2.719-.953 1.186-1 3.655-1 3.655h1.969s.135-2.318 1.041-3.381c.603-.707 1.443-1.338 1.443-2.494s-1.187-2.437-3.687-2.437zM11 16h2v2h-2z"/> </svg>') left center no-repeat;
 }
 
 // -----------------
@@ -106,7 +104,7 @@ body {
 
     // indent guide
     ul ul {
-        border-color: darken(@theme-text, 10%);
+        border-color: @list-indent-guide;
     }
 
     // text
@@ -115,147 +113,79 @@ body {
     }
 
     .toclevel-2 a {
-        color: darken(@theme-text, 10%);
+        color: @theme-text-subtle;
     }
 }
 
 //----- "Redirected from" message -----//
 #contentSub,
 #contentSub2 {
-    color: darken(@theme-text, 10%);
+    color: @theme-text-subtle;
 }
 
 // ---------------------
 //      Page footer
 // ---------------------
 #footer ul li {
-    color: darken(@theme-text, 5%);
-}
-
-// ---------------------
-//      Page header
-// ---------------------
-div.vectorTabs {
-    padding: 0;
-    background: @sidebar;
-}
-
-#mw-head .vectorTabs ul li {
-    background-color: @sidebar;
-
-    &.selected {
-        background-color: @main-page-bg;
-        border: solid 1px @theme-borders;
-        border-bottom: none;
-
-        span {
-            position: relative;
-            top: -1px;
-        }
-
-        a {
-            color: @theme-text;
-        }
-    }
-
-    &:hover {
-        background-color: lighten(@sidebar, 5%);
-    }
-}
-
-//----- "More" dropdown -----//
-#mw-head #p-cactions.vectorMenu h3 {
-    background: @sidebar;
-
-    span {
-        color: @theme-text;
-
-        &:after {
-            filter: invert(1);
-        }
-    }
-}
-
-#mw-head #p-cactions.vectorMenu:hover h3 {
-    background: lighten(@sidebar, 5%);
-}
-
-#mw-head .vectorMenu .menu {
-    background: @dropdown-bg;
-    border-color: @theme-borders;
-
-    li:hover {
-        background: @dropdown-bg-hover-item;
-    }
-}
-
-//----- Searchbar -----//
-#mw-head #simpleSearch {
-    background: @input-fields-bg;
-
-    #searchInput {
-        .text-input-styling();
-        border: none;
-    }
-
-    #searchButton {
-        background-color: transparent;
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="13"> <g fill="none" stroke="@{theme-text}" stroke-width="2"> <path d="M11.29 11.71l-4-4"/> <circle cx="5" cy="5" r="4"/> </g> </svg>');
-        background-position: center center;
-        background-repeat: no-repeat;
-    }
-
-    #mw-searchButton {
-        display: none;
-    }
-}
-
-//----- Notification icons -----//
-.mw-echo-notifications-badge::before {
-    filter: invert(1);
+    color: @theme-text-subtle;
 }
 
 // -------------------------------
 //      Autocomplete dropdown
 // -------------------------------
-.suggestions-results {
-    background: @dropdown-bg;
-    border-color: @theme-borders;
-}
-
-.suggestions-result {
-    color: @theme-text;
-}
-
+// container
+.suggestions-results,
 .suggestions-special {
-    &:extend(.suggestions-results);
+    background: @dropdown-bg;
+    border-color: @dropdown-border;
+}
 
+// list item
+.suggestions-result {
+    color: @dropdown-text;
+}
+
+// last item to search for "containing..."
+.suggestions-special {
     .special-label {
-        color: darken(@theme-text, 10%);
+        color: darken(@dropdown-text, 10%);
     }
 
     .special-query {
-        color: @theme-text;
+        color: @dropdown-text;
     }
 }
 
+// hover over item
 .suggestions-result-current {
     background: @dropdown-bg-hover-item;
-    color: lighten(@theme-text, 10%);
+    color: lighten(@dropdown-text, 10%);
 
     .special-label {
-        color: @theme-text;
+        color: @dropdown-text;
     }
 
     .special-query {
-        color: lighten(@theme-text, 10%);
+        color: lighten(@dropdown-text, 10%);
     }
 }
 
-// =====================================
+// -------------------------------------
 //      Categories on wiki articles
-// =====================================
+// -------------------------------------
 .catlinks {
     background: @categories;
     border-color: @theme-borders;
+}
+
+// ------------------------------
+//      Filter options group
+// ------------------------------
+form fieldset {
+    background: @input-group-wrapper;
+    border-color: @input-group-wrapper-border;
+    
+    legend {
+        color: @theme-text;
+    }
 }

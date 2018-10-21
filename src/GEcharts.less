@@ -1,195 +1,271 @@
-// ================================
-//      GE chart on item pages
-// ================================
+// ==================================
+//      GE chart general styling
+// ==================================
 // --------------------
 //      Background
 // --------------------
-.GEChartBox {
-    background: @table-header;
+.GEChart-bg(@color) {
+    GEChartBox {
+        background: @color;
+    }
+
+    .highcharts-background {
+        fill: @color;
+    }
+
+    .highcharts-plot-background {
+        fill: @color;
+    }
+
+    .highcharts-legend-box {
+        fill: @color;
+    }
 }
 
-.highcharts-background {
-    fill: @table-header;
+// For [[GEMC/C]]
+.GEChart-bg(@main-page-bg);
+
+// For in infoboxes
+table {
+    .GEChart-bg(@GEChart-infobox-bg);
 }
 
-.highcharts-plot-background {
-    fill: @table-header;
-}
-
-.highcharts-legend-box {
-    fill: @table-header;
+// For the popup
+#GEchartpopup {
+    background: @GEChart-popup-bg;
+    .GEChart-bg(@GEChart-popup-bg);
 }
 
 // --------------------
 //      Axis color
 // --------------------
-.highcharts-grid-line {
-    stroke: @theme-borders;
+.highcharts-yaxis-grid .highcharts-grid-line {
+    stroke: @GEChart-axis;
 }
 
 .highcharts-axis-line {
-    stroke: @theme-borders;
+    stroke: @GEChart-axis;
 }
 
 // --------------------
 //      text color
 // --------------------
 .highcharts-title {
-    color: @theme-text;
+    color: @GEChart-title !important;
+}
+
+.highcharts-subtitle {
+    color: @GEChart-subtitle !important;
 }
 
 .highcharts-axis-labels > text {
-    fill: @theme-text;
+    fill: @GEChart-labels !important;
+}
+
+#GEchartpopup {
+    color: @theme-text;
+}
+
+.highcharts-axis-title,
+.highcharts-range-label text,
+.highcharts-legend-item text,
+.highcharts-range-selector-buttons text {
+    fill: @theme-text !important;
 }
 
 // ---------------------------------
 //      No data to display cell     
 // ---------------------------------
 .infobox-switch .hidden td[data-attr-param="graph"] {
-    background: @table-header;
+    background: @GEChart-infobox-bg;
     color: @theme-text;
 }
 
-// ========================
-//      GE chart popup
-// ========================
-// --------------------
-//      Background
-// --------------------
-#GEchartpopup {
-    background: @popup-bg;
-
-    a {
-        color: @theme-links;
-    }
-
-    .GEChartBox {
-        background: @popup-bg;
-    }
-
-    .highcharts-background {
-        fill: @popup-bg;
-    }
-
-    .highcharts-plot-background {
-        fill: @popup-bg;
-    }
-
-    .highcharts-legend-box {
-        fill: @popup-bg;
-    }
-}
-
-// --------------------
-//      Axis color
-// --------------------
+// --------------------------
+//      Date slider axis
+// --------------------------
 .highcharts-navigator-outline {
-    stroke: @theme-borders;
+    stroke: @GEChart-axis;
 }
 
-.highcharts-label-box {
-    stroke: @theme-borders;
+.highcharts-navigator-xaxis .highcharts-grid-line {
+    stroke: @GEChart-axis;
 }
 
-// --------------------
-//      text color
-// --------------------
-.highcharts-axis-title {
-    fill: @theme-text;
+// -------------------------
+//      Date data color
+// -------------------------
+.highcharts-navigator-series .highcharts-area {
+    fill: @GEChart-date-graph-bg;
 }
 
-// Input field notes
-#chartPropertiespopup {
-    color: @theme-text;
+.highcharts-navigator-series .highcharts-graph {
+    stroke: @GEChart-date-graph-stroke;
 }
 
-// Legend
-.highcharts-legend-item text {
-    fill: @theme-text;
-}
-
-// -----------------------------
-//      Inputs fields color
-// -----------------------------
-#averagepopup,
-#extraItempopup,
-.highcharts-range-selector {
-    .text-input-styling();
-}
-
-// Data range text
-.highcharts-range-input text {
-    fill: @theme-text;
-}
-
+// -----------------------
+//      Inputs fields
+// -----------------------
 // Buttons
 .zoomButton {
     .highcharts-button-box {
-        fill: @theme-blue-lighter;
+        fill: @button-bg-base;
     }
 
     &:hover .highcharts-button-box{
-        fill: lighten(@theme-blue-lighter, 10%);
+        fill: @button-bg-base--hover;
+    }
+
+    &:active .highcharts-button-box{
+        fill: @button-bg-base--active;
     }
 
     text {
-        fill: lighten(@theme-text, 10%);
+        fill: @button-text-base !important;
+    }
+}
+
+// Date "from", "to" fields
+.highcharts-label-box {
+    stroke: @input-fields-border;
+}
+
+.highcharts-range-input {
+    .highcharts-label-box {
+        stroke: @input-fields-border;
+        fill: @input-fields-bg;
+    }
+    
+    text {
+        fill: @input-fields-text !important;
     }
 }
 
 // -------------------
 //      Scrollbar
 // -------------------
-.highcharts-scrollbar-track {
-    fill: lighten(@table-header, 10%);
-    stroke: lighten(@table-header, 10%);
-}
-
-.highcharts-scrollbar-button {
-    fill: lighten(@table-header, 20%);
-    stroke: lighten(@table-header, 20%);
-}
-
-.highcharts-scrollbar-arrow {
-    fill: lighten(@theme-text, 10%);
-}
-
-.highcharts-scrollbar-thumb {
-    fill: lighten(@table-header, 30%);
-    stroke: lighten(@table-header, 30%);
-}
-
-.highcharts-scrollbar-rifles {
-    stroke: lighten(@theme-text, 10%);
-    stroke-width: 2px;
-}
-
-#GEchartpopup {
+.GEChartScrollbar(@bgcolor, @tracklighten, @buttonlighten, @thumblighten) {
     .highcharts-scrollbar-track {
-        fill: lighten(@popup-bg, 10%);
-        stroke: lighten(@popup-bg, 10%);
+        fill: lighten(@bgcolor, @tracklighten);
+        stroke: lighten(@bgcolor, @tracklighten);
     }
 
     .highcharts-scrollbar-button {
-        fill: lighten(@popup-bg, 20%);
-        stroke: lighten(@popup-bg, 20%);
+        fill: lighten(@bgcolor, @buttonlighten);
+        stroke: lighten(@bgcolor, @buttonlighten);
     }
 
     .highcharts-scrollbar-thumb {
-        fill: lighten(@popup-bg, 30%);
-        stroke: lighten(@popup-bg, 30%);
+        fill: lighten(@bgcolor, @thumblighten);
+        stroke: lighten(@bgcolor, @thumblighten);
+    }
+}
+
+.GEChartScrollbar(
+    @main-page-bg,
+    @GEChart-scrollbar-track-lighten,
+    @GEChart-scrollbar-button-lighten,
+    @GEChart-scrollbar-thumb-lighten
+);
+
+// For in infoboxes
+// table {
+//     .GEChartScrollbar(
+//         @GEChart-infobox-bg,
+//         @GEChart-scrollbar-track-lighten,
+//         @GEChart-scrollbar-button-lighten,
+//         @GEChart-scrollbar-thumb-lighten
+//     );
+// }
+
+// For the popup
+#GEchartpopup {
+    .GEChartScrollbar(
+        @GEChart-popup-bg,
+        @GEChart-scrollbar-track-lighten,
+        @GEChart-scrollbar-button-lighten,
+        @GEChart-scrollbar-thumb-lighten
+    );
+}
+
+.highcharts-scrollbar-arrow {
+    fill: @GEChart-scrollbar-arrow;
+}
+
+.highcharts-scrollbar-rifles {
+    stroke: @GEChart-scrollbar-rifles;
+    stroke-width: 2px;
+}
+
+// ------------------
+//      Tooltips
+// ------------------
+.highcharts-tooltip-box {
+    path:last-of-type {
+        fill: @GEChart-tooltip-bg;
+        stroke: @GEChart-tooltip-border;
+    }
+
+    text {
+        fill: @theme-text !important;
     }
 }
 
 // ============================
 //      Exchange namespace
 // ============================
-#rs-exchange-data {
-    .button-styling();
+// ----------------
+//      header
+// ----------------
+.gemw-header {
+    .gemw-name a {
+        color: @theme-text;
+    }
+
+    .gemw-examine {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-price::after {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-updated {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-time {
+        color: @theme-text;
+    }
+
+    .gemw-update-price .oo-ui-icon-help {
+        .oo-ui-icon-help();
+    }
 }
 
-#gemw_guide {
-    color: @theme-text;
-    border: none;
-    background: @messageboxes;
+// --------------
+//      body
+// --------------
+.gemw-body {
+    .gemw-section-left {
+        a {
+            color: @theme-text-subtle;
+        }
+    }
+
+    .gemw-property {
+        border-top-color: @theme-text-subtle;
+
+        dt {
+            color: @theme-text;
+        }
+    }
+
+    .gemw-links {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-chart {
+        background: none;
+    }
 }

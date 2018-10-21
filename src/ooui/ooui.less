@@ -31,9 +31,10 @@
 //      Buttons
 // =================
 //----- Buttons with backgrounds -----//
-a.oo-ui-buttonElement-button,
-input.oo-ui-buttonElement-button,
-button.oo-ui-buttonElement-button {
+// a.oo-ui-buttonElement-button,
+// input.oo-ui-buttonElement-button,
+// button.oo-ui-buttonElement-button 
+.oo-ui-buttonElement-button {
     .oo-ui-buttonElement-framed.oo-ui-widget-enabled > & {
         & {
             color: @button-text-base;
@@ -46,12 +47,15 @@ button.oo-ui-buttonElement-button {
                 border-color: @button-bg-base--hover;
             }
 
-            &:active:focus {
+            &:active,
+            &:active:focus,
+            .oo-ui-buttonElement-pressed& {
                 color: @button-text-base;
                 background: @button-bg-base--active;
                 border-color: @button-bg-base--active;
             }
-
+            
+            // Select between multiple buttons
             .oo-ui-buttonElement-active& {
                 color: @button-text-primary;
                 background: @button-bg-progressive;
@@ -70,7 +74,9 @@ button.oo-ui-buttonElement-button {
                 border-color: @button-bg-base--hover;
             }
 
-            &:active:focus {
+            &:active,
+            &:active:focus,
+            .oo-ui-buttonElement-pressed& {
                 color: @button-text-progressive;
                 background: @button-bg-base--active;
                 border-color: @button-bg-base--active;
@@ -87,7 +93,9 @@ button.oo-ui-buttonElement-button {
                     border-color: @button-bg-progressive--hover;
                 }
     
-                &:active:focus {
+                &:active,
+                &:active:focus,
+                .oo-ui-buttonElement-pressed& {
                     color: @button-text-primary;
                     background: @button-bg-progressive--active;
                     border-color: @button-bg-progressive--active;
@@ -106,7 +114,9 @@ button.oo-ui-buttonElement-button {
                 border-color: @button-bg-base--hover;
             }
 
-            &:active:focus {
+            &:active,
+            &:active:focus,
+            .oo-ui-buttonElement-pressed& {
                 color: @button-text-destructive;
                 background: @button-bg-base--active;
                 border-color: @button-bg-base--active;
@@ -123,7 +133,9 @@ button.oo-ui-buttonElement-button {
                     border-color: @button-bg-destructive--hover;
                 }
     
-                &:active:focus {
+                &:active,
+                &:active:focus,
+                .oo-ui-buttonElement-pressed& {
                     color: @button-text-primary;
                     background: @button-bg-destructive--active;
                     border-color: @button-bg-destructive--active;
@@ -135,7 +147,9 @@ button.oo-ui-buttonElement-button {
     .oo-ui-buttonElement-framed.oo-ui-widget-disabled > & {
         &,
         &:hover,
-        &:active {
+        &:active,
+        &:active:focus,
+        .oo-ui-buttonElement-pressed& {
             color: @button-text-disabled;
             background: @button-bg-disabled;
             border-color: @button-bg-disabled;
@@ -144,18 +158,22 @@ button.oo-ui-buttonElement-button {
 }
 
 //----- Buttons without backgrounds -----//
-.oo-ui-buttonElement-button[tabindex] {
+.oo-ui-buttonElement-button {
     .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > & {
         &,
         &:hover,
-        &:active {
+        &:active,
+        &:active:focus,
+        .oo-ui-buttonElement-pressed& {
             color: @theme-text;
         }
       
         .oo-ui-flaggedElement-progressive& {
             &,
             &:hover,
-            &:active {
+            &:active,
+            &:active:focus,
+            .oo-ui-buttonElement-pressed& {
                 color: @button-text-progressive;
             }
         }
@@ -163,7 +181,9 @@ button.oo-ui-buttonElement-button {
         .oo-ui-flaggedElement-destructive& {
             &,
             &:hover,
-            &:active {
+            &:active,
+            &:active:focus,
+            .oo-ui-buttonElement-pressed& {
                 color: @button-text-destructive;
             }
         }
@@ -172,7 +192,9 @@ button.oo-ui-buttonElement-button {
     .oo-ui-buttonElement-framed.oo-ui-widget-disabled > & {
         &,
         &:hover,
-        &:active {
+        &:active,
+        &:active:focus,
+        .oo-ui-buttonElement-pressed& {
             color: @button-text-disabled;
         }
     }
@@ -189,6 +211,19 @@ button.oo-ui-buttonElement-button {
     .oo-ui-buttonElement:last-child > .oo-ui-buttonElement-button {
         border-left-color: @button-group-separator;
     }
+}
+
+.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle {
+    &:hover,
+    &:active,
+    &:active:focus,
+    .oo-ui-buttonElement-pressed& {
+        background: @button-bg-base;
+    }
+}
+
+.oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle {
+    background: @button-bg-base;
 }
 
 // ===========================

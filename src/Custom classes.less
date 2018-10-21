@@ -8,19 +8,19 @@
 // applies to a variety of templates used by a variety of scripts
 .sg-red,
 .nocell {
-    background: @red-bg;
+    background: @table-red-bg;
     color: @theme-text;
 }
 
 .sg-yellow,
 .maybecell {
-    background: @yellow-bg;
+    background: @table-yellow-bg;
     color: @theme-text;
 }
 
 .sg-green,
 .yescell {
-    background: @green-bg;
+    background: @table-green-bg;
     color: @theme-text;
 }
 
@@ -35,22 +35,6 @@
     color: @coins-negative;
 }
 
-// ================================
-//      Big navigation buttons
-// ================================
-// Example: [[Treasure Trails#Types of clues]]
-.portal-link {
-        a {
-            background-color: @theme-grey-2;
-            .links(@theme-text);
-        }
-
-    a:hover {
-        background-color: @theme-gray-2-lighter;
-        color: @button-text-base;
-    }
-}
-
 // ==========================
 //      Alternating rows
 // ==========================
@@ -63,12 +47,12 @@ table.alternating-rows tr:nth-child(even) {
 //      Minigame status
 // =========================
 .status-active {
-    background-color: @green-lighter-bg;
+    background-color: @table-green-bg-lighter;
     color: @theme-text;
 }
 
 .status-inactive {
-    background-color: @red-bg;
+    background-color: @table-red-bg;
     color: @theme-text;
 }
 

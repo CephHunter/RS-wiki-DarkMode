@@ -5,32 +5,16 @@
 
 @gemw-light-text: #949eaa;
 
-.gemw-container {
-	width: 90%;
-    max-width: 60em;
-    margin: 4em auto;
-}
-
 // @TODO: remove this when real buttons are added
 .gemw-button {
-    display: inline-block;
     color: white;
     background: #36c;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 4px;
-    padding: 5px 15px;
 
     &.secondary {
         background: #f8f9fa;
         color: #444e5a;
         border: 1px solid #a2a9b1;
     }
-
-    & + & {
-        margin-left: 1em;
-    }
-
 }
 
 /* ------------------
@@ -38,12 +22,6 @@
    ------------------ */
 
 .gemw-header {
-    display: flex;
-    border-left-width: .25em;
-    border-left-style: solid;
-    padding-left: 1em;
-    margin-bottom: 3em;
-
     &.positive {
         border-color: @lima;
     }
@@ -56,69 +34,29 @@
         border-color: @curious-blue;
     }
 
-    .gemw-section-left {
-        flex: 1;
-    }
-
     .gemw-name {
-        font-size: 1.15em;
-        font-weight: bold;
-        margin-bottom: 0;
-
         a {
             color: @river-bed;
         }
-
     }
 
     .gemw-examine {
         color: @gemw-light-text;
-        font-size: 1.05em;
-        font-style: italic;
-        margin: 0 1em 1.25em 0;
     }
 
     .gemw-price {
-        display: inline-block; // for animation
-        font-size: 2.75em;
-        font-weight: bold;
-
         &::after {
-            content: ' coins';
             color: @gemw-light-text;
-            font-size: 1rem;
-            font-weight: normal;
-            word-spacing: .25em;
         }
 
-    }
-
-    .gemw-change {
-        display: inline-block; // for animation
-        font-size: 1rem;
-        font-weight: bold;
-        margin-left: 2em;
-        word-spacing: .5em;
-
-        img {
-            vertical-align: baseline;
-        }
-
-    }
-
-    .gemw-section-right {
-        text-align: right;
     }
 
     .gemw-updated {
         color: @gemw-light-text;
-        line-height: 1.5em;
-        margin-top: .25em;
     }
 
     .gemw-time {
         color: @base-text-color;
-        font-weight: bold;
     }
 
 }
@@ -128,68 +66,30 @@
    ------------------ */
 
 .gemw-body {
-    display: flex;
 
     .gemw-section-left {
-        width: 40%;
-        margin-right: 2em;
-
-        dl {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-            margin-bottom: -1.25em;
-        }
-
-        > div {
-            margin-top: 2em;
-        }
-
         a {
             color: @gemw-light-text;
         }
-
     }
 
     .gemw-property {
-        width: 30%;
         border-top: .15em dotted @mystic;
-        padding-top: .25em;
-        margin-bottom: 1.5em;
 
         dt {
             color: @gemw-light-text;
-            font-weight: normal;
-        }
-
-        dd {
-            font-weight: bold;
-            margin: -0.25em 0 0;
         }
 
     }
 
     .gemw-links {
         color: @gemw-light-text;
-        margin-bottom: .35em;
-    }
-
-    .gemw-section-right {
-        width: 60%;
     }
 
     // @TODO: remove this when real chart is added
     .gemw-chart {
         background: @black-haze;
         color: #eceeee;
-        font-size: 5em;
-        text-align: center;
-        line-height: 5em;
-        position: relative;
-        
-        .GEChartBox, .GEdatachart {
-        	position: relative;
-        }
     }
 
 }
@@ -202,27 +102,7 @@
 
 #overlay {
     // @todo why are we setting image props, but no image?
-    background-attachment: scroll;
     background-color: #000;
-    background-image: none;
-    background-position: 0 0;
-    background-repeat: repeat;
-    border-width: 0;
-    display: none;
-    height: 2500px;
-    left: 0;
-    margin: 0;
-    opacity: 0.70;
-    padding: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-
-    // @todo what is this for?
-    -moz-background-clip: -moz-initial;
-    -moz-background-origin: -moz-initial;
-    -moz-background-inline-policy: -moz-initial;    
 }
 
 #modal,
@@ -230,116 +110,4 @@
     background: #fff;
     border: 3px solid #000;
     color: #000;
-    font-size: 10pt;
-    left: 0;
-    padding: 10px;
-    position: fixed;
-    top: 150px;
-    width: 975px;
-    z-index: 52;
-}
-
-#GEchartpopup {
-    min-width: 700px;
-    min-height: 525px;
-    width: 85%;
-    height: 80%;
-    left: 7%;
-    top: 10%;
-    overflow: auto;
-}
-
-#GEchartpopup,
-.highcharts-container,
-.highcharts-range-selector,
-form[id^="chartProperties"],
-form[id^="chartProperties"] *,
-[id^="addedItems"] {
-    // this is way too many
-    // @todo remove some of these
-    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, sans-serif;
-    font-size: 12px;
-}
-
-#GEchartpopup {
-    #closepopup {
-        float: right;
-        margin-bottom: 5px;
-        z-index: 100;
-    }
-
-    #itemstats {
-        bottom: 50px;
-        font-size: 11px;
-        position: absolute;
-        right: 45px;
-        width: 200px;
-        z-index: 10;
-    }
-}
-
-#GEchartpopup #itemstats caption {
-    cursor: pointer;
-    text-align: right;
-}
-
-#GEpopupchart {
-    height: 500px;
-    margin-right: 100px;
-}
-
-.highcharts-container .highcharts-range-selector {
-    font-size: 11px;
-}
-
-.GEPermLink {
-    float: right;
-    font-size: 14px;
-}
-
-.GEPermLink ~ .GEdatachart {
-    clear: right;
-}
-
-form[id^="chartProperties"] button {
-    margin: 3px;
-}
-
-.smallChart {
-    .highcharts-range-selector {
-        display: none;
-    }
-
-    // this is supposed to select ONLY the 'reset zoom' button
-    // if it selects anything else, please remove this
-    .highcharts-button title + rect {
-        display: none;
-    }
-
-    // don't allow line-break on small chart titles
-    .highcharts-title {
-        white-space: nowrap !important;
-    }
-
-    .zoomButton,
-    // the 'Zoom' label
-    svg > text:first-of-type,
-    .highcharts-input-group {
-        display: none;
-    }
-}
-
-.smallChart, .mediumChart {
-	.highcharts-scrollbar {
-		display:none;
-	}
-}
-
-#rsw-exchange-overlay {
-	.oo-ui-popupWidget-anchor {
-		z-index: 101;
-	}
-	.oo-ui-labelElement-label {
-		font-weight: bold;
-	}
 }

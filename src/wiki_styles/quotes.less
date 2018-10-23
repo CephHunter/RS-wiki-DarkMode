@@ -1,14 +1,5 @@
 // <pre>
 
-.quote-source {
-    text-align: right;
-
-    &::before {
-        content: '— ';
-    }
-
-}
-
 /* ========================
       [[Template:Quote]]
    ======================== */
@@ -18,7 +9,6 @@ blockquote {
 
     p:not(.quote-source) {
         border-left: 3px solid @mystic;
-        padding-left: 1em;
     }
 
 }
@@ -28,37 +18,8 @@ blockquote {
    ========================== */
 
 .pullquote {
-	border-collapse: collapse;
-	border: none;
-    margin: 1em auto;
 
     .quotation-mark {
     	color: @gray-chateau;
-        font-size: 3em;
-        font-family: serif;
-        font-weight: bold;
-        padding: .3em;
-        .user-select( none );
-
-        &.left {
-            text-align: left;
-            vertical-align: top;
-        }
-
-        &.right {
-            text-align: right;
-            vertical-align: bottom;
-        }
-
     }
-
-    .quotation-text {
-        vertical-align: top;
-        padding: .2em .5em;
-    }
-
-    .quotation-source {
-        text-align: right;
-    }
-    
 }

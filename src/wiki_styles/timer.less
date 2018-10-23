@@ -1,133 +1,26 @@
 .timer-modal {
-    width: 38em;
     background: @white;
     filter: drop-shadow(0 .13em .2em rgba(0,0,0,.2)); // box-shadow doesn't include ::after
-    position: relative;
-
-    h3 {
-        font-family: @sans-serif-stack;
-    }
 
     &::after {
-        content: " ";
-        border: solid transparent;
         border-bottom-color: @white;
-        border-width: .75em;
-        position: absolute;
-        bottom: 100%;
-        right: 2em;
-    }
-
-}
-
-.timer-top {
-    display: flex;
-
-    > * {
-        flex: 1;
-
-        // left
-        &:first-child {
-            padding: .5em 1em 1.25em 2em;
-        }
-
-        // right
-        &:last-child {
-            padding: .5em 2em 1.25em 1em;
-        }
-
     }
 
 }
 
 .timer-bottom {
     background: @black-haze;
-    display: flex;
-
-    > * {
-        flex: 1;
-
-        // left
-        &:first-child {
-            padding: 1.25em 1em 1.25em 2em;
-        }
-
-        // right
-        &:last-child {
-            padding: 1.25em 2em 1.25em 1em;
-        }
-
-    }
-
 }
 
-.timer-group {
-
-    table {
-        width: 100%;
-        border-spacing: 0 .15em;
-    }
-
-    td:last-of-type {
-        font-weight: bold;
-        text-align: right;
-    }
-
-}
-
-.timer-resets {
-    display: flex;
-
-    > * {
-        flex: 1;
-    }
-
-}
 
 .timer-footer {
-	padding: 0em 0em 1.25em 2.5em;
-	font-size: 12px;
 	color: gray;
 }
 
 .event-active {
-    font-weight: bold;
     color: @lima;
 }
 
 .event-secondary {
     color: @gray-chateau;
-    font-size: .9em;
-    margin-bottom: -0.25em;
 }
-
-#rsevents-main {
-    max-width: 300px;
-  }
-
-  #rsevents-events {
-    width: 100%;
-  }
-
-  .rsevents-item {
-    max-height: 35px;
-    display: flex;
-  }
-
-  .rsevents-item-name {
-    width: 70%;
-  }
-
-  .rsevents-item-time {
-    width: 30%;
-  }
-
-  .rsevents-item-reminder {
-    display: inline-block;  
-    min-width: 20px;
-  }
-
-  .rsevents-item-reminder > img {
-    height: 16px;
-    width: 16px;
-  }

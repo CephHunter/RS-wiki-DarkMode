@@ -12,26 +12,17 @@
 
 .rsw-infobox {
     background: @infobox-background;
-    font-size: .85em;
-    width: 300px; // fixed size so image always fills entire width
-    margin: .5em 0 1em 1em;
-    border-collapse: collapse;
     box-shadow: @box-shadow;
-    float: right;
 
     .infobox-header {
         color: @white;
-        font-size: 1.15em;
-        line-height: 1.4em;
         background: @infobox-header-color;
         border-bottom: @infobox-header-border;
-        padding: .5em 0;
     }
 
     .infobox-subheader {
         background: @infobox-subheader-color;
         color: @white;
-        line-height: 2em;
         border-top: @infobox-header-border;
         border-bottom: @infobox-header-border;
 
@@ -43,79 +34,38 @@
 
     // usually first row
     .infobox-image {
-    	text-align: center;
 
         // for things like inventory icon in infobox item
         &.bordered-image {
             border: @infobox-cell-border;
-            border-bottom: none;
-            padding: .4em;
         }
-
-        // keep infobox images from sticking together
-        a.image + a.image {
-            margin-left: .1em;
-        }
-
-        img {
-            max-width: 300px;
-            height: auto;
-        }
-
     }
 
     // usually last row
     .infobox-map {
         border-top: @infobox-header-border;
-    	text-align: center;
-
-        img {
-            max-width: 300px;
-            height: auto;
-        }
 
     }
 
     // browsers get your shit together https://caniuse.com/#feat=css-not-sel-list
     th:not(.infobox-header):not(.infobox-subheader) {
-        text-align: right;
-        vertical-align: top;
         border-left: @infobox-cell-border;
         border-right: .175em solid @infobox-subheader-color;
-        padding: 0.2em 0.5em;
     }
 
     td {
 
         &:not(.infobox-image):not(.infobox-map) {
         	border-right: @infobox-cell-border;
-            padding: 0.25em 0.5em;
-            line-height: 1.6em;
         }
 
         // for full width td's at the bottom like infobox item examine
         &[colspan="2"]:not(.infobox-image):not(.infobox-map) {
         	border: @infobox-cell-border;
-        	padding-bottom: .6em;
     	}
 
     }
 
-    .infobox-cell-hidden {
-        display: none;
-    }
-
-    .infobox-template-links {
-        text-align: center;
-    }
-
-}
-
-/* used in [[Module:Infobox]] to contain switch infoboxes  */
-/* we're trying to remove all instances of infobox-wrapper */
-.infobox-wrapper {
-	display: table;
-	float: right;
 }
 
 /* =============================
@@ -123,42 +73,19 @@
    ============================= */
 
 /* ----------------------
-       Infobox item 
-  ---------------------- */
-
-.infobox-item {
-
-    // for HiDPI screens; otherwise inventory icons appear blurry
-    .infobox-image {
-    	image-rendering: -moz-crisp-edges; // firefox doesn't support unprefixed
-    	image-rendering: pixelated; // chrome only supports this value
-    	image-rendering: crisp-edges; // this is what should be used; only safari supports it
-    }
-
-}
-
-/* ----------------------
       Infobox monster 
    ---------------------- */
 // @TODO: redo all of this, it looks terrible
 
 .infobox-monster {
-    text-align:center;
-
-    th,
-    td {
-        vertical-align:middle !important;
-    }
 
     .offensive-header {
         background-color: #861c10;
         color: #fff;
-        font-variant: small-caps;
     }
 
     .offensive-subheader {
         background-color: #ecccc6;
-        font-variant: small-caps;
 
         a {
             color: #861c10 !important;
@@ -169,12 +96,10 @@
     .defensive-header {
         background-color: #438ab5;
         color: #fff;
-        font-variant: small-caps;
     }
 
     .defensive-subheader {
         background-color: #c1deed;
-        font-variant: small-caps;
 
         a {
             color: #32637c !important;
@@ -185,66 +110,8 @@
     .slayer-header {
         background: #464646;
         color: #fff;
-        font-variant: small-caps;
     }
 
-}
-
-/* =============================
-        miscellaneous stuff
-   ============================= */
-// document your shit
-// i don't know what half this stuff does or where it is
-
-// [view] and [talk] links
-.infobox-bottom-links {
-    clear: right;
-    float: right;
-    font-size: xx-small;
-    margin-top: -1.5em;
-}
-
-// switch infobox buttons
-.infobox-buttons {
-    text-align: center;
-    max-width: 250px;
-    display: none;
-    margin: 0 auto;
-    padding: 0 0 0.5em 2em;
-
-    .button {
-        margin: 0 3px;
-    }
-
-}
-
-.infobox-switch-resources {
-    display:none;
-}
-
-.infobox .infobox-cell-hidden {
-	display: none;
-}
-
-/* infobox bonuses switch buttons */
-.switch-infobox {
-
-    .switch-infobox-triggers,
-    .loading-button {
-        clear: left;
-    }
-
-}
-
-.infobox .nestedinfo td table {
-    min-width: 263px;
-    margin: -1px;
-    width: ~"calc(100% + 2px)" !important;
-}
-
-.infobox .nestedinfo td {
-	width:100%;
-	padding:0;
 }
 
 /* ========================
@@ -255,80 +122,12 @@
 .infobox {
     border: 1px solid darken( @default-page, 33.5% );
     background-color: darken( @default-page, 2.5% );
-    color: inherit !important;
-    margin: 0 0 0.5em 0.2em !important;
-    padding: 0.2em;
-    float: right;
-    clear: right;
-
-    td,
-    th {
-        vertical-align: top;
-    }
-
-    caption {
-        font-size: larger;
-        padding-bottom: 10px !important;
-        margin-left: 0 !important;
-        color: inherit !important;
-    }
 
     &.bordered {
-        border-collapse: collapse;
 
         td,
         th {
             border: 1px solid darken( @default-page, 33.5%);
         }
-
-        .borderless {
-            td,
-            th {
-                border: 0;
-            }
-        }
     }
-
-    // fix awkward margins for lists in infoboxes
-    ul {
-        margin: 0.3em 0 0 1.6em;
-    }
-
-    // fix for nested collapsible wikitables in infoboxes
-    // @todo fix monster infoboxes so we don't need this
-    .wikitable.mw-collapsible {
-        margin: -1px;
-        width: ~"calc(100% + 2px)" !important;
-    }
-
-    // keep infobox images from sticking together
-    a.image + a.image {
-        margin-left: 3px;
-    }
-
-    // remove effect of any spaces when there's [[File]] [[File]] to let margins do all the work
-    .infobox-image {
-        text-align: center;
-        word-spacing: -4px;
-
-        img {
-            height: inherit;
-            max-width: 250px;
-        }
-    }
-
-    // let red links have normal spacing
-    td .new {
-        word-spacing: 0;
-    }
-
-    // make gemw input box smaller
-    input#QtyCalc {
-        width: 50px !important;
-    }
-
-    .infobox-cell-hidden {
-        display: none;
-    }
-
 }

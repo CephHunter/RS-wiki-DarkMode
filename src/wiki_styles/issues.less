@@ -4,59 +4,23 @@
    ===================================== */
 
 #issues-form-modal {
-    border: none;
-    .border-radius( 2px );
-    top: 20vh;
 
     #issue-form-wrapper {
-        margin-left: 10px;
-        margin-right: 10px;
 
         #issue-form-box {
             border-color: #eee;
             background: #f9f9f9;
-            font-size: 12px;
-            height: 11em;
-            width: 480px;
-            padding: 5px 7px;
-            resize: none;
-            outline: none;
         }
 
         #issue-form-count {
             color: #a9a9a9;
-            float: right;
-            text-align: right;
         }
-
-        #issue-form-msg {
-            width: 100%;
-            height: 5em;
-            overflow-y: scroll;
-        }
-
-        .issue-form-text {
-            padding-bottom: 10px;
-
-            strong {
-                font-weight: bold;
-            }
-
-            &:last-of-type {
-                padding-bottom: 25px;
-            }
-
-        }
-
     }
 
     .modalToolbar {
-        margin: 20px 10px;
-
         .wds-button {
             border-color: @theme-buttons;
             background-color: @theme-buttons;
-            text-decoration: none;
 
             &:hover {
                 border-color: darken( @theme-buttons, 7% );

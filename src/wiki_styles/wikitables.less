@@ -9,7 +9,6 @@
 
 table.wikitable {
     background: @wikitable-background;
-    font-size: .9em;
     box-shadow: @box-shadow;
 
     // headers
@@ -31,7 +30,6 @@ table.wikitable {
     // cells
     > * > tr > td {
         border-color: darken( @wikitable-background, 10% );
-        padding: .25em .45em;
     }
 
 	// i forget what this is for
@@ -39,49 +37,6 @@ table.wikitable {
         background: #448fba;
     }
 
-}
-
-/* table alignment help */
-/* nth td from the left is right-aligned - ths are ignored */
-table.align-right-1 td:nth-of-type(1),
-table.align-right-2 td:nth-of-type(2),
-table.align-right-3 td:nth-of-type(3),
-table.align-right-4 td:nth-of-type(4),
-table.align-right-5 td:nth-of-type(5),
-table.align-right-6 td:nth-of-type(6),
-table.align-right-7 td:nth-of-type(7),
-table.align-right-8 td:nth-of-type(8),
-table.align-right-9 td:nth-of-type(9),
-table.align-right-10 td:nth-of-type(10) {
-    text-align: right;
-}
-
-/* center */
-table.align-center-1 td:nth-of-type(1),
-table.align-center-2 td:nth-of-type(2),
-table.align-center-3 td:nth-of-type(3),
-table.align-center-4 td:nth-of-type(4),
-table.align-center-5 td:nth-of-type(5),
-table.align-center-6 td:nth-of-type(6),
-table.align-center-7 td:nth-of-type(7),
-table.align-center-8 td:nth-of-type(8),
-table.align-center-9 td:nth-of-type(9),
-table.align-center-10 td:nth-of-type(10) {
-    text-align: center;
-}
-
-/* left */
-table.align-left-1 td:nth-of-type(1),
-table.align-left-2 td:nth-of-type(2),
-table.align-left-3 td:nth-of-type(3),
-table.align-left-4 td:nth-of-type(4),
-table.align-left-5 td:nth-of-type(5),
-table.align-left-6 td:nth-of-type(6),
-table.align-left-7 td:nth-of-type(7),
-table.align-left-8 td:nth-of-type(8),
-table.align-left-9 td:nth-of-type(9),
-table.align-left-10 td:nth-of-type(10) {
-    text-align: left;
 }
 
 /* alternating colours (similar to spreadsheets) */

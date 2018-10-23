@@ -9,81 +9,28 @@
     background: @poll-bg-color;
     border: 1px solid @mystic;
     box-shadow: @box-shadow;
-    padding: 20px 30px;
-
-    .ajaxpoll-question {
-        margin-bottom: 8px;
-    }
-
-    // radio button
-    input {
-        margin-bottom: 3px;
-        margin-right: 8px;
-    }
-
-    .ajaxpoll-answer {
-        margin-bottom: 8px;
-    }
 
     // percentage bar
     .ajaxpoll-answer-vote {
-        border: none;
         background: darken( @alabaster, 1% );
-        width: ~"calc(100% - 40px)"; // have bar be aligned with text, not button
-        margin: 0 auto;
-
-        // text
-        span {
-            font-weight: bold;
-            top: -5px;
-        }
 
         // bar
         div {
             background: lighten( @loblolly, 5% );
-            border: none;
         }
 
-    }
-
-    // selected option
-    .ajaxpoll-our-vote {
-
-        // bar
-        div {
-            top: 0;
-            left: 0;
-        }
-
-    }
-
-    // hovering over unselected option
-    .ajaxpoll-hover-revoke,
-    // hovering over revoke vote option
-    .ajaxpoll-hover-vote {
-        background: none;
     }
 
     // status of vote (submitting, submitted, etc)
     .ajaxpoll-ajax {
         color: @gray-chateau;
-        font-size: .9em;
         background: @alabaster;
-        border-radius: 3px;
-        padding: 2px 6px;
-        margin-bottom: 8px;
     }
 
     // extra text above and below options
     .ajaxpoll-misc,
     .ajaxpoll-info {
         color: @gray-chateau;
-        font-size: .9em;
-    }
-
-    // number of votes
-    .ajaxpoll-info {
-        margin-top: 10px;
     }
 
     // weird way of hiding poll id ¯\_(ツ)_/¯

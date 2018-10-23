@@ -8,58 +8,17 @@
        [[Special:UserLogin]]
    --------------------------------- */
 
-.page-Special_CreateAccount,
-.page-Special_UserLogin {
-
-    .firstHeading {
-        width: 32rem;
-        margin: 1.5em auto .4em;
-    }
-
-    #contentSub {
-        display: none;
-    }
-
-    // message + form container
-    .mw-ui-container {
-        width: 32rem;
-        margin: 3em auto;
-
-        #userloginForm {
-            float: unset;
-            margin: 0;
-        }
-
-        // actual form area
-        .mw-ui-vform {
-            margin: 2.5em auto 0;
-            width: 22rem;
-        }
-
-    }
-
-}
-
 // custom message on Special:CreateAccount
 #signupstart,
 // custom message on Special:UserLogin
 #userloginprompt {
     border: 1px solid @mystic;
     box-shadow: @box-shadow;
-    padding: 1.5em 2em 1em;
 }
 
 // comments under real name field on Special:CreateAccount
 .signup-realname-tip {
     color: darken( @boulder, 7% );
-    font-size: .9em;
-    line-height: 1.8em;
-    margin: -0.75em 0 .75em;
-}
-
-// useless statistics on the right of Special:CreateAccount
-.mw-createacct-benefits-container {
-    display: none;
 }
 
 /* ---------------------------------
@@ -78,28 +37,16 @@
 .mw-tag-markers,
 .mw-tag-markers a {
     color: red;
-    font-weight: bold;
 }
 
 // remove certain styles from tags
 .mw-tag-marker-visualeditor a,
 .mw-tag-marker-visualeditor-needcheck a {
     color: #e49f10;
-    font-weight: normal;
 }
 
 // [[Mediawiki:Recentchangestext]]
 .mw-recentchanges-toplinks {
-    font-size: .85em;
-
-    table {
-        margin: 3.5em auto 2em;
-    }
-
-    th {
-        text-align: right;
-        padding-right: 5px;
-    }
 
     .speedy-delete a,
     .speedy-move a {
@@ -112,62 +59,16 @@
        [[Special:Search]]
    -------------------------- */
 // prevent columns from being an unreadable mess
-#mw-searchoptions table {
-    margin-right: 0;
 
-    // bold subject namespace
-    tr td:first-of-type {
-        font-weight: bold;
-    }
-
-    td {
-        width: 18vw;
-        padding: 0;
-    }
-
-}
-
-// "Search in namespaces:"
-#mw-searchoptions h4 {
-	font-family: @sans-serif-stack;
-}
-
-// more whitespace between results
-.mw-search-results li {
-    padding-bottom: 1.75em;
-
-    a {
-        font-size: 125%;
-    }
-
-}
 
 /* -----------------------------
        [[Special:Listfiles]]
    ----------------------------- */
 // fixing small images on FileList
-.page-Special_ListFiles {
-    a.image img {
-        width: inherit;
-        height: inherit;
-    }
-
-    .TablePager_col_thumb {
-        text-align: center;
-    }
-
-}
 
 /* -----------------------------
        [[Special:NewFiles]]
    ----------------------------- */
-
-/* prevent image cutoff */
-.page-Special_NewFiles .thumbimage {
-    max-height: 212px !important;
-    max-width: 212px !important;
-    margin: 0 !important;
-}
 
 /* -----------------------------
        [[Special:Browse]]
@@ -185,21 +86,6 @@
 .smwb-title {
     background-color: @smw-title-bg-color;
     border: 1px solid @smw-border-color;
-    border-bottom: 0;
-    font-size: 1.6em;
-
-    a {
-        padding-left: 10px;
-    }
-
-}
-
-// left-aligned table
-.smwb-factbox,
-// right-aligned table
-.smwb-ifactbox {
-    border-collapse: collapse;
-    border: 0;
 }
 
 // rows
@@ -210,14 +96,12 @@
     .smwb-prophead {
         background-color: @smw-header-bg-color;
         border: 1px solid @smw-border-color;
-        font-size: .9em;
     }
 
     // value
     .smwb-propval {
         background-color: @smw-row-bg-color;
         border: 1px solid @smw-border-color;
-        font-size: .9em;
     }
 
 }
@@ -226,18 +110,6 @@
 .smwb-center {
     background-color: @smw-header-bg-color;
     border: 1px solid @smw-border-color;
-    border-top: 0;
-    padding: 4px 8px;
-
-    a {
-        padding-left: 10px;
-    }
-
-}
-
-// table bottom
-.smwb-bottom {
-    border-bottom: 0;
 }
 
 /* -----------------------------
@@ -250,19 +122,15 @@
 /* [[Special:AllPages]] */
 .allpagesredirect a {
     color: #888;
-    font-style: italic;
 }
 
 /* Replace default #ffa in [[Special:NewPages]] */
 .not-patrolled {
     background-color: @alabaster;
     border-right: 10px solid #eee;
-    padding-right: 15px;
 }
 
 /* Special:AbuseFilter */
 /* fix table overflowing: http://i.imgur.com/WNZH9f4.png */
 .mw-special-AbuseLog .mw-abuselog-details {
-    table-layout: fixed;
-    width: 100%;
 }

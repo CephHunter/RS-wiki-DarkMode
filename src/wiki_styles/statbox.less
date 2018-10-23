@@ -4,71 +4,18 @@
    ---------------------------- */
 
 .statbox {
-    width: 197px;
-    height: 280px;
-    cursor: default;
-    font-family: runescape;
-    font-size: 16px;
     color: #ff8c00;
     text-shadow: #000 1px 1px 0;
     background-color: #000;
-    background-image: filepath('Statstable_bg.png');
-    background-repeat: no-repeat;
-    border-spacing: 0;
-    padding: 7px;
 
     td {
-        position: relative;
-        background-image: filepath('Statstable_background.png');
-        background-repeat: no-repeat;
-        vertical-align: middle;
-        text-align: right;
-        width: 62px;
-        height: 25px;
-        padding: 0 10px 0 4px;
-        border-spacing: 0;
-
-        img {
-            float: left;
-            margin-bottom: -3px;
-            margin-top: -1px;
-
-            // fix for thieving and smithing icons
-            &[height^="1"] {
-                margin-top: 4px;
-            }
-            
-        }
-
         .xpbox {
-            display: none;
-            z-index: 3;
-            position: absolute;
-            text-align: left;
             background-color: #0d0d0d;
             border: 1px solid #ebece6;
             color: #f5b241;
-            text-shadow: none;
-            padding: 2px 1px 0 1px;
-            font-family: runescape;
-            min-width: 119px;
-            line-height: 15px;
-            margin-left: 7px;
-
-            span {
-                float: right;
-            }
-
-        }
-
-        &:hover .xpbox {
-            display: inline-block;
         }
 
         &[colspan="3"] {
-            background: none;
-            text-align: left;
-            padding: 20px 0 0 90px;
             color: #fff;
         }
 

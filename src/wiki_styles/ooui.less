@@ -1,38 +1,12 @@
 // <pre>
-/* =====================
-       general fixes
-   ===================== */
-
-// fix placeholder text being 1px higher than actual text
-.oo-ui-textInputWidget input,
-.oo-ui-textInputWidget > .oo-ui-labelElement-label {
-    line-height: initial;
-}
 
 /* =============================================
        [[MediaWiki:Gadget-exchangeCreate.js]]
    ============================================= */
 
-// entire modal
-.rs-ex-modal {
-
-    // override inline styles
-	.oo-ui-window-frame {
-        width: 600px !important; // medium is too narrow, large is too wide
-        height: 540px !important; // increase height to make up for "data loaded" line
-	}
-
-	// submit button
-	.oo-ui-flaggedElement-primary {
-		margin-left: 15px;
-	}
-
-}
-
 // "data loaded" message
 #rs-ex-status {
 	color: @gray-chateau;
-	margin: 10px 15px 5px;
 }
 
 // form area
@@ -41,46 +15,5 @@
 	// heading
 	.oo-ui-fieldsetLayout-header {
 		font-family: @serif-stack;
-		font-size: 1.3em;
-		margin: 0 15px 10px;
 	}
-
-	// fields
-	.oo-ui-fieldsetLayout-group {
-		margin-bottom: 15px;
-	}
-
-	// field label
-	.oo-ui-fieldLayout-header {
-		width: 15%;
-		margin-right: 23px;
-	}
-	
-	// field input box
-	.oo-ui-fieldLayout-field {
-		width: 70%;
-	}
-
-	// help icon
-	.oo-ui-fieldLayout-help {
-		margin-right: 1em;
-		margin-left: -1.8em;
-	}
-
-}
-
-// fixes for inventory icon field
-#rs-ex-icon {
-
-	// original padding covered the end of the input and made it unclickable
-	.oo-ui-labelElement-label {
-		padding-right: 0;
-	}
-
-	// not sure why padding doesn't account for "File:" label
-	// override inline style
-	.oo-ui-inputWidget-input {
-		padding-left: 33px !important;
-	}
-
 }

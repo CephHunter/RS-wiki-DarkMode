@@ -9,26 +9,13 @@
 /* -----------------------
       MediaWiki:Sidebar
    ----------------------- */
-#p-lang,
-#p-RuneScape-label {
-    display: none;
-}
-
 #n-Play-RuneScape {
     background: @white;
     border: 1px solid @loblolly;
-    border-radius: .35em;
-    padding: 0 !important;
     box-shadow: @box-shadow;
-    transition: background .3s ease;
 
     a {
         color: @river-bed !important;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        padding: 0.6em; // padding is on the link so it fills the space
     }
 
     &:hover {
@@ -45,19 +32,6 @@
 #viewingnew-warning {
     background: @mw-notice-background;
     border: 1px solid @mw-notice-border;
-    font-size: 1.1em;
-    font-weight: bold;
-    line-height: 1.4em;
-    margin: 1em 0 .5em;
-    padding: .75em 1.5em;
-}
-
-#mw-revision-reason {
-    font-style: italic;
-}
-
-#mw-revision-nav {
-    text-align: center;
 }
 
 /* ---------------------------------------
@@ -72,33 +46,12 @@ div.mw-warning-with-logexcerpt,
     box-shadow: @box-shadow;
 }
 
-div.mw-warning-with-logexcerpt {
-	padding: 1em 1.5em;
-}
-
-// user links at bottom
-#sp-contributions-footer {
-    font-size: .9em;
-    text-align: center;
-    padding: 1em 1.5em .5em;
-    margin-top: 1.5em;
-}
-
 /* ----------------------------------------
       contains MediaWiki:Anoneditwarning
       where else is this used?
    ---------------------------------------- */
 .warningbox {
-	padding: 1em 1.5em .5em;
 	box-shadow: @box-shadow;
-}
-
-/* ---------------------------------
-      MediaWiki:Copyrightwarning
-   --------------------------------- */
-.mw-editform #editpage-copywarn {
-	line-height: 1.6em;
-	padding: 0 0 .5em;
 }
 
 /* ---------------------------------
@@ -110,7 +63,6 @@ div.mw-warning-with-logexcerpt {
 	border: 1px solid #fde29b;
 	background-color: #fdf1d1;
 	box-shadow: 0 2px 5px -3px rgba(0,0,0,0.1);
-	margin: 1em 5em;
 }
 
 /* -------------------------
@@ -119,28 +71,20 @@ div.mw-warning-with-logexcerpt {
 
 /* single thumbnails */
 div.thumbinner {
-    border: none;
-    background: none;
-    padding: 0;
+
 }
 
 // core mediawiki classes use the html selector for some dumb reason
 html .thumbimage {
-    border: none;
 }
 
 html .thumbcaption {
     color: @shuttle-gray;
     background: @mw-notice-background;
     border: 1px solid @mw-notice-border;
-    padding: .4em .6em;
-    margin: 0 auto;
-    width: ~"calc(100% - 2px)";
-    box-sizing: border-box;
 }
 
 .thumbcaption .magnify {
-    display: none;
 }
 
 /* galleries */
@@ -151,13 +95,6 @@ li.gallerybox div.thumb {
 
 div.gallerytext {
     color: @shuttle-gray;
-    font-size: .85em;
-    line-height: 1.6em;
-    
-    p {
-        margin: .5em 0;
-    }
-
 }
 
 /* -------------------------------------
@@ -166,20 +103,14 @@ div.gallerytext {
 #filetoc {
 	background: @mw-notice-background;
     border: 1px solid @mw-notice-border;
-    border-radius: 4px;
-    padding: 10px;
-    margin-bottom: 1.5em;
 }
 
 /* ----------------------------
       page history revisions
    ---------------------------- */
 #pagehistory {
-    margin: 15px 0;
-    list-style: none;
 
     li {
-        padding: 1px 10px;
 
         &.selected {
             border: 1px solid @mw-notice-border;
@@ -187,15 +118,6 @@ div.gallerytext {
         }
 
     }
-
-    .mw-history-histlinks {
-        padding-right: 5px;
-    }
-
-    .mw-userlink {
-        font-weight: bold;
-    }
-
 }
 
 /* ------------------------------
@@ -204,15 +126,6 @@ div.gallerytext {
    ------------------------------ */
 .updatedmarker {
     color: #1b8408;
-
-    &:before {
-        content: '(';
-    }
-
-    &:after {
-        content: ')';
-    }
-
 }
 
 /* ----------------------------------
@@ -221,23 +134,4 @@ div.gallerytext {
    ---------------------------------- */
 .mw-headline:target {
     color: @la-palma;
-
-    &::before {
-        content: '#';
-        position: absolute;
-        left: -1rem;
-    }
-
-}
-
-/* ----------------
-        other
-   ---------------- */
-#contentSub {
-    margin-left: 0;
-}
-
-// smw box that randomly appears at the bottom
-.smwfact {
-    display: none;
 }

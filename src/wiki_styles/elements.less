@@ -11,23 +11,9 @@
          body
   ================== */
 
-body {
-	font-family: @sans-serif-stack;
-}
-
 .mw-body {
 	color: @base-text-color;
 	background-color: @content-bg;
-}
-
-.mw-body-content {
-	font-size: .9em;
-	line-height: 1.8em;
-
-	p {
-		margin: 0 0 .8em;
-	}
-
 }
 
 /* ------------------
@@ -44,37 +30,14 @@ h6 {
     border-color: @base-heading-border;
 }
 
-h1 {
-    font-weight: bold;
-}
-
-.mw-body h1,
-.mw-body-content h1,
-.mw-body-content h2,
-.mw-body-content h3,
-.mw-body-content h4,
-.mw-body-content h5,
-.mw-body-content h6 {
-    font-family: @serif-stack;
-    margin-bottom: .3em;
-}
-
-.mw-body h1,
-.mw-body-content h1,
-.mw-body-content h2 {
-	padding: 0 0 .15em;
-}
-
 /* --------------------
        pre and code
    -------------------- */
 
 pre,
 code {
-	color: inherit; // default is bad #000
     background-color: @white;
     border-color: @mystic;
-    overflow: auto;
 }
 
 /* --------------------
@@ -83,31 +46,6 @@ code {
 
 ul {
     list-style-image: url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' width='5' height='13'%3E %3Ccircle cx='2.5' cy='9.5' r='2.5' fill='%234c4c4c'/%3E %3C/svg%3E"); // change fill to #4c4c4c
-
-    // match spacing of <p>
-    .mw-content-ltr & {
-        margin-bottom: .8em;
-    }
-
-}
-
-ol {
-
-    // match spacing of <p>
-    .mw-content-ltr & {
-        margin-bottom: .8em;
-    }
-
-}
-
-// bold line margins
-dl {
-    margin: 0;
-}
-
-// for indents used in discussions to mimic threaded replies
-dd {
-    min-width: 17.85em;
 }
 
 /* -------------------------
@@ -116,7 +54,4 @@ dd {
 
 hr {
     border-color: @base-heading-border;
-    border-style: solid;
-    border-width: 1px 0 0 0;
-    height: initial;
 }

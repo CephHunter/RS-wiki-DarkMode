@@ -3,32 +3,10 @@
        [[Template:Recolours]]
    ------------------------------ */
 
-@empty-size: 9px;
-
 // border conflicts for cells when this is used inside the infobox
 .recolour-table {
-    .infobox & {
-        margin: auto;
-    }
-
-    .rec-empty-row,
-    .rec-empty-cell {
-        padding: 0;
-        border: none;
-    }
-
-    .rec-empty-row {
-        height: @empty-size;
-    }
-
-    .rec-empty-cell {
-        width: @empty-size;
-    }
 
     .rec-cell {
         border: 2px ridge #8c8264 !important; // gets overridden by infobox css otherwise
-        padding: 0 !important; // gets overridden by infobox css otherwise
-        height: 15px;
-        width: 15px;
     }
 }

@@ -1,0 +1,61 @@
+// <pre>
+/* =======================================
+     [[MediaWiki:Common.js/tooltips.js]]
+   ======================================= */
+
+.js-tooltip-text {
+    padding: 5px;
+}
+
+.js-tooltip-wrapper {
+    position: absolute;
+    z-index: 999999;
+    max-width: 75%;
+    padding: 5px;
+    border: 3px solid @theme-buttons;
+    background: @theme-page;
+    .box-shadow( 3px 3px 10px -5px #333 );
+    font-size: 12px;
+}
+
+.js-tooltip-click {
+    color: white;
+    background: @theme-buttons;
+    border-radius: 2em;
+    border: 2px solid @theme-buttons;
+    cursor: pointer;
+    padding: 0 0.3em;
+    .user-select( none );
+}
+
+.js-tooltip-arrow {
+    position: absolute;
+    border-color: transparent;
+    border-style: solid;
+    z-index: 900001;
+    width: 0;
+    height: 0;
+
+    &.js-tooltip-arrow-pointleft {
+        border-right-color: @theme-buttons;
+        border-left-color: transparent;
+        border-left-width: 0;
+    }
+
+    &.js-tooltip-arrow-pointright {
+        border-left-color: @theme-buttons;
+        border-right-color: transparent;
+        border-right-width: 0;
+    }
+
+}
+
+.js-tooltip-close {
+    float: right;
+    margin-left: 10px;
+    margin-right: -5px;
+    margin-top: -5px;
+    margin-bottom: 1px;
+    background: @theme-buttons;
+    border: 0;
+}

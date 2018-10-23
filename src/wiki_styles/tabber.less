@@ -1,0 +1,54 @@
+// <pre>
+/* ==============================
+         <tabber> styling
+   ============================== */
+
+.tabberlive {
+
+    ul.tabbernav {
+        border: none;
+        margin-left: 2em;
+        padding: 0.5em 0;
+
+        li a {
+            .transition( 0.2s ease );
+            background-color: darken( @default-page, 3% );
+            border: none;
+            color: #3a3a3a;
+            font-family: sans-serif;
+            font-size: 110%;
+            margin-left: 0;
+            padding: 0.5em 1em;
+
+            &:hover {
+                background-color: darken( @default-page, 7% );
+            }
+
+            &:link {
+                color: #3a3a3a;
+            }
+
+        }
+
+        li.tabberactive a {
+            background-color: @theme-buttons;
+            color: @default-page;
+            border: none;
+
+            &:hover {
+                background-color: darken( @theme-buttons, 5% );
+                color: @default-page;
+                border: none;
+            }
+            
+        }
+
+    }
+
+    div.tabbertab {
+        background-color: darken( @default-page, 3% );
+        border: none;
+        padding-left: 1em;
+    }
+
+}

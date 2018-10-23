@@ -1,0 +1,591 @@
+// <pre>
+/* ------------------------------------------------------------------------------------------------------
+ * This is the root Less file that is parsed to produce [[MediaWiki:Common.css]].
+ *
+ * Eventually, this will be completely converted to native Less and will be a series of
+ * imports of Less files. All CSS found here should ideally be moved to a subpage.
+ * Converted subpages can be found at [[Special:PrefixIndex/MediaWiki:Common.less/]].
+ *
+ * To update MediaWiki:Common.css from here, click the "Update CSS" button at the top.
+ * ------------------------------------------------------------------------------------------------------
+ * Less documentation:    <http://lesscss.org/features/>
+ * Gadget:                <https://meta.weirdgloop.org/w/MediaWiki:Gadget-Less.js>
+ * Core Less JS:          <https://meta.weirdgloop.org/w/MediaWiki:Gadget-Less-core.js>
+ * Non-standard mixins:   <https://meta.weirdgloop.org/w/MediaWiki:Gadget-LessMixins.less>
+ * Online Less tester:    <http://lesstester.com/>
+ * ------------------------------------------------------------------------------------------------------ */
+
+/* ------------------------------------------
+ *            TABLE OF CONTENTS
+ *
+ * - Imports
+ *    - Important stuff
+ *    - Local modifications
+ *    - Custom classes
+ *    - Templates
+ *    - Page specific styling
+ *    - Script CSS
+ * - Junk that hasn't been organised yet
+   ------------------------------------------ */
+
+/* =============
+      IMPORTS
+   ============= */
+
+//    @dir: 'MediaWiki:Common.less';
+   @dir: 'src/wiki_styles';
+   @import "@{dir}/Gadget-LessMixins";
+
+   // important stuff
+   @import '@{dir}/fonts.less';             // needs to be first, due to the Google Fonts @import
+   @import '@{dir}/variables.less';         // color variables
+   
+   // modifications
+   @import '@{dir}/links.less';             // link colors, at the top for lower specificity
+   @import '@{dir}/elements.less';          // HTML elements
+   @import '@{dir}/hilite.less';            // highlighted usernames
+   @import '@{dir}/interface.less';         // changes to the MediaWiki interface: system messages, etc
+   @import '@{dir}/poll.less';              // <poll>
+   
+   // custom classes
+   @import '@{dir}/animations.less';        // CSS animations
+   @import '@{dir}/censored.less';          //
+   @import '@{dir}/hovereffects.less';      // document usage better
+   @import '@{dir}/nodesktop.less';         // hide elements from appearing on desktop
+   @import '@{dir}/tile.less';              //
+   @import '@{dir}/tooltips.less';          //
+   @import '@{dir}/transcripts.less';       //
+   
+   // templates
+   @import '@{dir}/actionbar.less';         // 
+   @import '@{dir}/attackspeedbar.less';    // 
+   @import '@{dir}/chatoptions.less';       // 
+   @import '@{dir}/clear.less';             // 
+   @import '@{dir}/coins.less';             // 
+   @import '@{dir}/disassembly.less';       // 
+   @import '@{dir}/documentation.less';     // 
+   @import '@{dir}/editnotice.less';        // 
+   @import '@{dir}/equipment.less';         // 
+   @import '@{dir}/extimage.less';          // 
+   @import '@{dir}/fact.less';              // 
+   @import '@{dir}/fairycode.less';         // 
+   @import '@{dir}/indicators.less';        // 
+   @import '@{dir}/infobox.less';           // 
+   @import '@{dir}/infoboxbonuses.less';    // 
+   @import '@{dir}/infotablebonuses.less';  // 
+   @import '@{dir}/inventory.less';         // 
+   @import '@{dir}/keypress.less';          // 
+   @import '@{dir}/license.less';           //
+   @import '@{dir}/listen.less';            // 
+   @import '@{dir}/messagebox.less';        // 
+   @import '@{dir}/menaphite.less';         // 
+   @import '@{dir}/navbox.less';            // 
+   @import '@{dir}/perk-link.less';         // 
+   @import '@{dir}/perk-suggestions.less';  // 
+   @import '@{dir}/pohroom.less';           // 
+   @import '@{dir}/portals.less';           // 
+   @import '@{dir}/questdetails.less';      // 
+   @import '@{dir}/questreq.less';          // 
+   @import '@{dir}/quotes.less';            //
+   @import '@{dir}/recolours.less';         //
+   @import '@{dir}/shortcut.less';          //
+   @import '@{dir}/statbox.less';           //
+   @import '@{dir}/tabber.less';            //
+   @import '@{dir}/thgem.less';             //
+   @import '@{dir}/toc.less';               //
+   @import '@{dir}/towers.less';            //
+   @import '@{dir}/updatelist.less';        //
+   @import '@{dir}/updates.less';           //
+   @import '@{dir}/usesmateriallist.less';  //
+   @import '@{dir}/wikitables.less';        //
+   
+   // page specific styling
+   @import '@{dir}/activediscussions.less'; // [[RuneScape:Active discussions]]
+   @import '@{dir}/mainpage.less';          // Main Page
+   @import '@{dir}/specials.less';          // Special pages
+   @import '@{dir}/rsediting.less';         // [[RuneScape:Editing]]
+   @import '@{dir}/rstheme.less';           // [[RuneScape:Theme]]
+   @import '@{dir}/yewgrove.less';          // [[Forum:Yew Grove]]
+   
+   // script styles
+   @import '@{dir}/calc.less';              // [[MediaWiki:Common.js/calc.js]]
+   @import '@{dir}/gemw.less';              // review after js is tidied
+   @import '@{dir}/issues.less';            // [[MediaWiki:Common.js/issues.js]]
+   @import '@{dir}/timer.less';             // 
+   @import '@{dir}/ooui.less';              // anything that uses OOUI
+   
+   /* ----------------------
+          CSS to convert
+      ---------------------- */
+   
+   /* =================
+          TEMPLATES
+      ================= */
+   
+   /* -------------------------------
+           [[Template:Redirect]]
+          [[Template:Other uses]]
+      ------------------------------- */
+   .seealso {
+       margin: .8em 1.6em; // needs to be 1.6em to match : indent
+       font-style: italic;
+   
+       & + & {
+           margin-top: -0.8em;
+       }
+   
+   }
+   
+   /* ----------------------------------
+          [[Template:Level up table]]
+      ---------------------------------- */
+   .level-up-table {
+       td li {
+           padding: 0 10px 0 10px;
+       }
+   
+       ul {
+           list-style-type: disc;
+       }
+   
+       .lvlupmem {
+           background: #f6ab58;
+           color: #582e00;
+       }
+   
+       .lvlupfree {
+           background: #98e553;
+           color: #245200;
+       }
+   }
+   
+   /* ----------------------
+         Template:Perk link 
+         possibly move in-line styles here
+      ---------------------- */
+   .navbox .perk-link img {
+       padding: 2.5px 0 0 0 !important;
+       border-spacing: 2px !important;
+   }
+   
+   /* ======================
+          CUSTOM CLASSES
+      ====================== */
+   
+   /* ----------------
+          tooltips
+      ---------------- */
+   .sic {
+       color:#15F;
+       font-style:italic;
+       cursor:help;
+       border-bottom:dotted 1px black;
+   }
+   
+   /* -------------------
+          nowraplinks
+      ------------------- */
+   .nowraplinks a {
+       white-space: nowrap;
+   }
+   
+   /* -----------------
+          boldlinks
+      ----------------- */
+   .boldlinks a {
+       font-weight: bold;
+   }
+    
+   /* -----------------
+          alignment
+      ----------------- */
+   .center,
+   .centre {
+       display: block;
+       text-align: center;
+   }
+   
+   .center table,
+   table.center,
+   .centre table,
+   table.centre {
+       margin: 0 auto;
+   }
+   
+   .right table,
+   span.right {
+       float: right;
+   }
+   
+   .left table,
+   span.left {
+       float: left;
+   }
+   
+   /* -------------
+          small
+      ------------- */
+   // class alternative to deprecated small tag
+   .small {
+       font-size: smaller;
+   }
+   
+   /* -----------------------
+          non-mobile-hide
+      ----------------------- */
+   /* hides stuff for non-mobile viewers, not to be confused with mobile-hide found in [[MediaWiki:Handheld.css]] */
+   .non-mobile-hide {
+       display: none;
+   }
+   
+   /* -------------------
+          sg-red
+          sg-yellow
+          sg-green
+   ------------------- */
+   // for skill calculators and interactive skill guides
+   // includes modified link colour for accessibility
+   // applies to a variety of templates used by a variety of scripts */
+   .sg-red,
+   .nocell {
+       background: #ecccc6;
+       color: #861c10;
+   }
+   
+   .sg-yellow,
+   .maybecell {
+       background: #f3f0b0;
+       color: #6e5d45;
+   }
+   
+   .sg-green,
+   .yescell {
+       background: #c3ebc5;
+       color: #506553;
+   }
+   
+   .sg-red,
+   .sg-yellow,
+   .sg-green,
+   .nocell,
+   .maybecell,
+   .yescell {
+       a {
+           color: #04f;
+       }
+   }
+   
+   /* -----------------------
+          smalllistmargin
+      ----------------------- */
+   ul.smalllistmargin,
+   .smalllistmargin ul,
+   ol.smalllistmargin,
+   .smalllistmargin ol {
+       margin-left: 1.5em;
+   }
+   
+   /* ==================
+          SCRIPT CSS
+      ================== */
+   
+   /* -------------------------------------------
+          [[MediaWiki:Common.js/spreport.js]]
+      ------------------------------------------- */
+   #spreport {
+       border: 1px solid #808080;
+       padding: 10px;
+       text-align: center;
+   }
+   
+   
+   /* dismiss link on sitenotice */
+   .rcsitenotice-dismiss {
+       float: right;
+       font-weight: normal;
+   }
+   
+   /* ===========================
+          LOCAL MODIFICATIONS
+      =========================== */
+   
+   /* ------------------------------
+          Standard table styling
+      ------------------------------ */
+   
+   // .wikitable is defined in core scss as table.wikitable
+   // Which forces us to use table.class in pretty much every table that uses .wikitable
+   // yay...
+   
+   // single pixel border between adjacent wikitables
+   table.wikitable + table.wikitable {
+       margin-top: -1px;
+   }
+   
+   /* ------------------------------------
+          File background transparency
+      ------------------------------------ */
+   #file img,
+   table.filehistory img {
+       background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGElEQVQYV2N4DwX/oYBhgARgDJjEAAkAAEC99wFuu0VFAAAAAElFTkSuQmCC) repeat;
+   }
+    
+   table.filehistory button img,
+   #file button img {
+       background: none;
+   }
+   
+   /* --------------------
+          Category bar
+      -------------------- */
+   .catlinks {
+       background: @white;
+       border: 1px solid @mystic;
+       padding: 8px 15px;
+       box-shadow: @box-shadow;
+   }
+   
+   /* -------------------------
+          stuff to document
+      ------------------------- */
+   
+   /* Remove section title bar when editing charm logs */
+   .ns-0 #charmguide + div + form .mw-summary,
+   .ns-0 #charmguide + div + form .module_content {
+       display: none;
+   }
+   
+   /* @todo check if these still apply following thumbnail updates */
+   /*       reapply/remove if so? */
+   .thumbcaption {
+       word-wrap: break-word;
+       padding: 0;
+   }
+   
+   .article-thumb {
+       padding: 2px;
+   }
+   
+   /* fix q tags in content area */
+   #mw-content-text q:before {
+       content: open-quote;
+   }
+   
+   #mw-content-text q:after {
+       content: close-quote;
+   }
+   
+   /* Proper styling for block cells in family trees */
+   td {
+   
+       &.famtreesub {
+           margin: 0;
+           padding: 0;
+   
+           table {
+               border-spacing: 0;
+               margin: 0;
+               padding: 0;
+   
+               td {
+                   height: 1em;
+                   width: 1em;
+               }
+   
+           }
+   
+       }
+   
+       &.famtreeleaf {
+           background: #dfdfdf;
+           padding: .2em;
+       }
+   
+   }
+   
+   /* active/inactive colors for [[Module:Rotations]] */
+   .status-active {
+       background-color: #98e553;
+       color: #245200;
+   
+       a {
+           color: inherit !important;
+       }
+   }
+   
+   .status-inactive {
+       background-color: #ececec;
+       color: #777777;
+   
+       a {
+           color: inherit !important;
+       }
+   }
+   
+   /* adjacent clickpics */
+   .clickpic a.image {
+       margin-left: 2px !important;
+       margin-right: 2px !important;
+       line-height: 34px;
+       vertical-align: middle;
+   }
+   
+   /* {{THGem}} */
+   .TH_Gem-common img,
+   .TH_Gem-fairly-common img,
+   .TH_Gem-rare img,
+   .TH_Gem-uncommon img,
+   .TH_Gem-very-rare img,
+   .TH_Gem-none img {
+       image-rendering: pixelated;
+   }
+    
+   /* {{Gif gallery}} */
+   .gifgallery img {
+       background: #d9e7f0;
+       border: 1px solid #438ab5;
+   }
+    
+   /* give red links cute little box */
+   .gifgallery a[rel='nofollow'] {
+       display: block;
+       max-height: 187px;
+       padding: 25px;
+       background: #d9e7f0;
+       border: 1px solid #438ab5;
+   }
+   
+   .gifgallery a[rel='nofollow']:after {
+       display: block;
+       color: #999;
+       content: '(File does not exist)';
+   }
+   
+   /* margins for captions */
+   .gifgallery div {
+       margin: 10px auto 30px;
+   }
+   
+   .gifgallery .lightbox-caption {
+       display: block;
+       margin: 8px 0 5px;
+   }
+   
+   /* dropsline rarity */
+   .rarity-always {
+       background: #8fd7fa;
+       color: #083f66;
+   
+       a {
+           color: #0b588f !important;
+       }
+   }
+   
+   .rarity-common {
+       background: #98e553;
+       color: #245200;
+   
+       a {
+           color: #286801 !important;
+       }
+   }
+   
+   .rarity-uncommon {
+       background: #f5eb4e;
+       color: #524e00;
+   
+       a {
+           color: #706b0d !important;
+       }
+   }
+   
+   .rarity-rare {
+       background:#f6ab58;
+       color:#582e00;
+   
+       a {
+           color: #804200 !important;
+       }
+   }
+   
+   .rarity-very-rare {
+       background: #f86c67;
+       color: #520800;
+   
+       a {
+           color: #7f0d03 !important;
+       }
+   }
+   
+   .rarity-random {
+       background: #f3bff3;
+       color: #651565;
+   
+       a {
+           color: #882988 !important;
+       }
+   }
+   
+   .rarity-varies {
+       background: #f3bff3;
+       color: #651565;
+   
+       a {
+           color: #882988 !important;
+       }
+   }
+   
+   .rarity-unknown {
+       background: #fff;
+       color: #000;
+   }
+   
+   /* template:na and similar */
+   .table-na {
+       background: #f3f3f3;
+       color: #aaa;
+       vertical-align: middle;
+       text-align: center;
+       cursor: default;
+       .user-select( none );
+   }
+   
+   /* hide border from image galleries */
+   .gallery-image-wrapper {
+       border: none !important;
+   }
+   
+   .accent {
+       background-color: transparent !important;
+   }
+   
+   /* smw display of large things */
+   .smwprops {
+       width: 80% !important;
+       max-width: 500px;
+       white-space: nowrap;
+       overflow: auto;
+       display: inline-block;
+   }
+   
+   /* For showing double spaces in usernames ([[RS:WIKIAN]], etc.) */
+   .prewrap p {
+       white-space: pre-wrap;
+   }
+   
+   .mw-editsection,
+   .mw-editsection-like {
+       font-family: @sans-serif-stack;
+   }
+   
+   // for HiDPI screens; otherwise inventory icons appear blurry
+   .inventory-image {
+       image-rendering: -moz-crisp-edges; // firefox doesn't support unprefixed
+       image-rendering: pixelated; // chrome only supports this value
+       image-rendering: crisp-edges; // this is what should be used, but only safari supports it
+   }
+   
+   // not for navboxes, since they're already scaled down
+   .navbox .inventory-image {
+       image-rendering: auto;
+   }

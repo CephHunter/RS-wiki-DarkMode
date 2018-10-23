@@ -1,0 +1,21 @@
+// <pre>
+/* ================
+       censored
+   ================ */
+
+// @example <http://rs.wikia.com/?oldid=12382140>
+
+.censored {
+    color: contrast( @default-page );
+    background-color: contrast( @default-page );
+
+    a {
+        color: contrast( @default-page );
+        text-decoration: underline;
+    }
+
+    // show text on rollover
+    &:hover {
+        background-color: @default-page;
+    }
+}

@@ -3,6 +3,7 @@ ToDo.txt
 imagesExtra/
 *.dev.*
 browser.js
+pythonScripts/
 
 # Created by https://www.gitignore.io/api/sass,node,linux,macos,windows,visualstudiocode
 

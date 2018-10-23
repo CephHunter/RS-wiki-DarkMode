@@ -1,0 +1,53 @@
+// ====================
+//      Checkboxes
+// ====================
+.oo-ui-checkboxInputWidget [type='checkbox'] + span {
+    background-color: @checkbox-bg-base;
+    border-color: @checkbox-border-base;
+}
+
+.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type='checkbox']:checked + span {
+    background-color: @checkbox-bg-active;
+    border-color: @checkbox-border-active;
+}
+
+.oo-ui-checkboxInputWidget [type='checkbox']:disabled + span {
+    background-color: @checkbox-bg-disabled;
+    border-color: @checkbox-border-disabled;
+    opacity: @checkbox-opacity-disabled;
+}
+
+// =======================
+//      Radio buttons
+// =======================
+.oo-ui-radioInputWidget [type='radio'] + span {
+    background-color: @checkbox-bg-base;
+    border-color: @checkbox-border-base;
+}
+
+.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked + span {
+    border-color: @checkbox-border-active;
+}
+
+.oo-ui-radioInputWidget [type='radio']:disabled + span {
+    background-color: @checkbox-bg-disabled;
+    border-color: @checkbox-border-disabled;
+    opacity: @checkbox-opacity-disabled;
+}
+
+.oo-ui-radioInputWidget [type='radio']:disabled:checked + span {
+    background-color: @checkbox-bg-disabled;
+    border-color: @checkbox-border-active;
+}
+
+// =====================
+//      Date select
+// =====================
+.mw-widget-dateInputWidget-handle {
+    background-color: @select-bg;
+    border-color: @select-border;
+
+    .mw-widget-dateInputWidget-empty & {
+        color: @select-text;
+    }
+}

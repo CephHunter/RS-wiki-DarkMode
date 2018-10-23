@@ -1,0 +1,725 @@
+// <pre>
+/* ===================
+        MAIN PAGE
+   =================== */
+
+// @TODO: switch to grid for layout with flexbox fallback
+
+/* ===================
+        variables
+   =================== */
+
+@mp-text-light: fade( @white, 90% );
+@mp-border-color: @mystic;
+@mp-gutter-width: .9rem;
+
+/* ===================
+          mixins
+   =================== */
+
+// background-image support for high DPI screens
+// (not currently used)
+.bg-image(@filename; @width: 400; @2xwidth: @width*2;) {
+    background-image: filepath( escape('@{filename}'), '@{width}' );
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        background-image: filepath( escape('@{filename}'), '@{2xwidth}' );
+    }
+
+}
+
+// skill training colors
+.skill-color(@color) {
+
+    // icon
+    a:first-child {
+        background: desaturate( lighten( @color, 15% ), 20% );
+    }
+
+    // skill name
+    &:hover a:last-child {
+        background: @color;
+    }
+
+}
+
+/* ==========================
+      page-specific styles
+   ========================== */
+
+body.page-RuneScape_Wiki {
+
+    // limit max width for readability
+    // don't use #mw-content-text because it includes the editform
+    .mw-parser-output {
+        max-width: 75em;
+        margin: 0 auto;
+    }
+
+    // not when editing
+    &.action-view {
+
+        .catlinks,
+        #contentSub,
+        // hide pagetitle in favor of .mainpage-header
+        #firstHeading,
+        // anything listed in the sitenotice should already be on the main page
+        #siteNotice {
+            display: none;
+        }
+
+    }
+
+}
+
+/* ====================
+      general styles
+   ==================== */
+
+.mainpage-header {
+    display: flex;
+    margin: 2.6em 1.75em 1.5em;
+
+    .header-intro {
+        flex: 2;
+
+        h1 {
+            font-size: 2.5em;
+            border: none;
+            margin: 0 0 .15em;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.7em;
+        }
+
+    }
+
+    .header-stats {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: -1em;
+
+        ul {
+            list-style: none;
+        }
+
+    }
+
+    .announcement {
+        margin: .5em 0 1.5em;
+
+        a {
+            background: @black-haze;
+            border: 1px solid @mystic;
+            color: @shuttle-gray;
+            font-size: .9em;
+            line-height: 1.25em;
+            padding: .25em .75em;
+            border-radius: 10em;
+            transition: .25s ease;
+            
+            display: inline-flex; // vertically center the pill
+            align-items: center;
+
+            &:hover {
+                text-decoration: none;
+                box-shadow: @box-shadow;
+            }
+
+        }
+
+        .announcement-pill {
+            background: @lima;
+            color: @white;
+            font-size: .85em;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 10em;
+            padding: .1em .6em;
+            margin: 0 .5em 0 -0.5em;
+        }
+
+        .arrow.dark {
+            margin-left: .5em;
+            filter: invert(50%);
+        }
+
+    }
+
+}
+
+// main sections
+.mainpage-body {
+    display: flex;
+    flex-flow: row wrap;
+
+    h2 a {
+        color: @base-heading-color; // from [[MediaWiki:Common.less/elements.less]]
+    }
+
+    .tile {
+        padding-left: 1.75em;
+        padding-right: 1.75em;
+        max-width: 100%;
+    }
+
+    .tile-row {
+        width: 100%;
+        margin-bottom: @mp-gutter-width;
+    }
+
+}
+
+// left column
+.mainpage-left {
+    flex: 2;
+    display: flex;
+    flex-flow: column wrap;
+    margin-right: @mp-gutter-width;
+
+    > * {
+        margin: 0 0 @mp-gutter-width;
+    }
+
+}
+
+// right column
+.mainpage-right {
+    flex: 1;
+    display: flex;
+    flex-flow: column wrap;
+
+    > * {
+        margin: 0 0 @mp-gutter-width;
+    }
+
+}
+
+/* ====================
+        components
+   ==================== */
+
+.arrow {
+    background: filepath('White-chevron.svg') no-repeat;
+    display: inline-block;
+    height: .7rem;
+    width: .45rem;
+    vertical-align: middle;
+
+    &.dark {
+        filter: invert(80%);
+    }
+
+}
+
+// remove after one month
+.ribbon {
+    position: absolute;
+    right: -0.5em;
+    top: -0.5em;
+    color: @white;
+    background: @lima;
+    font-size: .7em;
+    font-weight: bold;
+    letter-spacing: .045em;
+    line-height: 2.25em;
+    padding: 0 .55em;
+    border-radius: .35em;
+    box-shadow: @box-shadow;
+    pointer-events: none;
+}
+
+/* =============================
+      section-specific styles
+   ============================= */
+
+/* --------------------
+      recent updates
+   -------------------- */
+
+.mainpage-recent-updates {
+
+    .tile-halves {
+        flex: 1;
+        align-content: flex-start;
+        margin-right: @mp-gutter-width;
+
+        // zoom on hover
+        &:hover .tile-top img {
+            transform: scale(1.04);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    .tile-bottom.link-button a {
+        text-align: left;
+        padding: 1rem 1.5rem .75rem;
+    }
+
+    h2 {
+        margin: -0.5em 0 .3em;
+    }
+
+    p:not(.byline) {
+        font-size: .9em;
+        line-height: 1.75em;
+        color: @river-bed;
+    }
+
+    .jagex-promotion .byline {
+        color: @medium-purple;
+    }
+
+}
+
+/* --------------------
+      wiki contents
+   -------------------- */
+@mp-contents-height: 4.5rem;
+
+.mainpage-contents {
+
+    .tile-halves {
+        flex: 1;
+        margin-right: @mp-gutter-width;
+        
+        // zoom on hover
+        &:hover .tile-top img {
+            transform: scale(1.04);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    .tile-top {
+        height: @mp-contents-height;
+        position: relative; // needed for ribbon
+
+        h2 a {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            line-height: @mp-contents-height;
+            padding-left: .45rem; // to make up for arrow width
+        }
+
+    }
+
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+/* --------------------
+      skill training
+   -------------------- */
+
+.mainpage-skills {
+
+    ul {
+        columns: 3;
+        margin: 1em .7em .7em 1em;
+    }
+
+    // skill row
+    li {
+        display: flex;
+        margin-bottom: .39em;
+
+        a {
+
+            // skill icon
+            &:first-child {
+                border-radius: 3px;
+                padding: 4px;
+                width: 25px;
+                height: 25px;
+            }
+
+            // skill text
+            &:last-child {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                color: @base-text-color; // from [[MediaWiki:Common.less/elements.less]]
+                font-weight: bold;
+                padding-left: .7em;
+                text-decoration: none;
+            }
+
+        }
+
+        &:hover a {
+
+            &:first-child {
+                border-radius: 3px 0 0 3px;
+            }
+
+            &:last-child {
+                color: @mp-text-light;
+                border-radius: 0 3px 3px 0;
+            }
+
+        }
+
+    }
+
+}
+
+.skill-agility,
+.skill-melee {
+    .skill-color( #932419 ); // red
+}
+
+.skill-ranged {
+    .skill-color( #4c6215 ); // green
+}
+
+.skill-magic {
+    .skill-color( #304791 ); // blurple
+}
+
+.skill-fishing,
+.skill-fletching {
+    .skill-color( #1a6671 ); // bluish
+}
+
+.skill-cooking,
+.skill-divination,
+.skill-thieving {
+    .skill-color( #713684 ); // purple
+}
+
+.skill-farming,
+.skill-woodcutting {
+    .skill-color( #306f25 ); // dark green
+}
+
+.skill-mining,
+.skill-summoning {
+    .skill-color( #315f8d ); // dark blue
+}
+
+.skill-invention,
+.skill-smithing {
+    .skill-color( #b69213 ); // gold
+}
+
+/* --------------------
+        wiki news
+   -------------------- */
+
+.mainpage-wikinews {
+
+    .news-date {
+        font-weight: bold;
+        margin-bottom: .3em;
+    }
+
+    p:not(.news-date) {
+        margin-left: 1em;
+    }
+
+}
+
+/* --------------------
+      runescape news
+   -------------------- */
+
+.mainpage-news {
+
+    .tile-top {
+        display: flex;
+    }
+
+    .news-updates {
+        flex: 2;
+        padding-right: 1.75em;
+        border-right: 1px solid @mp-border-color;
+    }
+
+    .news-patchnotes {
+        flex: 1;
+        padding-left: 1.75em;
+    }
+
+}
+
+/* --------------------
+       on this day
+   -------------------- */
+
+.mainpage-onthisday {
+    flex: 1; // expands so that the columns match
+}
+
+/* --------------------
+      discord server
+   -------------------- */
+@discord-purple: #7289da;
+@discord-purple-dark: #697ec4;
+
+.mainpage-discord  {
+    border: none;
+    box-shadow: @box-shadow-dark;
+
+    .tile-top {
+        display: flex;
+        align-items: center;
+        background: @discord-purple;
+        padding: 1em 1.75em;
+
+        a {
+            flex: 1;
+            position: relative; // allow link to cover icon
+            text-decoration: none;
+
+            &:hover .arrow {
+                transform: translateX(50%);
+            }
+
+        }
+
+    }
+
+    .tile-bottom {
+        background: @discord-purple-dark;
+        border: none;
+        padding: 1em 1.75em;
+
+        p {
+            color: @white;
+            font-weight: bold;
+            font-size: .9em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: .03em;
+            margin: 0;
+        }
+
+    }
+
+    .partner-icon {
+        margin-right: .75em;
+    }
+
+    .server-name {
+        color: @white;
+        font-weight: bold;
+        font-size: 1.25em;
+        margin: .5em 0 -0.15em;
+    }
+
+    .server-tagline {
+        color: @mp-text-light;
+        margin-bottom: .5em;
+    }
+
+    .arrow {
+        position: absolute;
+        top: ~"calc(50% - .5em)"; // center arrow on its point
+        right: 0;
+        height: 1em;
+        width: .7em;
+        background-size: .7em 1em;
+        transition: .3s ease-out;
+    }
+
+}
+
+/* --------------------
+      edit the wiki
+   -------------------- */
+
+.mainpage-editing {
+    border: none;
+    box-shadow: @box-shadow-dark;
+
+    .tile-top {
+        background: @steel-blue;
+    }
+
+    .tile-bottom {
+        background: saturate( darken( @steel-blue, 4% ), 4% );
+        border: none;
+        padding: .8rem 1.5rem .4rem;
+    }
+
+    h2,
+    a {
+        color: @white;
+    }
+
+    p {
+        color: @mp-text-light;
+    }
+
+    ul {
+        list-style-image: filepath('Transparent-chevron.svg');
+    }
+
+}
+
+/* --------------------
+           poll
+   -------------------- */
+.mainpage-poll .ajaxpoll {
+    padding: 0;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+}
+
+/* --------------------
+      featured image
+   -------------------- */
+
+.mainpage-fimg {
+
+    img {
+        margin: .7em 0 1.15em;
+        .filter( drop-shadow(0 .15em .25em rgba(0,0,0,.15)) );
+    }
+
+    // caption
+    .tile-top p:not(.byline) {
+        font-size: .9em;
+        line-height: 1.8em;
+    }
+
+}
+
+/* ==========================
+          media queries
+   ========================== */
+
+@media only screen and (max-width: 65.999rem) {
+
+    .mainpage-recent-updates {
+
+        .tile-halves {
+
+            // hide third recent update
+            &:last-child {
+                display: none;
+            }
+
+            // remove margin for the (now) last tile
+            &:nth-last-child(2) {
+                margin-right: 0;
+            }
+
+        }
+
+        .tile-top {
+            height: 18vw;
+        }
+
+    }
+
+    // switch to two rows of three tiles
+    .mainpage-contents {
+
+        .tile-halves {
+
+            &:nth-child(1),
+            &:nth-child(2),
+            &:nth-child(3) {
+                margin-bottom: @mp-gutter-width;
+            }
+
+            &:nth-child(3) {
+                margin-right: 0;
+            }
+
+        }
+
+        // this forces the tiles into a new row
+        .line-break {
+            width: 100%;
+        }
+
+    }
+
+    .mainpage-skills {
+
+        ul {
+            columns: 2 9em;
+        }
+
+        // remove one skill to make columns even
+        .skill-thieving {
+            display: none;
+        }
+
+    }
+
+    // hide patch notes
+    .mainpage-news {
+
+        .news-updates {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        .news-patchnotes {
+            display: none;
+        }
+
+    }
+
+    // hide other things
+    .mainpage-header .header-stats,
+    .mainpage-onthisday {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 66rem) and (max-width: 81.999rem) {
+
+    // hide sixth contents tile
+    .mainpage-contents {
+
+        .contents-minigames {
+            display: none;
+        }
+
+        // remove margin for the (now) last tile
+        .contents-guides {
+            margin-right: 0;
+        }
+
+    }
+
+    .mainpage-header .header-stats,
+    .mainpage-contents .line-break {
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 82rem) {
+
+    .mainpage-header .header-intro {
+        margin-right: 2em;
+    }
+
+    .mainpage-contents .line-break {
+        display: none;
+    }
+
+}

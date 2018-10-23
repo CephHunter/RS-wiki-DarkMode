@@ -13,6 +13,7 @@
 @theme-red          : #b32424;
 @theme-gray8        : darken(@theme-gray12, 3.5%);
 @theme-gray12       : #1e1e1e;
+@theme-gray13       : lighten(@theme-gray12, 1%);
 @theme-gray15       : lighten(@theme-gray12, 3%);
 @theme-gray17       : lighten(@theme-gray12, 5%);
 @theme-gray20       : lighten(@theme-gray12, 8%);
@@ -25,24 +26,24 @@
 //      Secondary colors
 // ==========================
 //----- general -----//
-@main-page-bg           : @theme-gray12;
-@homepage-module-bg     : @theme-gray20;
-@sidebar                : @theme-gray15;
-@table-data             : @theme-gray20;
-@table-header           : @theme-gray17;
-@highlight-table-on     : @theme-green;
-@highlight-table-hover  : @theme-green-lighter;
-@documentation-bg       : @theme-gray15;
-@categories             : @theme-gray8;
-@messageboxes           : @theme-gray8;
-@popup-bg               : @theme-gray12;
-@popup-header-bg        : lighten(@popup-bg, 5%);
-@tooltip-bg             : @theme-gray15;
-@tooltip-border: @theme-borders;
-@input-group-wrapper    : @theme-gray8;
-@input-group-wrapper-border    : @theme-borders;
-@vector-tabs: @sidebar;
-@vector-tabs--hover: lighten(@sidebar, 4%);
+@main-page-bg              : @theme-gray12;
+@homepage-module-bg        : @theme-gray20;
+@sidebar                   : @theme-gray15;
+@table-data                : @theme-gray20;
+@table-header              : @theme-gray17;
+@highlight-table-on        : @theme-green;
+@highlight-table-hover     : @theme-green-lighter;
+@documentation-bg          : @theme-gray15;
+@categories                : @theme-gray8;
+@messageboxes              : @theme-gray8;
+@popup-bg                  : @theme-gray12;
+@popup-header-bg           : lighten(@popup-bg, 5%);
+@tooltip-bg                : @theme-gray15;
+@tooltip-border            : @theme-borders;
+@input-group-wrapper       : @theme-gray8;
+@input-group-wrapper-border: @theme-borders;
+@vector-tabs               : @sidebar;
+@vector-tabs--hover        : lighten(@sidebar, 4%);
 
 //----- text -----//
 @list-indent-guide: darken(@theme-text, 15%);
@@ -50,7 +51,7 @@
 @positive-change  : #06df2e;
 @negative-change  : lighten(#c02614, 5%);
 @base-text-diabled: #72777d;                   // for ooui
-@popup-text: @theme-text;
+@popup-text       : @theme-text;
 
 //----- Buttons -----//
 @button-bg-base               : lighten(@theme-gray20, 15%);
@@ -91,25 +92,26 @@
 //----- Dropdown selects -----//
 @select-bg              : @input-fields-bg;
 @select-bg--hover       : @select-bg;
-@select-border          : @theme-borders;
+@select-border          : @input-fields-border;
+@select-border--hover   : @input-fields-border--hover;
 @select-text            : @theme-text;
 @select-opacity-disabled: 0.5;
 @dropdown-bg            : @theme-gray17;
-@dropdown-bg-hover-item : lighten(@dropdown-bg, 5%);
+@dropdown-bg-hover-item : lighten(@dropdown-bg, 3%);
+@dropdown-bg-active-item: lighten(@dropdown-bg, 5%);
 @dropdown-border        : @theme-borders;
 @dropdown-text          : @theme-text;
-@dropdown-text--hover   : @theme-text;
 
 //----- Progress bar -----//
-@progressbar-bg              : @input-fields-bg;
-@progressbar-bar             : @theme-blue-lighter;
-@progressbar-bar-disabled    : @button-bg-base;
-@progressbar-border          : @theme-borders;
+@progressbar-bg          : @input-fields-bg;
+@progressbar-bar         : @theme-blue-lighter;
+@progressbar-bar-disabled: @button-bg-base;
+@progressbar-border      : @theme-borders;
 
 //----- ooui icons -----//
-@ooui-icon-base          : #000;
-@ooui-icon-base--inverted: #f8f9fa;
-@ooui-icon-progressive   : @theme-blue;
+@ooui-icon-base          : #f8f9fa;
+@ooui-icon-base--inverted: #000;
+@ooui-icon-progressive   : @button-text-progressive;//@theme-blue;
 @ooui-icon-destructive   : @theme-red;
 @ooui-icon-warning       : #ff5d00;
 
@@ -128,37 +130,38 @@
 @code-tag-border: lighten(@theme-gray21, 5%);
 
 //----- Source editor -----//
-@edit-area-bg       : #a9a9a9;
-@edit-area-header-bg: @theme-gray15;
+@edit-area-bg        : #a9a9a9;
+@edit-area-header-bg : @theme-gray15;
 @edit-area-symmary-bg: @theme-gray17;
 
 //----- Code editor -----//
-@code-editor-console-bg: @theme-gray17;
-@code-editor-console-error-text: lighten(@theme-red, 10%);
-@code-editor-console-input-text: #99c4f1;
-@code-editor-console-output-text: @theme-text;
+@code-editor-bg                  : @theme-gray15;
+@code-editor-console-bg          : @theme-gray17;
+@code-editor-console-error-text  : lighten(@theme-red, 10%);
+@code-editor-console-input-text  : #99c4f1;
+@code-editor-console-output-text : @theme-text;
 @code-editor-console-message-text: @theme-text-subtle;
-@code-editor-search-bg: @theme-gray12;
+@code-editor-search-bg           : @theme-gray12;
 
 //----- templates -----//
-@coins-positive : lighten(#5799c1, 2%);
-@coins-negative : lighten(#c02614, 5%);
+@coins-positive: lighten(#5799c1, 2%);
+@coins-negative: lighten(#c02614, 5%);
 
-@table-red-bg    : darken(#861c10, 10%);
-@table-yellow-bg : darken(#f3f0b0, 60%);
-@table-green-bg  : #1e5400;
+@table-red-bg          : darken(#861c10, 10%);
+@table-yellow-bg       : darken(#f3f0b0, 60%);
+@table-green-bg        : #1e5400;
 @table-green-bg-lighter: #006d13;
 
-@portal-link-bg: @theme-gray20;
-@portal-link-bg--hover: lighten(@theme-gray20, 10%);
-@portal-link-text: @theme-text;
+@portal-link-bg         : @theme-gray20;
+@portal-link-bg--hover  : lighten(@theme-gray20, 10%);
+@portal-link-text       : @theme-text;
 @portal-link-text--hover: lighten(@theme-text, 10%);
 
 @navbox-title-bg    : @theme-blue;
 @navbox-title-text  : lighten(@theme-text, 10%);
 @navbox-title-2-bg  : @theme-blue-lighter;
 @navbox-group-bg    : @theme-gray17;
-@navbox-group-border: darken(@theme-borders, 15%);
+@navbox-group-border: darken(@theme-borders, 10%);
 
 @infobox-background     : @table-data;
 @infobox-header-color   : @theme-blue;//#246c97;
@@ -176,26 +179,26 @@
 
 @reference-target: lighten(@main-page-bg, 10%);
 
-@transcript-bg: @documentation-bg;
-@transcript-namespace-character-name: @button-text-progressive;
-@transcript-namespace-section-hover: lighten(@main-page-bg, 5%);
-@transcript-namespace-section-hover-2: lighten(@main-page-bg, 1%);
+@transcript-bg                            : @documentation-bg;
+@transcript-namespace-character-name      : @button-text-progressive;
+@transcript-namespace-section-hover       : lighten(@main-page-bg, 5%);
+@transcript-namespace-section-hover-2     : lighten(@main-page-bg, 1%);
 @transcript-namespace-section-hover-border: @theme-borders;
 
-@GEChart-infobox-bg: @infobox-background;
-@GEChart-popup-bg: @popup-bg;
-@GEChart-subtitle: @theme-text-subtle;
-@GEChart-title: @theme-text;
-@GEChart-axis: @theme-borders;
-@GEChart-labels: @theme-text-subtle;
-@GEChart-scrollbar-track-lighten: 10%;
+@GEChart-infobox-bg              : @infobox-background;
+@GEChart-popup-bg                : @popup-bg;
+@GEChart-subtitle                : @theme-text-subtle;
+@GEChart-title                   : @theme-text;
+@GEChart-axis                    : @theme-borders;
+@GEChart-labels                  : @theme-text-subtle;
+@GEChart-scrollbar-track-lighten : 10%;
 @GEChart-scrollbar-button-lighten: 20%;
-@GEChart-scrollbar-thumb-lighten: 30%;
-@GEChart-scrollbar-arrow: lighten(@theme-text, 10%);
-@GEChart-scrollbar-rifles: lighten(@theme-text, 10%);
-@GEChart-tooltip-bg: fade(lighten(@GEChart-popup-bg, 5%), 85%);
-@GEChart-tooltip-border: @tooltip-border;
-@GEChart-date-graph-bg: rgba(69, 115, 167, 0.3);;
-@GEChart-date-graph-stroke: lighten(rgb(69, 114, 167), 10%);
+@GEChart-scrollbar-thumb-lighten : 30%;
+@GEChart-scrollbar-arrow         : lighten(@theme-text, 10%);
+@GEChart-scrollbar-rifles        : lighten(@theme-text, 10%);
+@GEChart-tooltip-bg              : fade(lighten(@GEChart-popup-bg, 5%), 85%);
+@GEChart-tooltip-border          : @tooltip-border;
+@GEChart-date-graph-bg           : rgba(69, 115, 167, 0.3);;
+@GEChart-date-graph-stroke       : lighten(rgb(69, 114, 167), 10%);
 
 @property-namespace-listitem-hover: lighten(@main-page-bg, 3%);

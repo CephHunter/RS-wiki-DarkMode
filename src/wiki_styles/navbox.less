@@ -1,0 +1,154 @@
+@grey: #ddd;
+
+/* ===========================
+       [[Template:Navbox]]
+   =========================== */
+
+.navbox {
+    font-size: .85em;
+    background: #f9f9f9;
+    border-collapse: collapse;
+    margin: 15px auto;
+    width: 100%;
+    clear: both;
+
+    // only main navbox, not subnavboxes
+    &:not(.navbox-collapsible) {
+        box-shadow: 0 2px 3px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    // main header
+    .navbox-title {
+        font-size: 110%;
+        background: @steel-blue;
+        color: #fff;
+        text-align: center;
+        padding: 3px 8px;
+
+        .mw-collapsible-toggle {
+            font-size: .9em;
+            margin-left: 6em;
+            float: right;
+        }
+        
+        a {
+            color: #fff;
+        }
+        
+        a:visited {
+        	color: #fff;
+        }
+
+    }
+
+    // footer
+    .navbox-footer {
+        background: @steel-blue;
+        border-top: 1px;
+        text-align: center;
+        font-size: smaller;
+        
+        a {
+            color: #fff;
+        }
+        
+        a:visited {
+        	color: #fff;
+        }
+        
+    }
+
+    // navbox grouping header
+    .navbox-group {
+        background: @mystic;
+        border: 1px solid #d8e5ff;
+        border-width: 0 1px 1px 0; // right and bottom
+        font-weight: bold;
+        padding: 0 10px 5px 10px;
+        width: 100px;
+
+        //a {
+        //    white-space: normal;
+        //    color: #555;
+        //}
+        
+        a:visited {
+        	color: #327bae;
+        }
+
+    }
+
+	// navbox group content
+    .navbox-list {
+        border-bottom: 1px solid #d8e5ff;
+        padding: 0 7px 5px 7px;
+        
+        ul {
+        	margin: 0;
+        }
+
+        // list styling
+        li {
+            display: inline-block;
+
+            & + li::before {
+                content: ' • ';
+            }
+
+        }
+
+    }
+
+	// nested group content
+    .navbox-subgroup {
+        border-spacing: 0;
+        width: 100%;
+
+        // if the nested group title ever needs to be changed
+        .navbox-group {
+            // background: #f4f4f4;
+            padding-bottom: 5px;
+        }
+
+    }
+
+    // nested navboxes only
+    .navbox.navbox-collapsible {
+        font-size: 100%;
+        margin: 5px 0 0;
+
+        .navbox-title {
+            background: #7fa9db;
+            padding: 0 8px;
+        }
+
+    }
+
+    // images
+    img {
+        height: auto;
+        width: auto;
+        max-height: 1.6em; // limit to line-height
+        padding: 0 1px;
+    }
+
+    // reduce gap between adjacent navboxes
+    & + & {
+        margin-top: -8px;
+    }
+
+}
+
+// collapsible wikitables
+// @TODO: move this out of navbox subpage
+.mw-collapsible {
+
+    &.mw-collapsed {
+        min-width: 250px;
+    }
+
+    .mw-collapsible-toggle {
+        font-weight: normal;
+    }
+
+}

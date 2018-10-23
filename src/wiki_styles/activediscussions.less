@@ -1,0 +1,72 @@
+// <pre>
+/* ========================================
+       [[RuneScape:Active discussions]]
+   ======================================== */
+
+.discussiontable {
+    &.noresults th {
+        background-color: darken( @default-page, 20% );
+
+        a {
+            color: contrast( @default-page );
+        }
+    }
+
+    th {
+        color: contrast( @theme-buttons );
+        background-color: @theme-buttons;
+
+        a {
+            color: contrast( @theme-buttons );
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .topic,
+    .edited,
+    .edited-by,
+    .yg-archive {
+        color: contrast( @default-page );
+        background-color: darken( @default-page, 10% );
+    }
+}
+
+.dpltable {
+    margin-top: -4px;
+
+    td {
+        padding-left: 5px;
+    }
+}
+
+
+.dpltable,
+.discussiontable {
+    width: 100%;
+
+    .topic {
+        width: 40%;
+    }
+
+    .edited,
+    .edited-by {
+        width: 30%;
+    }
+
+    .yg-archive {
+        width: 20%;
+    }
+}
+
+.discussiontable.noresults {
+    .topic,
+    .edited,
+    .edited-by,
+    .yg-archive {
+        color: contrast( @default-page );
+        background-color: darken( @default-page, 10% );
+    }
+}

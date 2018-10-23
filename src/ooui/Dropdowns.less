@@ -1,0 +1,105 @@
+// ================================
+//      Droppdown input widget
+// ================================
+.oo-ui-dropdownInputWidget-php {
+    border-color: @select-border;
+}
+
+.oo-ui-dropdownInputWidget.oo-ui-widget-enabled select {
+    background-color: @select-bg;
+    color: @select-text;
+    border-color: @select-border;
+
+    &:hover {
+        background-color: @select-bg--hover;
+        color: @select-text;
+        border-color: @select-border--hover;
+    }
+
+    option {
+        background: @dropdown-bg-hover-item;
+        color: @dropdown-text;
+    }
+}
+
+.oo-ui-dropdownInputWidget.oo-ui-widget-disabled select {
+    background-color: @select-bg;
+    color: @select-text;
+    border-color: @select-border;
+    opacity: @select-opacity-disabled;
+}
+
+// =========================
+//      Dropdown widget
+// =========================
+// Input field
+.oo-ui-dropdownWidget-handle {
+    border-color: @select-border;
+
+    .oo-ui-dropdownWidget.oo-ui-widget-enabled & {
+        &,
+        .oo-ui-dropdownWidget-open& {
+            background-color: @select-bg;
+            color: @select-text;
+        }
+
+        &:hover {
+            background-color: @select-bg--hover;
+            color: @select-text;
+            border-color: @select-border--hover;
+        }
+    }
+}
+
+// Dropdown box
+.oo-ui-menuSelectWidget {
+    border-color: @dropdown-border;
+    background-color: @dropdown-bg;
+    color: @dropdown-text;
+}
+
+.oo-ui-menuOptionWidget {
+    &.oo-ui-optionWidget-selected,
+    &.oo-ui-optionWidget-pressed {
+        background: @dropdown-bg-active-item;
+        color: @button-text-progressive;
+
+        &.oo-ui-menuOptionWidget.oo-ui-optionWidget-highlighted {
+            background-color: @select-bg--hover;
+            color: @dropdown-text;
+        }
+    }
+
+    &:hover {
+        background-color: @select-bg--hover;
+        color: @dropdown-text;
+    }
+}
+
+// ===================
+//      Toolgroup
+// ===================
+.oo-ui-popupToolGroup.oo-ui-widget-enabled {
+    .oo-ui-toolGroup-tools {
+        border-color: @dropdown-border;
+        background-color: @dropdown-bg;
+        color: @dropdown-text;
+    }
+
+    .oo-ui-tool:hover {
+        background-color: @dropdown-bg-hover-item;
+    }
+
+    .oo-ui-tool-link .oo-ui-tool-title {
+        color: @dropdown-text;
+    }
+
+    .oo-ui-tool-active.oo-ui-widget-enabled {
+        background: @dropdown-bg-active-item;
+
+        .oo-ui-tool-link .oo-ui-tool-title {
+            color: @button-text-progressive;
+        }
+    }
+}
+

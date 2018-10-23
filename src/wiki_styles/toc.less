@@ -1,0 +1,76 @@
+// <pre>
+/* ========================
+       [[Template:ToC]]
+   ======================== */
+
+@toc-background: @alabaster;
+@toc-border: darken( @alabaster, 4% );
+@toc-level1-color: lighten( @tundora, 4% );
+@toc-level2-color: @boulder;
+
+#toc,
+.toc {
+    font-size: .9em;
+	background: @toc-background;
+    margin-top: .75em;
+    padding: 0;
+    border: none;
+    box-shadow: @box-shadow;
+
+    // title bar
+    .toctitle {
+        background: linear-gradient(#e1e1e1, #efefef) #e9e9e9;
+        padding: .25em 1em;
+
+        h2,
+        a {
+            font-family: @sans-serif-stack;
+            color: @mineshaft;
+        }
+
+    }
+
+    // link colors
+    .toclevel-1 a {
+        color: @toc-level1-color;
+    }
+
+    .toclevel-2 a {
+        color: @toc-level2-color;
+    }
+
+    // entire group of headings
+    > ul {
+        border: 1px solid @toc-border;
+        border-top: none;
+        line-height: 1.8em;
+        padding: .75em 1.75em;
+        margin: 0;
+    }
+
+    // subheadings only
+    ul ul {
+        border-left: 1px dotted @silver;
+        padding-left: .5em;
+    }
+
+}
+
+// show/hide toggle
+.toctoggle {
+    padding-left: .2em;
+}
+
+// are these actually useful?
+.tocnumber {
+    display: none;
+}
+
+.toclimit-2 #toc .toclevel-2,
+.toclimit-3 #toc .toclevel-3,
+.toclimit-4 #toc .toclevel-4,
+.toclimit-5 #toc .toclevel-5,
+.toclimit-6 #toc .toclevel-6,
+.toclimit-7 #toc .toclevel-7 {
+    display: none;
+}

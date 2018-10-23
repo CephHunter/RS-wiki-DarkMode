@@ -1,0 +1,83 @@
+// <pre>
+/* ==============================
+     [[Template:Portal-links]]
+   ============================== */
+
+.portal-link-wrapper {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.portal-link {
+    display: inline-flex;
+
+    a {
+        height: 120px;
+        width: 300px;
+        display: inline-flex;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 7px;
+        border-radius: 5px;
+
+        font-size: 20px;
+        letter-spacing: 1px;
+        line-height: 1.4em;
+        font-family: 'League Spartan', sans-serif;
+        text-transform: uppercase;
+
+        background-color: darken( @default-page, 2% );
+        color: darken( @default-page, 75% );
+        box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.03);
+        .transition( 0.2s );
+
+        &:hover {
+            text-decoration: none;
+            background-color: darken( @default-page, 5% );
+        }
+
+    }
+
+    &.wide a {
+        width: 618px;
+    }
+
+    &.compact a {
+        font-size: 15px;
+        height: 100px;
+        width: 200px;
+    }
+
+    &.article a {
+        border-top: 8px solid @theme-body;
+
+        &:hover {
+            background-color: @theme-body;
+            color: @default-page;
+        }
+
+    }
+
+    &.file a {
+        border-top: 8px solid #617ebc;
+        background-color: #cfd8eb;
+
+        &:hover {
+            background-color: #617ebc;
+            color: @default-page;
+        }
+
+    }
+
+    &.template a {
+        border-top: 8px solid #898989;
+        background-color: #ebebeb;
+
+        &:hover {
+            background-color: #898989;
+            color: @default-page;
+        }
+
+    }
+
+}

@@ -1,0 +1,56 @@
+// <pre>
+/* ===========================
+       [[RuneScape:Theme]]
+   =========================== */
+
+.color-container {  
+    display: flex;  
+    margin: 2em auto;
+    width: 80%;
+    max-width: 60em;
+}
+
+.color-column {
+    flex: 1;
+    margin-right: 1em;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    h3 {
+        padding: 0;
+    }
+
+}
+
+.color-group {
+    padding: 1em 1.5em;
+    transition: .2s ease-out;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+
+    &.dark {
+        color: @white;
+    }
+
+    .variable,
+    .hexcode {
+        font-family: monospace;
+        font-size: 1.1em;
+        .user-select( all );
+        margin: 0;
+    }
+
+    .variable {
+        font-weight: bold;
+    }
+
+}
+
+// hide examples from appearing in toc
+.page-RuneScape_Theme #toc a[href^="#The_quick_brown_fox"] {
+    display: none;
+}

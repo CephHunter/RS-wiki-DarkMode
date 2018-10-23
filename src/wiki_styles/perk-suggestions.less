@@ -1,0 +1,40 @@
+// <pre>
+/* ------------------------------------
+       [[Template:Perk suggestion]]
+   ------------------------------------ */
+
+.gizmo-interface {
+    background-image: filepath('Empty_gizmo_interface.png');
+    background-repeat: no-repeat;
+    min-height: 132px;
+    padding: 11px 53px;
+    width: 216px;
+
+    td {
+        border: 0;
+        height: 32px;
+        padding: 1px;
+        text-align: center;
+        vertical-align: middle;
+        width: 32px;
+    }
+}
+
+.gizmo-interface-parts a {
+    position: relative;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:before {
+        color: #fff;
+        content: "5";
+        font-family: runescape-small;
+        font-size: 12pt;
+        margin-left: 1px;
+        margin-top: -4px;
+        position: absolute;
+        text-shadow: 1px 1px 1px #000;
+    }
+}

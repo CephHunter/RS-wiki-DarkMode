@@ -1,0 +1,170 @@
+// <pre>
+/* ---------------------
+           tiles
+   --------------------- */
+// mainpage.less relies on this; check before changing anything
+
+@tile-border-color: @mystic;
+@tile-background-color: @white;
+@byline-color: @gray-chateau;
+
+.tile {
+    background: @tile-background-color;
+    border: 1px solid @tile-border-color;
+    box-shadow: @box-shadow;
+    padding: 1.5em 2em 1em;
+    max-width: 40em;
+
+    h2 {
+    	font-size: 1.4em;
+        font-weight: bold;
+        border: none;
+        margin: 0 0 .4em;
+	}
+
+    // reduce spacing when byline and heading appear together
+    // (which should be the only way bylines appear)
+    .byline + h2 {
+        margin-top: -0.5em;
+    }
+
+    &.dark {
+        color: @white;
+        background: @shuttle-gray;
+        border: none;
+        box-shadow: @box-shadow-dark;
+
+        h2 {
+            color: @white;
+        }
+
+        a {
+            color: #ccc;
+        }
+
+        .byline {
+            color: fade( @white, 70% );
+        }
+
+    }
+
+}
+
+.byline {
+	font-size: .9em;
+	color: @byline-color;
+
+    a {
+    	color: @byline-color;
+    }
+
+}
+
+/* ---------------------
+        tile halves
+   --------------------- */
+
+// contains .tile or .tile-halves
+.tile-row {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 1em;
+}
+
+.tile-halves {
+	display: flex;
+	flex-flow: row wrap;
+    border: 1px solid @tile-border-color;
+    background: @tile-background-color;
+    box-shadow: @box-shadow;
+
+    h2 {
+        font-size: 1.4em;
+        font-weight: bold;
+        border: none;
+        margin: 0 0 .4em;
+    }
+
+    .byline + h2 {
+        margin-top: -0.5em;
+    }
+
+}
+
+// goes inside .tile-halves
+.tile-top {
+	width: 100%;
+    padding: 1.3rem 1.5rem .6rem;
+
+    &.tile-image {
+        display: flex;
+        align-items: center; // vertically center images
+        background-color: @byline-color;
+        overflow: hidden;
+        padding: 0;
+        height: 13vw;
+        max-height: 12em;
+
+        a {
+            width: 100%;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            transition: .4s ease-out;
+        }
+
+    }
+
+}
+
+// goes inside .tile-halves
+.tile-bottom {
+    background: @tile-background-color;
+    border-top: 1px solid @tile-border-color;
+    width: 100%;
+    padding: 1rem 1.5rem .6rem;
+
+    &.link-button {
+        align-self: flex-end; // have link stick to the bottom
+        padding: 0;
+
+        a {
+            display: block;
+            text-align: center;
+            padding: .75em 1.5em .8em;
+            text-decoration: none;
+        }
+
+    }
+
+    // must be used in conjunction with .link-button
+    &.read-more {
+        background: @black-haze;
+        transition: .3s ease-out;
+
+        a {
+            color: @byline-color;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        &:hover {
+            background: saturate( darken( @black-haze, 2.5% ), 2% );
+
+            .arrow {
+                transform: translateX(50%);
+            }
+
+        }
+
+        .arrow {
+            filter: invert(43%) sepia(50%) hue-rotate(175deg); // match @gray-chateau
+            margin-left: .4em;
+            transition: .3s ease-out;
+        }
+
+    }
+
+}

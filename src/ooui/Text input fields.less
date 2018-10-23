@@ -1,0 +1,28 @@
+// ===========================
+//      Text input fields
+// ===========================
+.oo-ui-textInputWidget.oo-ui-widget-enabled input, 
+.oo-ui-textInputWidget.oo-ui-widget-enabled textarea {
+    .text-input-styling();
+}
+
+.oo-ui-textInputWidget.oo-ui-widget-enabled:hover input, 
+.oo-ui-textInputWidget.oo-ui-widget-enabled:hover textarea {
+    border-color: @input-fields-border--hover;
+}
+
+//----- Read only inputs -----//
+.oo-ui-textInputWidget.oo-ui-widget-enabled input[readonly], 
+.oo-ui-textInputWidget.oo-ui-widget-enabled textarea[readonly] {
+    .text-input-styling();
+    background-color: @input-fields-bg-readonly;
+}
+
+//----- Disabled inputs -----//
+.oo-ui-textInputWidget.oo-ui-widget-disabled input,
+.oo-ui-textInputWidget.oo-ui-widget-disabled textarea {
+    .text-input-styling();
+    opacity: @input-fields-opacity-disabled;
+    text-shadow: none;
+    -webkit-text-fill-color: @input-fields-text;
+}

@@ -1,357 +1,160 @@
-@import "icon-imports.less";
+// -----------------
+//      Imports
+// -----------------
+@import "icons/oojs-ui-wikimediaui-icons-accessibility.less";
+@import "icons/oojs-ui-wikimediaui-icons-alerts.less";
+@import "icons/oojs-ui-wikimediaui-icons-content.less";
+@import "icons/oojs-ui-wikimediaui-icons-editing-advanced.less";
+@import "icons/oojs-ui-wikimediaui-icons-editing-core.less";
+@import "icons/oojs-ui-wikimediaui-icons-editing-list.less";
+@import "icons/oojs-ui-wikimediaui-icons-editing-styling.less";
+@import "icons/oojs-ui-wikimediaui-icons-interactions.less";
+@import "icons/oojs-ui-wikimediaui-icons-layout.less";
+@import "icons/oojs-ui-wikimediaui-icons-location.less";
+@import "icons/oojs-ui-wikimediaui-icons-media.less";
+@import "icons/oojs-ui-wikimediaui-icons-moderation.less";
+@import "icons/oojs-ui-wikimediaui-icons-movement.less";
+@import "icons/oojs-ui-wikimediaui-icons-user.less";
+@import "icons/oojs-ui-wikimediaui-icons-wikimedia.less";
+@import "icons/oojs-ui-wikimediaui-indicators.less";
 
-// =========================
-//      ooui demos page
-// =========================
-// body {
-//   background-image: none !important;
-// }
+@import "Buttons.less";
+@import "Checkboxes-radio buttons.less";
+@import "Dropdowns.less";
+@import "Progress bars.less";
+@import "Text input fields.less";
+@import "Text.less";
 
-// .demo-menu {
-//   background: @sidebar;
-//   border-color: @theme-borders;
-// }
+// -------------------
+//      Set icons
+// -------------------
+// Only set icons that are actually used to reduce filesize
 
-// .demo-menu + div {
-//   background: @main-page-bg !important;
-//   border: solid 1px @theme-borders !important;
-//   color: @theme-text;
-// }
-// =========================
+//----- Indicators -----//
+// .oo-ui-indicator-alert {.oo-ui-indicator-alert()}
+// .oo-ui-indicator-clear {.oo-ui-indicator-clear()}
+.oo-ui-indicator-up {.oo-ui-indicator-up()}
+.oo-ui-indicator-down {.oo-ui-indicator-down()}
+// .oo-ui-indicator-required {.oo-ui-indicator-required()}
+// .oo-ui-indicator-search {.oo-ui-indicator-search()}
+// .oo-ui-texture-pending {.oo-ui-texture-pending()}
 
-// ==============
-//      Text
-// ==============
-//----- Disabled labels -----//
-.oo-ui-fieldLayout-disabled > .oo-ui-fieldLayout-body > .oo-ui-fieldLayout-header > .oo-ui-labelElement-label {
-    color: @base-text-diabled;
-}
 
-// =================
-//      Buttons
-// =================
-//----- Buttons with backgrounds -----//
-// a.oo-ui-buttonElement-button,
-// input.oo-ui-buttonElement-button,
-// button.oo-ui-buttonElement-button 
-.oo-ui-buttonElement-button {
-    .oo-ui-buttonElement-framed.oo-ui-widget-enabled > & {
-        & {
-            color: @button-text-base;
-            background: @button-bg-base;
-            border-color: @button-bg-base;
+//----- Editing core-----//
+.oo-ui-icon-edit {.oo-ui-icon-edit()}
+.oo-ui-image-progressive.oo-ui-icon-edit {.oo-ui-icon-edit(@ooui-icon-progressive)}
+// .oo-ui-icon-editLock {.oo-ui-icon-editLock()}
+// .oo-ui-icon-editUndo {.oo-ui-icon-editUndo()}
+.oo-ui-icon-link {.oo-ui-icon-link()}
+// .oo-ui-icon-linkExternal {.oo-ui-icon-linkExternal()}
+// .oo-ui-icon-linkSecure {.oo-ui-icon-linkSecure()}
+// .oo-ui-icon-redo {.oo-ui-icon-redo()}
+// .oo-ui-icon-undo {.oo-ui-icon-undo()}
+.oo-ui-icon-pilcrow {.oo-ui-icon-pilcrow()}
+.oo-ui-image-progressive.oo-ui-icon-pilcrow {.oo-ui-icon-pilcrow(@ooui-icon-progressive)}
+.oo-ui-icon-wrapping {.oo-ui-icon-wrapping()}
+.oo-ui-image-progressive.oo-ui-icon-wrapping {.oo-ui-icon-wrapping(@ooui-icon-progressive)}
+.oo-ui-icon-gotoLine {.oo-ui-icon-gotoLine()}
 
-            &:hover {
-                color: @button-text-base;
-                background: @button-bg-base--hover;
-                border-color: @button-bg-base--hover;
-            }
+//----- Editing styling -----//
+.oo-ui-icon-bigger {.oo-ui-icon-bigger()}
+.oo-ui-icon-smaller {.oo-ui-icon-smaller()}
+.oo-ui-icon-subscript {.oo-ui-icon-subscript()}
+.oo-ui-icon-superscript {.oo-ui-icon-superscript()}
+.oo-ui-icon-bold {.oo-ui-icon-bold()}
+// .oo-ui-icon-highlight {.oo-ui-icon-highlight()}
+.oo-ui-icon-italic {.oo-ui-icon-italic()}
+// .oo-ui-icon-strikethrough {.oo-ui-icon-strikethrough()}
+// .oo-ui-icon-underline {.oo-ui-icon-underline()}
+// .oo-ui-icon-textLanguage {.oo-ui-icon-textLanguage()}
+// .oo-ui-icon-textDirLTR {.oo-ui-icon-textDirLTR()}
+// .oo-ui-icon-textDirRTL {.oo-ui-icon-textDirRTL()}
+// .oo-ui-icon-textStyle {.oo-ui-icon-textStyle()}
 
-            &:active,
-            &:active:focus,
-            .oo-ui-buttonElement-pressed& {
-                color: @button-text-base;
-                background: @button-bg-base--active;
-                border-color: @button-bg-base--active;
-            }
-            
-            // Select between multiple buttons
-            .oo-ui-buttonElement-active& {
-                color: @button-text-primary;
-                background: @button-bg-progressive;
-                border-color: @button-bg-progressive;
-            }
-        }
-      
-        .oo-ui-flaggedElement-progressive& {
-            color: @button-text-progressive;
-            background: @button-bg-base;
-            border-color: @button-bg-base;
+//----- Editing list -----//
+.oo-ui-icon-indent {.oo-ui-icon-indent()}
+.oo-ui-icon-listBullet {.oo-ui-icon-listBullet()}
+.oo-ui-icon-listNumbered {.oo-ui-icon-listNumbered()}
+.oo-ui-icon-outdent {.oo-ui-icon-outdent()}
 
-            &:hover {
-                color: @button-text-progressive;
-                background: @button-bg-base--hover;
-                border-color: @button-bg-base--hover;
-            }
+//----- Editing advanced -----//
+// .oo-ui-icon-alignCenter {.oo-ui-icon-alignCenter()}
+// .oo-ui-icon-alignLeft {.oo-ui-icon-alignLeft()}
+// .oo-ui-icon-alignRight {.oo-ui-icon-alignRight()}
+// .oo-ui-icon-attachment {.oo-ui-icon-attachment()}
+// .oo-ui-icon-calendar {.oo-ui-icon-calendar()}
+// .oo-ui-icon-code {.oo-ui-icon-code()}
+.oo-ui-icon-find {.oo-ui-icon-find()}
+// .oo-ui-icon-language {.oo-ui-icon-language()}
+// .oo-ui-icon-layout {.oo-ui-icon-layout()}
+.oo-ui-icon-markup {.oo-ui-icon-markup()}
+.oo-ui-image-progressive.oo-ui-icon-markup {.oo-ui-icon-markup(@ooui-icon-progressive)}
+.oo-ui-icon-newline {.oo-ui-icon-newline()}
+.oo-ui-icon-noWikiText {.oo-ui-icon-noWikiText()}
+// .oo-ui-icon-outline {.oo-ui-icon-outline()}
+// .oo-ui-icon-puzzle {.oo-ui-icon-puzzle()}
+// .oo-ui-icon-quotes {.oo-ui-icon-quotes()}
+// .oo-ui-icon-searchCaseSensitive {.oo-ui-icon-searchCaseSensitive()}
+// .oo-ui-icon-searchDiacritics {.oo-ui-icon-searchDiacritics()}
+// .oo-ui-icon-searchRegularExpression {.oo-ui-icon-searchRegularExpression()}
+// .oo-ui-icon-signature {.oo-ui-icon-signature()}
+// .oo-ui-icon-specialCharacter {.oo-ui-icon-specialCharacter()}
+.oo-ui-icon-table {.oo-ui-icon-table()}
+// .oo-ui-icon-tableAddColumnAfter {.oo-ui-icon-tableAddColumnAfter()}
+// .oo-ui-icon-tableAddColumnBefore {.oo-ui-icon-tableAddColumnBefore()}
+// .oo-ui-icon-tableAddRowAfter {.oo-ui-icon-tableAddRowAfter()}
+// .oo-ui-icon-tableAddRowBefore {.oo-ui-icon-tableAddRowBefore()}
+// .oo-ui-icon-tableCaption {.oo-ui-icon-tableCaption()}
+// .oo-ui-icon-tableMergeCells {.oo-ui-icon-tableMergeCells()}
+// .oo-ui-icon-tableMoveColumnAfter {.oo-ui-icon-tableMoveColumnAfter()}
+// .oo-ui-icon-tableMoveColumnBefore {.oo-ui-icon-tableMoveColumnBefore()}
+// .oo-ui-icon-tableMoveRowAfter {.oo-ui-icon-tableMoveRowAfter()}
+// .oo-ui-icon-tableMoveRowBefore {.oo-ui-icon-tableMoveRowBefore()}
+// .oo-ui-icon-templateAdd {.oo-ui-icon-templateAdd()}
+// .oo-ui-icon-translation {.oo-ui-icon-translation()}
+.oo-ui-icon-wikiText {.oo-ui-icon-wikiText()}
+.oo-ui-image-progressive.oo-ui-icon-wikiText {.oo-ui-icon-wikiText(@ooui-icon-progressive)}
 
-            &:active,
-            &:active:focus,
-            .oo-ui-buttonElement-pressed& {
-                color: @button-text-progressive;
-                background: @button-bg-base--active;
-                border-color: @button-bg-base--active;
-            }
+//----- Media -----//
+// .oo-ui-icon-exitFullscreen {.oo-ui-icon-exitFullscreen()}
+// .oo-ui-icon-fullScreen {.oo-ui-icon-fullScreen()}
+.oo-ui-icon-image {.oo-ui-icon-image()}
+// .oo-ui-icon-imageAdd {.oo-ui-icon-imageAdd()}
+// .oo-ui-icon-imageBroken {.oo-ui-icon-imageBroken()}
+// .oo-ui-icon-imageLock {.oo-ui-icon-imageLock()}
+.oo-ui-icon-imageGallery {.oo-ui-icon-imageGallery()}
+// .oo-ui-icon-camera {.oo-ui-icon-camera()}
+// .oo-ui-icon-pause {.oo-ui-icon-pause()}
+// .oo-ui-icon-play {.oo-ui-icon-play()}
+// .oo-ui-icon-stop {.oo-ui-icon-stop()}
 
-            .oo-ui-flaggedElement-primary& {
-                color: @button-text-primary;
-                background: @button-bg-progressive;
-                border-color: @button-bg-progressive;
+//----- Content -----//
+// .oo-ui-icon-article {.oo-ui-icon-article()}
+// .oo-ui-icon-articles {.oo-ui-icon-articles()}
+// .oo-ui-icon-articleCheck {.oo-ui-icon-articleCheck()}
+.oo-ui-icon-articleSearch {.oo-ui-icon-articleSearch()}
+.oo-ui-icon-articleRedirect {.oo-ui-icon-articleRedirect()}
+.oo-ui-icon-book {.oo-ui-icon-book()}
+// .oo-ui-icon-citeArticle {.oo-ui-icon-citeArticle()}
+// .oo-ui-icon-die {.oo-ui-icon-die()}
+// .oo-ui-icon-download {.oo-ui-icon-download()}
+// .oo-ui-icon-folderplaceholder-text {.oo-ui-icon-folderplaceholder-text()}
+// .oo-ui-icon-history {.oo-ui-icon-history()}
+// .oo-ui-icon-info {.oo-ui-icon-info()}
+// .oo-ui-icon-journal {.oo-ui-icon-journal()}
+// .oo-ui-icon-newspaper {.oo-ui-icon-newspaper()}
+// .oo-ui-icon-tag {.oo-ui-icon-tag()}
+// .oo-ui-icon-upload {.oo-ui-icon-upload()}
+// .oo-ui-icon-window {.oo-ui-icon-window()}
 
-                &:hover {
-                    color: @button-text-primary;
-                    background: @button-bg-progressive--hover;
-                    border-color: @button-bg-progressive--hover;
-                }
-    
-                &:active,
-                &:active:focus,
-                .oo-ui-buttonElement-pressed& {
-                    color: @button-text-primary;
-                    background: @button-bg-progressive--active;
-                    border-color: @button-bg-progressive--active;
-                }
-            }
-        }
-
-        .oo-ui-flaggedElement-destructive& {
-            color: @button-text-destructive;
-            background: @button-bg-base;
-            border-color: @button-bg-base;
-
-            &:hover {
-                color: @button-text-destructive;
-                background: @button-bg-base--hover;
-                border-color: @button-bg-base--hover;
-            }
-
-            &:active,
-            &:active:focus,
-            .oo-ui-buttonElement-pressed& {
-                color: @button-text-destructive;
-                background: @button-bg-base--active;
-                border-color: @button-bg-base--active;
-            }
-
-            .oo-ui-flaggedElement-primary& {
-                color: @button-text-primary;
-                background: @button-bg-destructive;
-                border-color: @button-bg-destructive;
-
-                &:hover {
-                    color: @button-text-primary;
-                    background: @button-bg-destructive--hover;
-                    border-color: @button-bg-destructive--hover;
-                }
-    
-                &:active,
-                &:active:focus,
-                .oo-ui-buttonElement-pressed& {
-                    color: @button-text-primary;
-                    background: @button-bg-destructive--active;
-                    border-color: @button-bg-destructive--active;
-                }
-            }
-        }
-    }
-
-    .oo-ui-buttonElement-framed.oo-ui-widget-disabled > & {
-        &,
-        &:hover,
-        &:active,
-        &:active:focus,
-        .oo-ui-buttonElement-pressed& {
-            color: @button-text-disabled;
-            background: @button-bg-disabled;
-            border-color: @button-bg-disabled;
-        }
-    }
-}
-
-//----- Buttons without backgrounds -----//
-.oo-ui-buttonElement-button {
-    .oo-ui-buttonElement-frameless.oo-ui-widget-enabled > & {
-        &,
-        &:hover,
-        &:active,
-        &:active:focus,
-        .oo-ui-buttonElement-pressed& {
-            color: @theme-text;
-        }
-      
-        .oo-ui-flaggedElement-progressive& {
-            &,
-            &:hover,
-            &:active,
-            &:active:focus,
-            .oo-ui-buttonElement-pressed& {
-                color: @button-text-progressive;
-            }
-        }
-
-        .oo-ui-flaggedElement-destructive& {
-            &,
-            &:hover,
-            &:active,
-            &:active:focus,
-            .oo-ui-buttonElement-pressed& {
-                color: @button-text-destructive;
-            }
-        }
-    }
-
-    .oo-ui-buttonElement-framed.oo-ui-widget-disabled > & {
-        &,
-        &:hover,
-        &:active,
-        &:active:focus,
-        .oo-ui-buttonElement-pressed& {
-            color: @button-text-disabled;
-        }
-    }
-}
-
-//----- Button groups -----//
-.oo-ui-buttonGroupWidget.oo-ui-widget-enabled,
-.oo-ui-buttonSelectWidget.oo-ui-widget-enabled {
-    .oo-ui-buttonElement:not(:first-child):not(:last-child) > .oo-ui-buttonElement-button {
-        border-right-color: @button-group-separator;
-        border-left-color: @button-group-separator;
-    }
-
-    .oo-ui-buttonElement:last-child > .oo-ui-buttonElement-button {
-        border-left-color: @button-group-separator;
-    }
-}
-
-.oo-ui-popupToolGroup.oo-ui-widget-enabled > .oo-ui-popupToolGroup-handle {
-    &:hover,
-    &:active,
-    &:active:focus,
-    .oo-ui-buttonElement-pressed& {
-        background: @button-bg-base;
-    }
-}
-
-.oo-ui-popupToolGroup.oo-ui-popupToolGroup-active > .oo-ui-popupToolGroup-handle {
-    background: @button-bg-base;
-}
-
-// ===========================
-//      Text input fields
-// ===========================
-.oo-ui-textInputWidget.oo-ui-widget-enabled input, 
-.oo-ui-textInputWidget.oo-ui-widget-enabled textarea {
-    .text-input-styling();
-}
-
-.oo-ui-textInputWidget.oo-ui-widget-enabled:hover input, 
-.oo-ui-textInputWidget.oo-ui-widget-enabled:hover textarea {
-    border-color: @input-fields-border--hover;
-}
-
-//----- Read only inputs -----//
-.oo-ui-textInputWidget.oo-ui-widget-enabled input[readonly], 
-.oo-ui-textInputWidget.oo-ui-widget-enabled textarea[readonly] {
-    .text-input-styling();
-    background-color: @input-fields-bg-readonly;
-}
-
-//----- Disabled inputs -----//
-.oo-ui-textInputWidget.oo-ui-widget-disabled input,
-.oo-ui-textInputWidget.oo-ui-widget-disabled textarea {
-    .text-input-styling();
-    opacity: @input-fields-opacity-disabled;
-    text-shadow: none;
-    -webkit-text-fill-color: @input-fields-text;
-}
-
-// ====================
-//      Checkboxes
-// ====================
-.oo-ui-checkboxInputWidget [type='checkbox'] + span {
-    background-color: @checkbox-bg-base;
-    border-color: @checkbox-border-base;
-}
-
-.oo-ui-checkboxInputWidget.oo-ui-widget-enabled [type='checkbox']:checked + span {
-    background-color: @checkbox-bg-active;
-    border-color: @checkbox-border-active;
-}
-
-.oo-ui-checkboxInputWidget [type='checkbox']:disabled + span {
-    background-color: @checkbox-bg-disabled;
-    border-color: @checkbox-border-disabled;
-    opacity: @checkbox-opacity-disabled;
-}
-
-// =======================
-//      Radio buttons
-// =======================
-.oo-ui-radioInputWidget [type='radio'] + span {
-    background-color: @checkbox-bg-base;
-    border-color: @checkbox-border-base;
-}
-
-.oo-ui-radioInputWidget.oo-ui-widget-enabled [type='radio']:checked + span {
-    border-color: @checkbox-border-active;
-}
-
-.oo-ui-radioInputWidget [type='radio']:disabled + span {
-    background-color: @checkbox-bg-disabled;
-    border-color: @checkbox-border-disabled;
-    opacity: @checkbox-opacity-disabled;
-}
-
-.oo-ui-radioInputWidget [type='radio']:disabled:checked + span {
-    background-color: @checkbox-bg-disabled;
-    border-color: @checkbox-border-active;
-}
-
-// ==========================
-//      Dropdown selects
-// ==========================
-.oo-ui-dropdownInputWidget-php {
-    border-color: @select-border;
-}
-
-.oo-ui-dropdownInputWidget.oo-ui-widget-enabled select {
-    background-color: @select-bg;
-    color: @select-text;
-    border-color: @select-border;
-
-    &:hover {
-        background-color: @select-bg--hover;
-        color: @select-text;
-        border-color: @select-border;
-    }
-
-    option {
-        background: @dropdown-bg-hover-item;
-        color: @dropdown-text--hover;
-    }
-}
-
-.oo-ui-dropdownInputWidget.oo-ui-widget-disabled select {
-    background-color: @select-bg;
-    color: @select-text;
-    border-color: @select-border;
-    opacity: @select-opacity-disabled;
-}
-
-// ======================
-//      Progress bar
-// ======================
-.oo-ui-progressBarWidget {
-    background-color: @progressbar-bg;
-    border-color: @progressbar-border;
-}
-
-.oo-ui-progressBarWidget.oo-ui-widget-enabled .oo-ui-progressBarWidget-bar {
-    background-color: @progressbar-bar;
-}
-
-.oo-ui-progressBarWidget.oo-ui-widget-disabled .oo-ui-progressBarWidget-bar {
-    background-color: @progressbar-bar-disabled;
-}
-
-// =====================
-//      Date select
-// =====================
-.mw-widget-dateInputWidget-handle {
-    background-color: @select-bg;
-    border-color: @select-border;
-
-    .mw-widget-dateInputWidget-empty & {
-        color: @select-text;
-    }
-}
+//----- Accessibility -----//
+// .oo-ui-icon-bright {.oo-ui-icon-bright()}
+// .oo-ui-icon-halfBright {.oo-ui-icon-halfBright()}
+// .oo-ui-icon-notBright {.oo-ui-icon-notBright()}
+.oo-ui-icon-eye {.oo-ui-icon-eye()}
+.oo-ui-image-progressive.oo-ui-icon-eye {.oo-ui-icon-eye(@ooui-icon-progressive)}
+// .oo-ui-icon-eyeClosed {.oo-ui-icon-eyeClosed()}
+// .oo-ui-icon-moon {.oo-ui-icon-moon()}
+// .oo-ui-icon-largerText {.oo-ui-icon-largerText()}
+// .oo-ui-icon-smallerText {.oo-ui-icon-smallerText()}
+// .oo-ui-icon-visionSimulator {.oo-ui-icon-visionSimulator()}

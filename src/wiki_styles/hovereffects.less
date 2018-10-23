@@ -1,0 +1,111 @@
+// <pre>
+/* ====================
+       Hover things
+   ==================== */
+
+// @todo identify where this is actually used and document it properly
+// Used in Template:Choose Option, in some users' signatures, and more(?)
+
+.ChooseOption {
+    background: #fff;
+    border: 3px double black;
+    color: #c6b895;
+    display: inline-block;
+    line-height: 1.1;
+
+    &:hover .OptionWindow {
+        display: inline;
+    }
+
+    &.bold {
+        font-weight: bold;
+    }
+}
+
+.OptionHover {
+    background: #0d1e25;
+    cursor: default;
+    display: inline-block;
+}
+
+.OptionHeader {
+    background: #0b0c05;
+    border-bottom: 1px solid #223239;
+    cursor: default;
+    display: block;
+}
+
+.OptionWindow {
+    background: white;
+    border: 3px double black;
+    border-radius: 4px 4px 2px 2px;
+    display: none;
+    font-family: runescape;
+    font-size: 16px;
+    font-weight: normal !important;
+    position: absolute;
+    margin-top: -3px;
+    z-index: 3;
+
+    .content {
+        background: #0d1e25;
+        display: block;
+    }
+
+    .content > *:not(.OptionHeader),
+    a {
+        color: inherit;
+        cursor: default;
+        display: block;
+        padding: 0 1px;
+        text-shadow: #000 1px 1px 0px;
+        white-space: nowrap;
+
+        &:hover {
+            text-decoration: none;
+            background: #1d2e55;
+        }
+    }
+
+    strong,
+    b,
+    // @todo huh?
+    * {
+        font-weight: normal !important;
+    }
+
+    .item {
+        color: #ff9040;
+    }
+
+    .NPC,
+    .npc {
+        color: #ff0;
+    }
+
+    .player {
+        color: #fff;
+    }
+
+    .scenery {
+        color: #0ff;
+    }
+
+    .cb-min {
+        color: #0f0;
+    }
+
+    .cb-same {
+        color: #ff0;
+    }
+
+    .cb-max {
+        color:#f00;
+    }
+}
+
+.ChooseOption.bold .OptionWindow *,
+.OptionWindow.bold *,
+.OptionHeader.bold * {
+    font-family: runescape-bold !important;
+}

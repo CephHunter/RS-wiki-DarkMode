@@ -1,0 +1,60 @@
+// <pre>
+/* ================
+      animations
+   ================ */
+
+@keyframes slide-up {
+
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slide-down {
+
+    from {
+        opacity: 0;
+        transform: translateY(-1rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* ================
+        classes
+   ================ */
+
+.slide-up {
+    animation: .8s @ease-out-quad both slide-up;
+}
+
+.slide-up-2 {
+    animation: .8s .3s @ease-out-quad both slide-up;
+}
+
+.slide-up-3 {
+    animation: .8s .6s @ease-out-quad both slide-up;
+}
+
+.slide-down {
+    animation: .8s @ease-out-quad both slide-down;
+}
+
+.slide-down-2 {
+    animation: .8s .3s @ease-out-quad both slide-down;
+}
+
+.slide-down-3 {
+    animation: .8s .6s @ease-out-quad both slide-down;
+}

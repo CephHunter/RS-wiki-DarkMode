@@ -1,0 +1,14 @@
+// <pre>
+/* [[Template:Fairycode]] */
+.fairycode {
+    font-family: "KingthingsPetrock", sans-serif;
+    font-size: 120%;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+
+    // This makes selection ignore bullets, and makes ctrl+f work on codes.
+    b ~ b:before {
+        content: "•"
+    }
+}

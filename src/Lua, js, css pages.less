@@ -118,7 +118,7 @@ textarea#mw-scribunto-input {
 // Generated with http://pygments.org/demo/
 //----- Monokai -----//
 .mw-highlight pre .hll { background-color: #49483e }
-.mw-highlight pre  { background: #272822; color: #f8f8f2 }
+.mw-highlight pre  { background: @code-editor-bg; color: #f8f8f2 }//{ background: #272822; color: #f8f8f2 }
 .mw-highlight pre .c { color: #75715e } /* Comment */
 .mw-highlight pre .err { color: #960050; background-color: #1e0010 } /* Error */
 .mw-highlight pre .k { color: #66d9ef } /* Keyword */
@@ -195,7 +195,7 @@ textarea#mw-scribunto-input {
 // This is taken from https://ace.c9.io/tool/mode_creator.html
 //----- Theme monokai -----//
 .ace-tm .ace_gutter {
-    background: #2F3129;
+    background: lighten(@code-editor-bg, 3%);//#2F3129;
     color: #8F908A;
 }
 
@@ -205,7 +205,7 @@ textarea#mw-scribunto-input {
 }
 
 .ace-tm {
-    background-color: #272822;
+    background-color: @code-editor-bg;//#272822;
     color: #F8F8F2
 }
 

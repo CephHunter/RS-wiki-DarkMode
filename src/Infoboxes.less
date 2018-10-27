@@ -1,0 +1,129 @@
+// =======================
+//      rsw-infoboxes
+// =======================
+.rsw-infobox {
+    background-color: @infobox-background;
+    // background: @table-data;
+
+    .infobox-header {
+        color: @theme-text;
+        background-color: @infobox-header-color;
+        border-bottom-color: @infobox-header-border;
+    }
+
+    .infobox-subheader {
+        background-color: @infobox-subheader-color;
+        color: lighten(@theme-text, 10%);
+        border-top-color: @infobox-header-border;
+        border-bottom-color: @infobox-header-border;
+
+        a {
+        	color: lighten(@theme-text, 10%);
+        }
+
+    }
+
+    // usually first row
+    .infobox-image.bordered-image {
+        border-color: @infobox-cell-border;
+    }
+
+    // usually last row
+    .infobox-map {
+        border-top-color: @infobox-header-border;
+    }
+
+    // not header or subheaders
+    th:not([colspan="2"]) {
+        border-left-color: @infobox-cell-border;
+        border-right-color: @infobox-subheader-color;
+    }
+
+    th:not(.infobox-header):not(.infobox-subheader) {
+        border-left-color: @infobox-cell-border;
+    }
+
+    td {
+
+        &:not(.infobox-image):not(.infobox-map) {
+        	border-right-color: @infobox-cell-border;
+        }
+
+        // for full width td's at the bottom like infobox item examine
+        &[colspan="2"]:not(.infobox-image):not(.infobox-map) {
+        	border-color: @infobox-cell-border;
+    	}
+    }
+}
+
+// ======================================
+//      Template:Infobox Monster new
+// ======================================
+.infobox-monster {
+    .offensive-header {
+        background-color: @infobox-monster-offensive-header-bg;
+    }
+
+    .offensive-subheader {
+        color: @infobox-monster-offensive-subheader-text;
+        background-color: @infobox-monster-offensive-subheader-bg;
+    }
+
+    .defensive-header {
+        background-color: @infobox-monster-defensive-header-bg;
+    }
+
+    .defensive-subheader {
+        color: @infobox-monster-defensive-subheader-text;
+        background-color: @infobox-monster-defensive-subheader-bg;
+    }
+
+    .slayer-header {
+        background-color: @infobox-monster-slayer-header-bg;
+    }
+}
+
+// ==================================
+//      Template:Infobox Bonuses
+// ==================================
+.infobox-bonuses {
+    td {
+        border-color: @theme-borders;
+        background-color: @table-data;
+    }
+
+    th {
+        border-color: @theme-borders;
+        background-color: @table-header;
+    }
+}
+
+// ==============================================
+//      Template:Infotable Bonuses header
+//      Template:Infotable Bonuses row
+//      Template:Infotable Bonuses totals
+//      Template:Equipment bonuses infotable
+// ==============================================
+.infotableBonuses {
+
+    .attribute-value {
+        background: @infotable-bonuses-attribute-value-bg;
+    }
+
+    .attribute-total {
+        background: @infotable-bonuses-attribute-value-bg;
+
+        .attribute-value {
+            background: @infotable-bonuses-attribute-value-bg;
+        }
+
+    }
+
+}
+
+// ==========================
+//      legacy infoboxes
+// ==========================
+.infobox {
+    .table-wikitable();
+}

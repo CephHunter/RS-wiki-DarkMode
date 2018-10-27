@@ -72,6 +72,7 @@ function clean() {
         .pipe(less())
         .pipe(postcss([ autoprefixer()/*, safeImportant()*/]))
         /*.pipe(cleanCSS({level: {2: {all: true}}, format: 'beautify'}))*/
+        .pipe(cleanCSS({level: 1, format: 'beautify'}))
         .pipe(lec({eolc: 'LF'}));
 
     //----- Final css file -----//

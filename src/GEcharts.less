@@ -1,3 +1,81 @@
+// =======================================
+//      Exchange namespace formatting
+// =======================================
+
+// ----------------
+//      header
+// ----------------
+.gemw-header {
+    .gemw-name a {
+        color: @theme-text;
+    }
+
+    .gemw-examine {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-price::after {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-updated {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-time {
+        color: @theme-text;
+    }
+
+    .gemw-update-price .oo-ui-icon-help {
+        .oo-ui-icon-help();
+    }
+}
+
+// --------------
+//      body
+// --------------
+.gemw-body {
+    .gemw-section-left {
+        a {
+            color: @theme-text-subtle;
+        }
+    }
+
+    .gemw-property {
+        border-top-color: @theme-text-subtle;
+
+        dt {
+            color: @theme-text;
+        }
+    }
+
+    .gemw-links {
+        color: @theme-text-subtle;
+    }
+
+    .gemw-chart {
+        background: none;
+    }
+}
+
+.gemw-container .gemw-button {
+    background: @button-bg-progressive;
+    border-color: @button-bg-progressive;
+
+    a {
+        .links(@button-text-primary);
+    }
+
+    &.secondary {
+        background: @button-bg-base;
+        border-color: @button-bg-base;
+
+        a {
+            .links(@button-text-base);
+        }
+    }
+}
+
 // ==================================
 //      GE chart general styling
 // ==================================
@@ -23,7 +101,7 @@
 }
 
 // For [[GEMC/C]]
-.GEChart-bg(@main-page-bg);
+.GEChart-bg(@mw-page-bg);
 
 // For in infoboxes
 table {
@@ -162,7 +240,7 @@ table {
 }
 
 .GEChartScrollbar(
-    @main-page-bg,
+    @mw-page-bg,
     @GEChart-scrollbar-track-lighten,
     @GEChart-scrollbar-button-lighten,
     @GEChart-scrollbar-thumb-lighten
@@ -208,64 +286,5 @@ table {
 
     text {
         fill: @theme-text !important;
-    }
-}
-
-// ============================
-//      Exchange namespace
-// ============================
-// ----------------
-//      header
-// ----------------
-.gemw-header {
-    .gemw-name a {
-        color: @theme-text;
-    }
-
-    .gemw-examine {
-        color: @theme-text-subtle;
-    }
-
-    .gemw-price::after {
-        color: @theme-text-subtle;
-    }
-
-    .gemw-updated {
-        color: @theme-text-subtle;
-    }
-
-    .gemw-time {
-        color: @theme-text;
-    }
-
-    .gemw-update-price .oo-ui-icon-help {
-        .oo-ui-icon-help();
-    }
-}
-
-// --------------
-//      body
-// --------------
-.gemw-body {
-    .gemw-section-left {
-        a {
-            color: @theme-text-subtle;
-        }
-    }
-
-    .gemw-property {
-        border-top-color: @theme-text-subtle;
-
-        dt {
-            color: @theme-text;
-        }
-    }
-
-    .gemw-links {
-        color: @theme-text-subtle;
-    }
-
-    .gemw-chart {
-        background: none;
     }
 }

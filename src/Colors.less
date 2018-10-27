@@ -4,56 +4,74 @@
 // =======================
 //      Primay colors
 // =======================
-@theme-text         : #c5c5c5;
+
 @theme-borders      : #52555a;
 @theme-links        : #6bbaea;
 @theme-redlinks     : #ba0000;
 @theme-green        : #1e5400;
 @theme-green-lighter: lighten(@theme-green, 2.5%);
 @theme-red          : #b32424;
+@theme-red-lighter  : lighten(@theme-red, 10%);
+@theme-blue         : #265588;
+@theme-blue-lighter : lighten(@theme-blue, 8%);
+@theme-blue-lightest: #99c4f1;
+
 @theme-gray8        : darken(@theme-gray12, 3.5%);
 @theme-gray12       : #1e1e1e;
 @theme-gray13       : lighten(@theme-gray12, 1%);
 @theme-gray15       : lighten(@theme-gray12, 3%);
 @theme-gray17       : lighten(@theme-gray12, 5%);
+@theme-gray19       : lighten(@theme-gray12, 6.5%);
 @theme-gray20       : lighten(@theme-gray12, 8%);
-@theme-gray21       : lighten(@theme-gray12, 9%);
-@theme-blue         : #265588;
-@theme-blue-lighter : lighten(@theme-blue, 8%);
+@theme-gray21       : lighten(@theme-gray12, 9.5%);
+@theme-gray35       : lighten(@theme-gray12, 23%);
+@theme-gray40       : lighten(@theme-gray12, 28%);
+
+@theme-gray55       : darken(@theme-gray80, 25%);
+@theme-gray65       : darken(@theme-gray80, 15%);
+@theme-gray70       : darken(@theme-gray80, 10%);
+@theme-gray80       : #cccccc; //#c5c5c5;
+@theme-gray90       : lighten(@theme-gray80, 10%);
+@theme-gray95       : lighten(@theme-gray80, 15%);
+
 
 // ==========================
 //      Secondary colors
 // ==========================
 //----- general -----//
-@main-page-bg              : @theme-gray12;
-@homepage-module-bg        : @theme-gray20;
+@mw-page-bg                : @theme-gray12;
 @sidebar                   : @theme-gray15;
+
 @table-data                : @theme-gray20;
 @table-header              : @theme-gray17;
 @highlight-table-on        : @theme-green;
 @highlight-table-hover     : @theme-green-lighter;
+
 @documentation-bg          : @theme-gray15;
 @categories                : @theme-gray8;
 @messageboxes              : @theme-gray8;
-@popup-bg                  : @theme-gray12;
-@popup-header-bg           : lighten(@popup-bg, 5%);
+
 @tooltip-bg                : @theme-gray15;
-@tooltip-border            : @theme-borders;
+@tooltip-border            : @theme-blue;
+
 @input-group-wrapper       : @theme-gray8;
 @input-group-wrapper-border: @theme-borders;
+
 @vector-tabs               : @sidebar;
 @vector-tabs--hover        : lighten(@sidebar, 4%);
 
 //----- text -----//
-@list-indent-guide: darken(@theme-text, 15%);
-@theme-text-subtle: darken(@theme-text, 10%);
-@positive-change  : #06df2e;
-@negative-change  : lighten(#c02614, 5%);
-@base-text-diabled: #72777d;                   // for ooui
-@popup-text       : @theme-text;
+@theme-text          : @theme-gray80;
+@theme-text-subtle   : @theme-gray70;
+@theme-text-highlight: @theme-gray90;
+@list-indent-guide   : @theme-gray55;
+@positive-change     : #06df2e;
+@negative-change     : @theme-red-lighter;
+@base-text-diabled   : #72777d;               // for ooui
+@abusefilter-tag: @theme-red-lighter;
 
 //----- Buttons -----//
-@button-bg-base               : lighten(@theme-gray20, 15%);
+@button-bg-base               : @theme-gray35;
 @button-bg-base--hover        : lighten(@button-bg-base, 3%);
 @button-bg-base--active       : darken(@button-bg-base, 5%);
 @button-bg-progressive        : @theme-blue-lighter;
@@ -62,12 +80,12 @@
 @button-bg-destructive        : @theme-red;
 @button-bg-destructive--hover : lighten(@theme-red, 5%);
 @button-bg-destructive--active: darken(@theme-red, 5%);
-@button-bg-disabled           : lighten(@theme-gray20, 0%);
-@button-text-base             : lighten(@theme-text, 10%);
-@button-text-progressive      : #99c4f1;
-@button-text-destructive      : lighten(@theme-red, 10%);
-@button-text-primary          : lighten(@theme-text, 20%);
-@button-text-disabled         : darken(@theme-text, 25%);
+@button-bg-disabled           : @theme-gray21;
+@button-text-base             : @theme-gray90;
+@button-text-progressive      : @theme-blue-lightest;
+@button-text-destructive      : @theme-red-lighter;
+@button-text-primary          : @theme-gray95;
+@button-text-disabled         : @theme-gray55;
 @button-group-separator       : lighten(@button-bg-base, 15%);
 
 //----- Text input fields -----//
@@ -77,7 +95,7 @@
 @input-fields-border--hover   : lighten(@theme-borders, 10%);
 @input-fields-text            : @theme-text;
 @input-fields-opacity-disabled: 0.5;
-@placeholder-text             : darken(@theme-text, 20%);
+@placeholder-text             : @theme-gray55;
 
 //----- Checkboxes and radio buttons -----//
 @checkbox-bg-base         : @input-fields-bg;
@@ -85,7 +103,7 @@
 @checkbox-bg-disabled     : @button-bg-disabled;
 @checkbox-border-base     : @theme-borders;
 @checkbox-border-active   : @theme-blue-lighter;
-@checkbox-border-disabled : @button-bg-disabled;
+@checkbox-border-disabled : @checkbox-bg-disabled;
 @checkbox-opacity-disabled: 0.5;
 
 //----- Dropdown selects -----//
@@ -94,23 +112,24 @@
 @select-border          : @input-fields-border;
 @select-border--hover   : @input-fields-border--hover;
 @select-text            : @theme-text;
+@select-text--active    : @theme-blue-lightest;
 @select-opacity-disabled: 0.5;
 @dropdown-bg            : @theme-gray17;
 @dropdown-bg-hover-item : lighten(@dropdown-bg, 3%);
 @dropdown-bg-active-item: lighten(@dropdown-bg, 5%);
-@dropdown-border        : @theme-borders;
-@dropdown-text          : @theme-text;
+@dropdown-border        : @input-fields-border;
+@dropdown-text          : @input-fields-text;
 
 //----- Progress bar -----//
-@progressbar-bg          : @input-fields-bg;
+@progressbar-bg          : @theme-gray21;
 @progressbar-bar         : @theme-blue-lighter;
-@progressbar-bar-disabled: @button-bg-base;
+@progressbar-bar-disabled: @theme-gray35;
 @progressbar-border      : @theme-borders;
 
 //----- ooui icons -----//
 @ooui-icon-base          : #f8f9fa;
 @ooui-icon-base--inverted: #000;
-@ooui-icon-progressive   : @button-text-progressive;//@theme-blue;
+@ooui-icon-progressive   : @theme-blue-lightest;
 @ooui-icon-destructive   : @theme-red;
 @ooui-icon-warning       : #ff5d00;
 
@@ -123,10 +142,10 @@
 // @scroll-bar-2-thumb   : hsl(0, 0%, 20%);
 
 //----- basic htlm elements -----//
-@pre-tag-bg     : @theme-gray21;
-@pre-tag-border : lighten(@theme-gray21, 5%);
-@code-tag-bg    : @theme-gray21;
-@code-tag-border: lighten(@theme-gray21, 5%);
+@pre-tag-bg     : @theme-gray19;
+@pre-tag-border : lighten(@pre-tag-bg, 8%);
+@code-tag-bg    : @theme-gray19;
+@code-tag-border: lighten(@code-tag-bg, 8%);
 
 //----- Source editor -----//
 @edit-area-bg        : #a9a9a9;
@@ -136,28 +155,64 @@
 //----- Code editor -----//
 @code-editor-bg                  : @theme-gray15;
 @code-editor-console-bg          : @theme-gray17;
-@code-editor-console-error-text  : lighten(@theme-red, 10%);
-@code-editor-console-input-text  : #99c4f1;
+@code-editor-console-error-text  : @theme-red-lighter;
+@code-editor-console-input-text  : @theme-blue-lightest;
 @code-editor-console-output-text : @theme-text;
 @code-editor-console-message-text: @theme-text-subtle;
 @code-editor-search-bg           : @theme-gray12;
 
-//----- templates -----//
-@coins-positive: lighten(#5799c1, 2%);
-@coins-negative: lighten(#c02614, 5%);
+//----- Active discussions/Yew grove -----//
+@discussion-table-header-bg            : @theme-blue;
+@discussion-table-header-text          : @theme-gray95;
+@discussion-table-header-noresults-bg  : @theme-gray17;
+@discussion-table-header-noresults-text: @theme-gray80;
+@discussion-table-title-bg             : @theme-gray20;
+@discussion-table-title-text           : @theme-gray80;
+
+//----- Popups -----//
+@popup-text     : @theme-text;
+@popup-bg       : @theme-gray12;
+@popup-header-bg: lighten(@popup-bg, 5%);
+
+//----- Custom classes -----//
+@coins-positive: #6ec4f7;
+@coins-negative: #d72b16;
+@coins-neutral : #34c534;
 
 @table-red-bg          : darken(#861c10, 10%);
 @table-yellow-bg       : darken(#f3f0b0, 60%);
-@table-green-bg        : #1e5400;
-@table-green-bg-lighter: #006d13;
+@table-green-bg        : @theme-green;
+@table-green-bg-lighter: @theme-green-lighter;
 
+@fact-text: @theme-blue-lightest;
+
+@infotable-bonuses-attribute-value-bg: @table-header;
+
+@table-na-bg: @table-header;
+
+@property-namespace-listitem-hover: lighten(@mw-page-bg, 3%);
+
+@reference-target: lighten(@mw-page-bg, 10%); // Highlight when clicked on a reference
+
+@tile-module-bg               : @theme-gray20;
+@tile-module-dark-bg          : @theme-gray17;
+@tile-module-borders          : transparent;            //@theme-borders;
+@tile-module-text             : @theme-text;
+@tile-module-byline-text      : @theme-text-subtle;
+@tile-module-header-text      : @theme-text-highlight;
+@tile-module-footer-bg        : @theme-gray17;
+@tile-module-footer-bg--hover : @theme-gray15;
+@tile-module-footer-text      : @theme-text;
+@tile-module-footer-sepperator: @theme-borders;
+
+//----- templates -----//
 @portal-link-bg         : @theme-gray20;
-@portal-link-bg--hover  : lighten(@theme-gray20, 10%);
+@portal-link-bg--hover  : lighten(@portal-link-bg, 10%);
 @portal-link-text       : @theme-text;
-@portal-link-text--hover: lighten(@theme-text, 10%);
+@portal-link-text--hover: lighten(@portal-link-text, 10%);
 
 @navbox-title-bg    : @theme-blue;
-@navbox-title-text  : lighten(@theme-text, 10%);
+@navbox-title-text  : @theme-gray90;
 @navbox-title-2-bg  : @theme-blue-lighter;
 @navbox-group-bg    : @theme-gray17;
 @navbox-group-border: darken(@theme-borders, 10%);
@@ -176,12 +231,10 @@
 @infobox-monster-defensive-subheader-text: #32637c;
 @infobox-monster-slayer-header-bg        : #464646;
 
-@reference-target: lighten(@main-page-bg, 10%);
-
 @transcript-bg                            : @documentation-bg;
-@transcript-namespace-character-name      : @button-text-progressive;
-@transcript-namespace-section-hover       : lighten(@main-page-bg, 5%);
-@transcript-namespace-section-hover-2     : lighten(@main-page-bg, 1%);
+@transcript-namespace-character-name      : @theme-blue-lightest;
+@transcript-namespace-section-hover       : lighten(@mw-page-bg, 5%);
+@transcript-namespace-section-hover-2     : lighten(@mw-page-bg, 1%);
 @transcript-namespace-section-hover-border: @theme-borders;
 
 @GEChart-infobox-bg              : @infobox-background;
@@ -193,11 +246,11 @@
 @GEChart-scrollbar-track-lighten : 10%;
 @GEChart-scrollbar-button-lighten: 20%;
 @GEChart-scrollbar-thumb-lighten : 30%;
-@GEChart-scrollbar-arrow         : lighten(@theme-text, 10%);
-@GEChart-scrollbar-rifles        : lighten(@theme-text, 10%);
+@GEChart-scrollbar-arrow         : @theme-gray90;
+@GEChart-scrollbar-rifles        : @theme-gray90;
 @GEChart-tooltip-bg              : fade(lighten(@GEChart-popup-bg, 5%), 85%);
 @GEChart-tooltip-border          : @tooltip-border;
 @GEChart-date-graph-bg           : rgba(69, 115, 167, 0.3);;
 @GEChart-date-graph-stroke       : lighten(rgb(69, 114, 167), 10%);
 
-@property-namespace-listitem-hover: lighten(@main-page-bg, 3%);
+@uses-material-list-selected: @theme-green;

@@ -5,7 +5,7 @@
 // ===================
 // for skill calculators and interactive skill guides
 // includes modified link colour for accessibility
-// applies to a variety of templates used by a variety of scripts
+// applies to a variety of templates used by a variety of scripts */
 .sg-red,
 .nocell {
     background: @table-red-bg;
@@ -24,17 +24,6 @@
     color: @theme-text;
 }
 
-// ===============
-//      Coins
-// ===============
-.coins-pos {
-    color: @coins-positive;
-}
-
-.coins-neg {
-    color: @coins-negative;
-}
-
 // ==========================
 //      Alternating rows
 // ==========================
@@ -44,30 +33,157 @@ table.alternating-rows tr:nth-child(even) {
 }
 
 // =========================
+//      Table N/A cells
+// =========================
+.table-na {
+    background: @table-na-bg;
+    color: @theme-text-subtle;
+}
+
+// =========================
 //      Minigame status
 // =========================
+/* active/inactive colors for [[Module:Rotations]] */
 .status-active {
     background-color: @table-green-bg-lighter;
     color: @theme-text;
 }
 
 .status-inactive {
-    background-color: @table-red-bg;
-    color: @theme-text;
+    background-color: @table-data;
+    color: @button-text-destructive;
 }
 
-// ================================
-//      Table attribute values
-// ================================
-// Example: {{Eq infotable}} {{InfoHeader}}
-.attribute-value {
-    .table-header();
+// ==================
+//      Censored
+// ==================
+// @example <http://rs.wiki/?oldid=12382140>
+
+.censored {
+    color: #000;
+    background-color: #000;
+
+    a {
+        .links(#000);
+        text-decoration: underline;
+    }
+
+    // show text on rollover
+    &:hover {
+        color: @theme-text;
+        background-color: @mw-page-bg;
+         
+        a {
+            color: @theme-links;
+        }
+    }
 }
 
-.attribute-total {
-    td,
-    th,
-    .attribute-value {
-        .table-header();
+// ===============
+//      tiles
+// ===============
+.tile {
+    background: @tile-module-bg;
+    border: solid 1px @tile-module-borders;
+
+    &.dark {
+        color: @theme-text;
+        background: @tile-module-dark-bg;
+        border: solid 1px @tile-module-borders;
+
+        h2 {
+            color: @tile-module-header-text;
+        }
+
+        a {
+            color: @theme-links;
+        }
+
+        .byline {
+            color: @tile-module-byline-text;
+        }
+    }
+}
+
+.byline {
+	color: @tile-module-byline-text;
+
+    a {
+    	.links(@tile-module-byline-text);
+    }
+}
+
+// ---------------------
+//      tile halves
+// ---------------------
+
+.tile-halves {
+    border: 1px solid @tile-module-borders;
+    background: @tile-module-bg;
+}
+
+// goes inside .tile-halves
+.tile-top {
+
+    &.tile-image {
+        background-color: @tile-module-bg;
+    }
+}
+
+// goes inside .tile-halves
+.tile-bottom {
+    background: @tile-module-bg;
+    border-top: 1px solid @tile-module-footer-sepperator;
+
+    &.read-more {
+        background: @tile-module-footer-bg;
+
+        a {
+            color: @tile-module-footer-text;
+        }
+
+        &:hover {
+            background: @tile-module-footer-bg--hover;
+        }
+
+        .arrow {
+            filter: invert(30%) sepia(50%) hue-rotate(175deg);
+        }
+    }
+}
+
+// ==============
+//      Poll
+// ==============
+.ajaxpoll {
+    background: @tile-module-bg;
+    border: none;
+
+    // percentage bar
+    .ajaxpoll-answer-vote {
+        background: @progressbar-bg;
+        border: solid 1px @progressbar-border;
+
+        // bar
+        div {
+            background: @progressbar-bar;
+        }
+    }
+
+    // status of vote (submitting, submitted, etc)
+    .ajaxpoll-ajax {
+        color: @theme-text;
+        background: lighten( @tile-module-bg, 7%);
+    }
+
+    // extra text above and below options
+    .ajaxpoll-misc,
+    .ajaxpoll-info {
+        color: @theme-text-subtle;
+    }
+
+    // weird way of hiding poll id ¯\_(ツ)_/¯
+    .ajaxpoll-id-info {
+        color: @tile-module-bg;
     }
 }

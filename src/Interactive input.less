@@ -27,10 +27,65 @@ button {
     }
 }
 
-.mw-ui-button {
-    .button-styling("grey");
+input.mw-ui-button {
+    color: @button-text-base;
+    background: @button-bg-base;
+    border-color: @button-bg-base;
+
+    &:hover {
+        color: @button-text-base;
+        background: @button-bg-base--hover;
+        border-color: @button-bg-base--hover;
+    }
+
+    &:active,
+    &:focus {
+        color: @button-text-base;
+        background: @button-bg-base--active;
+        border-color: @button-bg-base--active;
+    }
 
     &.mw-ui-progressive {
-        .button-styling();
+        color: @button-text-primary;
+        background: @button-bg-progressive;
+        border-color: @button-bg-progressive;
+
+        &:hover {
+            color: @button-text-primary;
+            background: @button-bg-progressive--hover;
+            border-color: @button-bg-progressive--hover;
+        }
+
+        &:active,
+        &:active:focus,
+        .oo-ui-buttonElement-pressed& {
+            color: @button-text-primary;
+            background: @button-bg-progressive--active;
+            border-color: @button-bg-progressive--active;
+        }
     }
+
+    &:disabled,
+    &.mw-ui-progressive:disabled {
+        &,
+        &:hover,
+        &:active {
+            color: @button-text-disabled;
+            background: @button-bg-disabled;
+            border-color: @button-bg-disabled;
+        }
+    }
+}
+
+// ====================
+//      Checkboxes
+// ====================
+.client-js .mw-ui-checkbox:not(#noop) [type='checkbox'] + label:before {
+    background-color: @checkbox-bg-base;
+    border-color: @checkbox-border-base;
+}
+
+.client-js .mw-ui-checkbox:not(#noop) [type='checkbox']:enabled:checked + label:before {
+    background-color: @checkbox-bg-active;
+    border-color: @checkbox-border-active;
 }

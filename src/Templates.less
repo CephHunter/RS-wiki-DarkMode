@@ -61,7 +61,7 @@ blockquote {
 
     &,
     .navbox-subgroup {
-        background-color: @main-page-bg;
+        background-color: @mw-page-bg;
     }
 
     .navbox-list,
@@ -75,7 +75,7 @@ blockquote {
 
     #navbox-title,
     .navbox-footer {
-        border-color: @main-page-bg;
+        border-color: @mw-page-bg;
         color: @navbox-title-text;
         background: @navbox-title-bg;
 
@@ -92,12 +92,16 @@ blockquote {
     }
 }
 
-// ===========================
-//      {{Documentation}}
-// ===========================
+// ================================
+//      Template:Documentation
+// ================================
 .documentation {
     background-color: @documentation-bg;
     color: @theme-text;
+
+    .doc-header {
+        border-bottom-color: @theme-borders;
+    }
 
     a {
         .links();
@@ -128,90 +132,12 @@ blockquote {
     }
 
     div.tabbertab {
-        background-color: lighten(@main-page-bg, 3%);
-    }
-}
-
-// =============================
-//      {{Infobox bonuses}}
-// =============================
-.infobox-bonuses {
-    td {
-        .table-data();
-        background-color: @table-data;
-    }
-
-    th {
-        .table-header();
-    }
-}
-
-// -----------------------
-//      Compare popup
-// -----------------------
-// #modal {
-//     background-color: @main-page-bg;
-//     color: @theme-text;
-
-//     // Add item input field
-//     #cioItem {
-//         .text-input-styling;
-//     }
-
-//     // Stat colors
-//     .cioPos {
-//         color: @positive-change;
-//     }
-
-//     .cioNeg {
-//         color: @negative-change;
-//     }
-
-//     // Totals row
-//     #cioTotals {
-//         background-color: @highlight-table-on;
-//     }
-// }
-
-// .oo-ui-windowManager-modal > .oo-ui-dialog {
-//     background: fade(@main-page-bg, 0.5);
-// }
-
-// .oo-ui-window-body {
-//     background: @popup-bg;
-//     color: @theme-text;
-//     border-color: @theme-borders;
-// }
-
-// =================================
-//      {{Infobox Monster new}}
-// =================================
-.infobox-monster {
-    .offensive-header {
-        background-color: @infobox-monster-offensive-header-bg;
-    }
-
-    .offensive-subheader {
-        color: @infobox-monster-offensive-subheader-text;
-        background-color: @infobox-monster-offensive-subheader-bg;
-    }
-
-    .defensive-header {
-        background-color: @infobox-monster-defensive-header-bg;
-    }
-
-    .defensive-subheader {
-        color: @infobox-monster-defensive-subheader-text;
-        background-color: @infobox-monster-defensive-subheader-bg;
-    }
-
-    .slayer-header {
-        background-color: @infobox-monster-slayer-header-bg;
+        background-color: lighten(@mw-page-bg, 3%);
     }
 }
 
 // ========================
-//      {{References}}
+//      <references />
 // ========================
 // Highlight ref when clicked
 ol.references li:target, 
@@ -263,17 +189,11 @@ td.famtreeleaf {
     }
 }
 
-// =========================
-//      {{Disassembly}}
-// =========================
-#DisassemblyT {
-    tr:first-of-type th:first-of-type {
-        border-top-color: @infobox-background !important;
-    }
-
-    .infobox-header {
-        border-top-color: @infobox-background !important;
-    }
+// ==============================
+//      Template:Disassembly
+// ==============================
+#DisassemblyT .disassembly-border {
+    border-top-color: @infobox-background;
 }
 
 // ========================
@@ -282,4 +202,96 @@ td.famtreeleaf {
 .switch-infobox .switch-infobox-triggers .button,
 .infobox-switch .infobox-buttons .button {
     .button-styling();
+}
+
+// ===============================
+//      Template:Chat options
+// ===============================
+.chat-options {
+    .chat-options-underline {
+        border-bottom-color: @theme-text;
+    }
+
+    + .js-tooltip-click {
+        color: @theme-text !important;
+    }
+}
+
+// ==============================
+//      Template:Coins
+//      Template:Rusty coins
+//      Template:Chimes
+// ==============================
+// default and common styles
+.coins {
+    color: @coins-neutral;
+}
+
+// positive/negative specific colours
+.coins-pos {
+    color: @coins-positive;
+}
+
+.coins-neg {
+    color: @coins-negative;
+}
+
+// =======================
+//      Template:Fact
+// =======================
+.fact-text {
+    color: @fact-text;
+    border-bottom: dotted 1px @fact-text;
+}
+
+// ==========================
+//      Template:Gallery
+// ==========================
+.gifgallery {
+    img {
+        background: @table-data;
+        border-color: @theme-borders;
+    }
+
+    .gallery-image-wrapper {
+        background: none;
+    }
+}
+
+// ================================
+//      Template:Choose Option
+// ================================
+.ChooseOption,
+.OptionWindow {
+    background: @theme-borders;
+}
+
+// ===================================
+//      Template:Menaphite script
+// ===================================
+.menaphite-script {
+    img {
+        filter: invert(0.9);
+    }
+
+    .js-tooltip-click {
+        background-color: @button-bg-base;
+        border-color: @button-bg-base;
+        color: @button-text-base;
+    }
+}
+
+// ==============================
+//      Template:Update list
+// ==============================
+.update-list a {
+    .links(white);
+}
+
+// =====================================
+//      Template:Uses material list
+// =====================================
+.production-selected {
+    background: @uses-material-list-selected;
+    color: @theme-text;
 }

@@ -13,6 +13,7 @@ table.wikipedia {
 .official,
 .forumheader {
     background-color: @messageboxes;
+    border-color: @theme-borders;
 }
 
 .messagebox {
@@ -52,7 +53,15 @@ div.mw-warning-with-logexcerpt {
     box-shadow: none;
 }
 
+// Subsection in editnotice
 #semiprotectedpagewarning {
     border-color: @theme-borders !important;
     background: lighten(@messageboxes, 2%);
+}
+
+// contains MediaWiki:Anoneditwarning
+.warningbox {
+    background: @messageboxes;
+    border-color: @theme-borders;
+    color: @theme-text;
 }

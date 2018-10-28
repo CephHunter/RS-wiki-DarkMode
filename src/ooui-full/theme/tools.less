@@ -1,0 +1,281 @@
+@import 'common';
+
+.theme-oo-ui-toolbar () {
+	&-bar {
+		background-color: @background-color-toolbar;
+		color: @color-base;
+
+		.oo-ui-toolbar-position-top > & {
+			border-bottom: @border-toolbar;
+			box-shadow: @box-shadow-toolbar-top;
+		}
+
+		.oo-ui-toolbar-position-bottom > & {
+			border-top: @border-toolbar;
+			box-shadow: @box-shadow-toolbar-bottom;
+		}
+
+		.oo-ui-toolbar-bar {
+			background-color: transparent;
+			border: 0;
+			box-shadow: none;
+		}
+	}
+
+	&-narrow {
+		&.oo-ui-toolbar-position-top .oo-ui-toolbar-bar:after {
+			border-bottom: @border-toolbar;
+		}
+
+		&.oo-ui-toolbar-position-bottom .oo-ui-toolbar-bar:after {
+			border-top: @border-toolbar;
+		}
+	}
+
+	&-actions {
+		> .oo-ui-buttonElement {
+			&.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive {
+				> .oo-ui-buttonElement-button:focus {
+					box-shadow: @box-shadow-toolbar-action-button--focus;
+				}
+			}
+		}
+
+		> .oo-ui-buttonGroupWidget {
+			> .oo-ui-popupToolGroup.oo-ui-widget-enabled.oo-ui-flaggedElement-primary.oo-ui-flaggedElement-progressive {
+				.mw-framed-primary-button-colored( ~'.oo-ui-popupToolGroup-handle', @color-progressive, @color-progressive--hover, @color-progressive--active, @color-progressive--focus );
+			}
+		}
+
+		> .oo-ui-toolbar:not( :last-child ) {
+			border-right: @border-toolbar;
+		}
+	}
+}
+
+.theme-oo-ui-tool () {
+	&.oo-ui-widget-enabled {
+		.oo-ui-tool-link:focus {
+			outline: @border-width-base @border-style-base @border-color-base--focus;
+			box-shadow: @box-shadow-base--focus;
+		}
+
+		.oo-ui-iconElement-icon {
+			opacity: @opacity-icon-base;
+		}
+
+		&:hover {
+			.oo-ui-iconElement-icon {
+				opacity: @opacity-base;
+			}
+		}
+
+		&[ class*='oo-ui-flaggedElement' ] {
+			.oo-ui-iconElement-icon {
+				opacity: @opacity-base;
+			}
+		}
+	}
+
+	&.oo-ui-widget-disabled .oo-ui-iconElement-icon {
+		opacity: @opacity-tool--disabled;
+	}
+}
+
+.theme-oo-ui-popupTool () {}
+
+.theme-oo-ui-toolGroupTool () {
+	> .oo-ui-toolGroup {
+		border-right: 0;
+	}
+}
+
+.theme-oo-ui-toolGroup () {
+	border-right: @border-toolbar;
+
+	.oo-ui-toolbar-actions & {
+		border-right: 0;
+		border-left: @border-toolbar;
+	}
+
+	&.oo-ui-widget-disabled .oo-ui-indicatorElement-indicator,
+	&.oo-ui-widget-disabled .oo-ui-iconElement-icon {
+		// `!important` necessary until T106914 is resolved
+		opacity: @opacity-tool--disabled !important; // stylelint-disable-line declaration-no-important
+	}
+}
+
+.theme-oo-ui-barToolGroup () {
+	&.oo-ui-widget-enabled {
+		> .oo-ui-toolGroup-tools > .oo-ui-tool:not( .oo-ui-toolGroupTool ) {
+			&.oo-ui-widget-enabled {
+				&:hover {
+					background-color: @background-color-tool--hover;
+				}
+
+				> .oo-ui-tool-link .oo-ui-tool-title {
+					color: @color-base;
+				}
+			}
+
+			&.oo-ui-tool-active {
+				background-color: @background-color-tool--active;
+
+				&:hover {
+					background-color: @background-color-tool--active-hover;
+				}
+
+				> .oo-ui-tool-link .oo-ui-tool-title {
+					color: @color-tool--active;
+				}
+			}
+		}
+	}
+
+	&.oo-ui-widget-enabled .oo-ui-tool.oo-ui-widget-disabled,
+	&.oo-ui-widget-disabled .oo-ui-tool {
+		> .oo-ui-tool-link {
+			.oo-ui-tool-title {
+				color: @color-base--disabled;
+			}
+		}
+	}
+}
+
+.theme-oo-ui-listToolGroup () {
+	.oo-ui-tool {
+		&.oo-ui-widget-enabled {
+			&:hover {
+				background-color: @background-color-tool--hover;
+				color: @color-tool--hover;
+			}
+		}
+
+		&-active {
+			&.oo-ui-widget-enabled {
+				background-color: @background-color-tool--active;
+
+				&:hover {
+					background-color: @background-color-tool--active-hover;
+				}
+
+				.oo-ui-tool-link .oo-ui-tool-title {
+					color: @color-tool--active;
+				}
+			}
+		}
+	}
+
+	&.oo-ui-widget-disabled,
+	.oo-ui-tool.oo-ui-widget-disabled .oo-ui-tool-title {
+		color: @color-base--disabled;
+	}
+}
+
+.theme-oo-ui-menuToolGroup () {
+	.oo-ui-tool {
+		&.oo-ui-widget-enabled {
+			&:hover {
+				background-color: @background-color-tool--active-hover;
+			}
+		}
+
+		&.oo-ui-tool-active {
+			background-color: @background-color-tool--active;
+		}
+	}
+
+	&.oo-ui-widget-disabled,
+	.oo-ui-tool.oo-ui-widget-disabled .oo-ui-tool-title {
+		color: @color-base--disabled;
+	}
+}
+
+.theme-oo-ui-popupToolGroup () {
+	&:not( .oo-ui-labelElement ):not( .oo-ui-iconElement ) .oo-ui-indicatorElement-indicator {
+		// Override earlier fading of the indicator if it's the only thing in the button
+		opacity: @opacity-base;
+	}
+
+	&-header {
+		color: @color-base--subtle;
+	}
+
+	.oo-ui-toolGroup-tools {
+		border: @border-toolbar;
+		background-color: @background-color-toolbar;
+		box-shadow: @box-shadow-menu;
+	}
+
+	.oo-ui-tool-link {
+		.oo-ui-tool-title {
+			color: @color-base;
+		}
+
+		.oo-ui-tool-accel {
+			color: @color-base--subtle;
+		}
+	}
+
+	&.oo-ui-widget-enabled {
+		> .oo-ui-popupToolGroup-handle {
+			&:hover {
+				background-color: @background-color-tool--hover;
+			}
+
+			&:active {
+				background-color: @background-color-tool--active;
+			}
+
+			// We don't generalize this further, as only PopupToolGroup carries them,
+			// all other ToolGroups own Tools, which come with their own icon rules
+			.oo-ui-iconElement-icon,
+			.oo-ui-indicatorElement-indicator {
+				opacity: @opacity-icon-base;
+			}
+
+			&:hover,
+			&:active {
+				.oo-ui-iconElement-icon,
+				.oo-ui-indicatorElement-indicator {
+					opacity: @opacity-icon-base--selected;
+				}
+			}
+
+			&:focus {
+				outline: @border-width-base @border-style-base @border-color-base--focus;
+				box-shadow: @box-shadow-base--focus;
+			}
+		}
+
+		&[ class*='oo-ui-flaggedElement' ] > .oo-ui-popupToolGroup-handle {
+			&,
+			&:hover {
+				.oo-ui-iconElement-icon {
+					opacity: @opacity-icon-base--selected;
+				}
+			}
+		}
+	}
+
+	&.oo-ui-popupToolGroup-active {
+		> .oo-ui-popupToolGroup-handle {
+			background-color: @background-color-tool--active;
+			color: @color-tool--active;
+
+			&:hover {
+				background-color: @background-color-tool--active-hover;
+				color: @color-tool--active;
+			}
+		}
+
+		.oo-ui-tool-active.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title {
+			color: @color-tool--active;
+		}
+	}
+
+	.oo-ui-tool.oo-ui-widget-enabled .oo-ui-tool-link:focus {
+		outline: 0;
+		box-shadow: inset 0 0 0 2px #36c;
+	}
+}

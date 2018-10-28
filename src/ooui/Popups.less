@@ -1,0 +1,74 @@
+// Blackout
+.oo-ui-windowManager-modal > .oo-ui-dialog {
+    background: fade(@popup-blackout-color, @popup-blackout-opacity);
+}
+
+// Popup border
+.oo-ui-windowManager-modal.oo-ui-windowManager-floating > .oo-ui-dialog > .oo-ui-window-frame {
+    border-color: @theme-borders;
+}
+
+// Content
+.oo-ui-window-content {
+    background: @popup-bg;
+    color: @popup-text;
+
+    .oo-ui-window-head {
+        background: @popup-header-bg;
+    }
+
+    .oo-ui-window-body {
+        outline-color: @theme-borders;
+        z-index: 1;
+    }
+
+    .oo-ui-window-foot {
+        background: @popup-footer-bg;
+    }
+
+    .oo-ui-processDialog-errors {
+        background: fade(@popup-bg, 90%);
+        color: @theme-text;
+
+        .oo-ui-processDialog-errors-title {
+            color: @theme-text;
+        }
+    }
+}
+
+//----- Message popup -----//
+// Example when discarding changes
+// message
+
+.oo-ui-messageDialog-title {
+    color: @theme-text;
+}
+.oo-ui-messageDialog-message, {
+    color: @theme-text-subtle;
+}
+
+// Border around button group
+.oo-ui-messageDialog-content > .oo-ui-window-foot {
+    outline-color: @theme-borders;
+}
+
+// Hover over button
+.oo-ui-messageDialog-actions .oo-ui-actionWidget.oo-ui-widget-enabled .oo-ui-buttonElement-button:hover {
+    background: lighten(@popup-bg, 10%);
+}
+
+.oo-ui-messageDialog-actions .oo-ui-actionWidget.oo-ui-widget-enabled.oo-ui-flaggedElement-progressive .oo-ui-buttonElement-button:hover
+
+// Button separator line
+.oo-ui-messageDialog-actions-horizontal .oo-ui-actionWidget {
+    border-color: @theme-borders;
+}
+
+// ----------------------------------
+//      Template data popup only
+// ----------------------------------
+.tdg-templateDataParamWidget-param-alias:first-child {
+    background: @code-tag-bg;
+    border-color: @code-tag-border;
+    color: @theme-text-subtle;
+}

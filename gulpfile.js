@@ -169,6 +169,12 @@ function _alpha() {
         .pipe(gulp.dest('./'));
 }
 
+function _beta() {
+    return gulp.src('package.json')
+        .pipe(bump({type:'prerelease', preid:'beta'}))
+        .pipe(gulp.dest('./'));
+}
+
 /**
  * Export gulp functions
  */
@@ -179,5 +185,6 @@ module.exports = {
     major: gulp.series(_major, gulp.parallel(dev, clean)),
     minor: gulp.series(_minor, gulp.parallel(dev, clean)),
     patch: gulp.series(_patch, gulp.parallel(dev, clean)),
-    alpha: gulp.series(_alpha, gulp.parallel(dev, clean))
+    alpha: gulp.series(_alpha, gulp.parallel(dev, clean)),
+    beta: gulp.series(_beta, gulp.parallel(dev, clean))
 }

@@ -50,7 +50,6 @@ function dev() {
     return gulp.src('./src/darkmode.less')
         .pipe(plumber())
         .pipe(sourcemaps.init())
-        // .pipe(sass().on('error', sass.logError))
         .pipe(less())
         .pipe(postcss([ autoprefixer()/*, safeImportant() */]))
         .pipe(sourcemaps.write())
@@ -68,10 +67,8 @@ function clean() {
 
     const finalCSS = gulp.src('./src/darkmode.less')
         .pipe(plumber())
-        // .pipe(sass().on('error', sass.logError))
         .pipe(less())
         .pipe(postcss([ autoprefixer()/*, safeImportant()*/]))
-        /*.pipe(cleanCSS({level: {2: {all: true}}, format: 'beautify'}))*/
         .pipe(cleanCSS({level: 1, format: 'beautify'}))
         .pipe(lec({eolc: 'LF'}));
 

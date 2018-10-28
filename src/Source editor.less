@@ -124,3 +124,49 @@
 #wpTextbox0 {
     background: @edit-area-bg !important;
 }
+
+// ================
+//      Popups
+// ================
+// Example: search and replace popup
+.mediawiki .ui-dialog {
+    background: @popup-bg;
+    border-color: @theme-borders;
+    color: @theme-text;
+
+    .ui-widget-header {
+        background: @popup-header-bg !important;
+        color: @popup-text;
+        border-color: @theme-borders;
+
+        // Hover over close button 
+        .ui-state-hover {
+            background: @button-bg-base--hover;
+            border-color: @button-bg-base--hover;
+            margin: -11px -1px 0 0;
+        }
+    }
+
+    .ui-icon-closethick {
+        .oo-ui-icon-close() !important;
+    }
+
+    .ui-dialog-content {
+        color: @theme-text;
+    }
+
+    .ui-dialog-buttonpane {
+        background: @popup-footer-bg;
+        border-color: @theme-borders !important;
+    }
+
+    .ui-button {
+        .button-styling("grey") !important;
+    }
+}
+
+// Blackout
+.ui-widget-overlay {
+    background: @popup-blackout-color;
+    opacity: @popup-blackout-opacity;
+}

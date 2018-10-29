@@ -1,79 +1,173 @@
 // Theme variables
 
-// Pull in the main set of variables from the shared UI base
-@import 'wikimedia-ui-base.less';
+// ----------------------------------
+//      wikimedia-ui-base colors
+// ----------------------------------
+// WikimediaUI (WMUI) color palette
+// Don't use those variables directly, instead define your vars
+// referring to them as applied further below
 
-@background-color-base--hover: #eaecf0;
-@background-color-base--read-only: #f8f9fa;
+@wmui-color-base0:    #000;    // = HSB 0°, 0%, 0%
+@wmui-color-base10:   #222;    // = HSB 0°, 0%, 13%
+@wmui-color-base20:   #54595d; // = HSB 207°, 10%, 36%; WCAG 2.0 level AAA 7.09:1 contrast ratio on `#fff`
+@wmui-color-base30:   #72777d; // = HSB 210°, 9%, 49%; WCAG 2.0 level AA at 4.52:1 contrast ratio on `#fff`
+@wmui-color-base50:   #a2a9b1; // = HSB 212°, 8%, 69%
+@wmui-color-base70:   #c8ccd1; // = HSB 213°, 4%, 82%
+@wmui-color-base80:   #eaecf0; // = HSB 220°, 3%, 94%
+@wmui-color-base90:   #f8f9fa; // = HSB 210°, 1%, 98%
+@wmui-color-base100:  #fff;    // = HSB 0°, 0%, 100%
 
-// Primary 'Progressive' and 'Destructive' Colors
-@background-color-progressive: #eaf3ff;
-@background-color-progressive--hover: rgba( 41, 98, 204, 0.1 );
-@color-progressive: #36c; // equals HSB 220°/75%/80%
-@color-progressive--hover: #447ff5; // equals HSB 220°/72%/96%
-@color-progressive--active: #2a4b8d; // equals HSB 220°/70%/55%
+@wmui-color-accent30: #2a4b8d; // = HSB 220°, 70%, 55%
+@wmui-color-accent50: #36c;    // = HSB 220°, 75%, 80%
+@wmui-color-accent90: #eaf3ff; // = HSB 214°, 8%, 100%
+
+@wmui-color-red30:    #b32424; // = HSB 360°, 80%, 70%
+@wmui-color-red50:    #d33;    // = HSB 360°, 77%, 87%
+@wmui-color-red90:    #fee7e6; // = HSB 3°, 9%, 100%
+
+@wmui-color-yellow30: #ac6600; // = HSB 36°, 100%, 67%
+@wmui-color-yellow50: #fc3;    // = HSB 45°, 80%, 100%
+@wmui-color-yellow90: #fef6e7; // = HSB 39°, 9%, 100%
+
+@wmui-color-green30:  #14866d; // = HSB 167°, 85%, 53%
+@wmui-color-green50:  #00af89; // = HSB 167°, 100%, 69%
+@wmui-color-green90:  #d5fdf4; // = HSB 166°, 16%, 99%
+
+// ---------------------------
+//      Foreground Colors
+// ---------------------------
+// Base colors
+@color-base:             		  @wmui-color-base10;
+@color-base--hover:      		  #444;
+@color-base--active:     		  @wmui-color-base0;
+@color-base--inverted:   		  @wmui-color-base100;
+@color-base--emphasized: 		  @wmui-color-base0;
+@color-base--subtle:     		  @wmui-color-base30;
+@color-base--disabled:   		  @wmui-color-base30;
+@color-filled--disabled: 		  @color-base--inverted;
+@color-placeholder:      		  @wmui-color-base30;
+
+// Progressive colors
+@color-progressive:               #36c;                // equals HSB 220°/75%/80%
+@color-progressive--hover:        #447ff5;             // equals HSB 220°/72%/96%
+@color-progressive--active:       #2a4b8d;             // equals HSB 220°/70%/55%
 @color-progressive--active-hover: @color-progressive;
-@color-progressive--focus: @color-progressive;
+@color-progressive--focus:        @color-progressive;
 
-@color-destructive-non-primary: #d73333; // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
+// Destructive colors
+@color-destructive:               @wmui-color-red50;
+@color-destructive--hover:        #ff4242;
+@color-destructive--active:       @wmui-color-red30;
+@color-destructive--focus:        @color-destructive;
+@color-destructive-non-primary:   #d73333;             // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
 
-// Disabled Widgets
-@background-color-base--disabled: #eaecf0;
+// Validation error feedback
+@color-erroneous:                 @wmui-color-red50;
+
+// ---------------------------
+//      Background colors
+// ---------------------------
+@background-color-base:               @wmui-color-base100;
+@background-color-base--hover:        #eaecf0;
+@background-color-base--read-only:    #f8f9fa;
+@background-color-progressive:        #eaf3ff;
+@background-color-progressive--hover: rgba( 41, 98, 204, 0.1 );
+@background-color-destructive:        @wmui-color-red90;
+
+// 'Framed' UI elements (Framed Buttons, Dropdowns, ToggleSwitches...)
+@background-color-framed:             @wmui-color-base90;
+@background-color-framed--hover:      @wmui-color-base100;
+@background-color-framed--active:     @wmui-color-base70;
+
+// Tabs Navigation Background Color
+@background-color-tabs:               @wmui-color-base80;
+
+// --------------------------
+//      Disabled Widgets
+// --------------------------
+@background-color-base--disabled:   #eaecf0;
 @background-color-filled--disabled: #c8ccd1;
-@opacity-filled--disabled: 1;
-@opacity-indicator--disabled: 0.15; // equals `#c7c8cc` on background-color `#fff`
-@opacity-tool--disabled: 0.34; // equals `#a9a9a9` on background-color `#fff`
+@opacity-filled--disabled:          1;
+@opacity-indicator--disabled:       0.15;     // equals `#c7c8cc` on background-color `#fff`
+@opacity-tool--disabled:            0.34;     // equals `#a9a9a9` on background-color `#fff`
 
-// Toolbar, Tools & Menus
-@background-color-toolbar: @background-color-base;
-@background-color-tool--hover: @background-color-base--hover;
-@background-color-tool--active: @background-color-progressive;
+// --------------------------------
+//      Toolbar, Tools & Menus
+// --------------------------------
+@background-color-toolbar:            @background-color-base;
+@background-color-tool--hover:        @background-color-base--hover;
+@background-color-tool--active:       @background-color-progressive;
 @background-color-tool--active-hover: @background-color-progressive--hover;
-@color-tool--hover: @color-base--emphasized; // Used here in combination with `:hover` background-color turning light grey
-@color-tool--active: @color-progressive;
-@border-color-toolbar: #c8ccd1;
+@color-tool--hover:                   @color-base--emphasized;               // Used here in combination with `:hover` background-color turning light grey
+@color-tool--active:                  @color-progressive;
+@border-color-toolbar:                #c8ccd1;
 
-// Binary Input Widgets (CheckboxInput, RadioInput, ToggleSwitch)
-@background-color-input-binary--active: @color-progressive--active;
+// ------------------------------
+//      Binary Input Widgets
+// ------------------------------
+//  (CheckboxInput, RadioInput, ToggleSwitch)
+@background-color-input-binary--active:  @color-progressive--active;
 @background-color-input-binary--checked: @color-progressive;
-@border-color-input-binary: @border-color-base--active;
-@border-color-input-binary--active: @color-progressive--active;
-@border-color-input-binary--checked: @color-progressive;
+@border-color-input-binary:              @border-color-base--active;
+@border-color-input-binary--active:      @color-progressive--active;
+@border-color-input-binary--checked:     @color-progressive;
 
-// Borders
-@border-color-base--focus: @color-progressive--focus;
+// -----------------
+//      Borders
+// -----------------
+@border-color-base:                      @wmui-color-base50;
+@border-color-base--hover:               @wmui-color-base50;
+@border-color-base--active:              @wmui-color-base30;
+@border-color-base--focus:               @color-progressive--focus;
+@border-color-base--disabled:            @wmui-color-base70;
 @border-color-framed-progressive--hover: @color-progressive--hover;
 @border-color-framed-destructive--hover: @color-destructive--hover;
-@border-color-frameless: transparent;
-@border-color-frameless--fallback: @color-base--inverted; // Support IE 6: `transparent` is not rendered correctly
+@border-color-frameless:                 transparent;
+@border-color-frameless--fallback:       @color-base--inverted;       // Support IE 6: `transparent` is not rendered correctly
+@border-color-erroneous:                 @color-erroneous;
+@border-color-input--hover:              @border-color-base--active;
+@border-color-dialog:                    @border-color-base;
+@border-color-dialog-bar:                #c8ccd1;
+@border-color-filled--disabled:          @color-filled--disabled;
+@border-color-menu:                      @border-color-base;
 
-// @border-color-focus-inset: @color-base--inverted;
-@border-color-erroneous: @color-erroneous;
-// @border-color-base--disabled: #c8ccd1;
-@border-color-input--hover: @border-color-base--active;
-@border-color-dialog-bar: #c8ccd1;
-
-// Box shadows
-@box-shadow-toolbar-top: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
-@box-shadow-toolbar-bottom: 0 -1px 1px 0 rgba( 0, 0, 0, 0.1 );
-@box-shadow-widget: inset 0 0 0 1px transparent;
-@box-shadow-widget--focus: inset 0 0 0 1px @color-progressive;
-@box-shadow-progressive--focus: inset 0 0 0 1px @color-progressive, inset 0 0 0 2px @color-base--inverted;
-@box-shadow-frameless-indicator--focus: 0 0 0 2px @color-progressive;
-@box-shadow-action--focus: @box-shadow-widget--focus, 0 0 0 1px @color-progressive;
+// ---------------------
+//      Box shadows
+// ---------------------
+@box-shadow-base--focus:                  inset 0 0 0 1px @wmui-color-accent50;
+@box-shadow-filled--disabled:             inset 0 0 0 1px @color-filled--disabled;
+@box-shadow-dialog:                       0 2px 2px 0 rgba( 0, 0, 0, 0.25 );
+@box-shadow-menu:                         @box-shadow-dialog;
+@box-shadow-toolbar-top:                  0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
+@box-shadow-toolbar-bottom:               0 -1px 1px 0 rgba( 0, 0, 0, 0.1 );
+@box-shadow-widget:                       inset 0 0 0 1px transparent;
+@box-shadow-widget--focus:                inset 0 0 0 1px @color-progressive;
+@box-shadow-progressive--focus:           inset 0 0 0 1px @color-progressive, inset 0 0 0 2px @color-base--inverted;
+@box-shadow-frameless-indicator--focus:   0 0 0 2px @color-progressive;
+@box-shadow-action--focus:                @box-shadow-widget--focus,          0 0 0 1px @color-progressive;
 @box-shadow-toolbar-action-button--focus: inset 0 0 0 2px @color-progressive, inset 0 0 0 3px @color-base--inverted;
-// @box-shadow-popuptoolgroup-tool--focus: inset 0 0 0 2px @color-progressive--focus;
-@box-shadow-input-binary: 0 0 0 1px rgba( 0, 0, 0, 0.1 );
-@box-shadow-input-binary--active: inset 0 0 0 1px @color-progressive--active;
-@box-shadow-erroneous--focus: inset 0 0 0 1px @color-erroneous;
+@box-shadow-input-binary:                 0 0 0 1px rgba( 0, 0, 0, 0.1 );
+@box-shadow-input-binary--active:         inset 0 0 0 1px @color-progressive--active;
+@box-shadow-erroneous--focus:             inset 0 0 0 1px @color-erroneous;
 
+// ----------------------
+//      Text Shadows
+// ----------------------
+@text-shadow-base:           0 1px 1px @color-base--inverted;  // 'coined' effect
+@text-shadow-base--disabled: @text-shadow-base;
 
-// Text Shadows
-@text-shadow-base:            0 1px 1px @color-base--inverted; // 'coined' effect
-@text-shadow-base--disabled:  @text-shadow-base;
+// -----------------
+//      Opacity
+// -----------------
+@opacity-base:                1;
+@opacity-base--disabled:      0.51;  // = `#7d7d7d` on `background-color: #fff`; HSB 0°, 0%, 49%
+@opacity-icon-base:           0.87;  // = `#222` on `background-color: #fff`
+@opacity-icon-base--hover:    0.73;  // = `#454545` on `background-color: #fff`, closest to `#444`
+@opacity-icon-base--selected: 1;
 
-
-// Theme mixins
+// ----------------------
+//      Theme mixins
+// ----------------------
 .mw-frameless-button-colored( @child, @link, @hover, @active, @focus ) { // following CSS Pseudo Classes
 	> @{child} {
 		color: @link;

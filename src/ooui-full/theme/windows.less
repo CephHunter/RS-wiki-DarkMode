@@ -9,7 +9,7 @@
 
 .theme-oo-ui-messageDialog () {
 	&-content > .oo-ui-window-foot {
-		outline: @border-dialog; // Using `@border-dialog` here as `outline` is `border` subsitute
+		outline-color: @border-color-dialog; // Using `@border-color-dialog` here as `outline` is `border` subsitute
 	}
 
 	&-title {
@@ -23,13 +23,13 @@
 	&-actions {
 		&-horizontal {
 			.oo-ui-actionWidget {
-				border-right: @border-base;
+				border-right-color: @border-color-base;
 			}
 		}
 
 		&-vertical {
 			.oo-ui-actionWidget {
-				border-bottom: @border-base;
+				border-bottom-color: @border-color-base;
 			}
 		}
 
@@ -82,7 +82,7 @@
 .theme-oo-ui-processDialog () {
 	&-content {
 		.oo-ui-window-body {
-			outline: @border-dialog-bar; // Using `@border-dialog-bar` here as `outline` is `border` subsitute
+			outline-color: @border-color-dialog-bar; // Using `@border-color-dialog-bar` here as `outline` is `border` subsitute
 		}
 	}
 
@@ -133,7 +133,7 @@
 	}
 
 	&-error {
-		border: @border-width-base solid @border-color-erroneous;
+		border-color: @border-color-erroneous;
 		background-color: #fff7f7;
 	}
 }
@@ -162,7 +162,7 @@
 	}
 
 	&-modal&-floating > .oo-ui-dialog > .oo-ui-window-frame {
-		border: @border-dialog;
+		border-color: @border-color-dialog;
 		box-shadow: @box-shadow-dialog;
 	}
 }

@@ -34,10 +34,6 @@
 .theme-oo-ui-buttonOptionWidget () {}
 
 .theme-oo-ui-buttonSelectWidget () {
-	&:focus {
-		outline: 0;
-	}
-
 	.oo-ui-buttonOptionWidget {
 		&.oo-ui-widget-disabled + .oo-ui-widget-disabled {
 			> .oo-ui-buttonElement-button {
@@ -59,7 +55,7 @@
 }
 
 .theme-oo-ui-capsuleItemWidget () {
-	border: @border-base;
+	border-color: @border-color-base;
 
 	&.oo-ui-widget-enabled {
 		background-color: @background-color-framed;
@@ -74,7 +70,6 @@
 		&:focus {
 			border-color: @border-color-base--focus;
 			box-shadow: @box-shadow-widget--focus;
-			outline: 0;
 		}
 	}
 
@@ -88,26 +83,15 @@
 
 .theme-oo-ui-capsuleMultiselectWidget () {
 	&-handle {
-		border: @border-base;
+		border-color: @border-color-base;
 
 		> .oo-ui-capsuleMultiselectWidget-content {
 			> input {
 				background-color: transparent;
 				color: @color-base--emphasized;
-				border: 0;
 
 				.mw-placeholder();
-
-				&:focus {
-					outline: 0; // Support: Chrome
-				}
 			}
-		}
-	}
-
-	&-popup {
-		> .oo-ui-popupWidget-popup {
-			border: 0;
 		}
 	}
 
@@ -119,7 +103,6 @@
 	}
 	&.oo-ui-widget-enabled.oo-ui-capsuleMultiselectWidget-open &-handle {
 		border-color: @border-color-base--focus;
-		outline: 0;
 		box-shadow: @box-shadow-widget--focus;
 	}
 
@@ -144,15 +127,7 @@
 	[ type='checkbox' ] {
 		& + span {
 			background-color: @background-color-base;
-			border: @border-input-binary;
-		}
-
-		&:checked {
-			& + span {
-				// This must have two values to match `background-size: 0 0` above,
-				// otherwise the transition does not work (at least in Chrome).
-				background-size: @size-icon-checkmark @size-icon-checkmark;
-			}
+			border-color: @border-color-input-binary;
 		}
 
 		&:disabled {
@@ -241,7 +216,7 @@
 
 .theme-oo-ui-dropdownWidget () {
 	&-handle {
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	&.oo-ui-widget-enabled &-handle {
@@ -266,7 +241,6 @@
 
 		&:focus {
 			border-color: @border-color-base--focus;
-			outline: 0;
 			box-shadow: @box-shadow-widget--focus;
 		}
 
@@ -291,10 +265,6 @@
 		border-color: @border-color-base--disabled;
 		background-color: @background-color-base--disabled;
 
-		&:focus {
-			outline: 0;
-		}
-
 		.oo-ui-indicatorElement-indicator {
 			opacity: @opacity-indicator--disabled;
 		}
@@ -303,7 +273,7 @@
 
 .theme-oo-ui-dropdownInputWidget () {
 	select {
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	&.oo-ui-widget-enabled {
@@ -324,7 +294,6 @@
 
 			&:focus {
 				border-color: @border-color-base--focus;
-				outline: 0;
 				box-shadow: @box-shadow-widget--focus;
 			}
 		}
@@ -379,7 +348,7 @@
 
 .theme-oo-ui-menuSelectWidget () {
 	background-color: @background-color-base;
-	border: @border-menu;
+	border-color: @border-color-menu;
 	box-shadow: @box-shadow-menu;
 }
 
@@ -452,8 +421,7 @@
 .theme-oo-ui-popupWidget () {
 	&-popup {
 		background-color: @background-color-base;
-		border: @border-menu;
-		border-radius: @border-radius-base;
+		border-color: @border-color-menu;
 		box-shadow: @box-shadow-menu;
 	}
 
@@ -510,7 +478,7 @@
 
 .theme-oo-ui-progressBarWidget () {
 	background-color: @background-color-base;
-	border: @border-base;
+	border-color: @border-color-base;
 
 	&.oo-ui-widget-enabled {
 		.oo-ui-progressBarWidget-bar {
@@ -529,7 +497,7 @@
 	[ type='radio' ] {
 		& + span {
 			background-color: @background-color-base;
-			border: @border-input-binary;
+			border-color: @border-color-input-binary;
 		}
 
 		&:disabled {
@@ -586,8 +554,6 @@
 
 .theme-oo-ui-radioSelectWidget () {
 	&:focus {
-		outline: 0;
-
 		[ type='radio' ]:checked + span:before {
 			border-color: @background-color-base;
 		}
@@ -598,7 +564,7 @@
 
 .theme-oo-ui-searchWidget () {
 	&-query {
-		border-bottom: @border-toolbar;
+		border-bottom-color: @border-color-toolbar;
 		box-shadow: @box-shadow-toolbar-top;
 	}
 }
@@ -608,8 +574,7 @@
 .theme-oo-ui-selectFileWidget () {
 	&-info {
 		background-color: @background-color-base;
-		border: @border-base;
-		border-right-width: 0;
+		border-color: @border-color-base;
 	}
 
 	&-empty {
@@ -620,7 +585,7 @@
 
 	&-dropTarget {
 		background-color: @background-color-base;
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	&-empty.oo-ui-widget-enabled {
@@ -706,7 +671,7 @@
 }
 
 .theme-oo-ui-tagItemWidget () {
-	border: @border-base;
+	border-color: @border-color-base;
 
 	&.oo-ui-widget-enabled {
 		background-color: @background-color-framed;
@@ -721,7 +686,6 @@
 		&:focus {
 			border-color: @border-color-base--focus;
 			box-shadow: @box-shadow-widget--focus;
-			outline: 0;
 		}
 
 		&.oo-ui-flaggedElement-invalid {
@@ -743,28 +707,19 @@
 		color: @color-base--disabled;
 		border-color: @border-color-base--disabled;
 		text-shadow: @text-shadow-base--disabled;
-
-		&:focus {
-			outline: 0;
-		}
 	}
 }
 
 .theme-oo-ui-tagMultiselectWidget () {
 	&-handle {
-		border: @border-base;
+		border-color: @border-color-base;
 
 		> .oo-ui-tagMultiselectWidget-content {
 			> input {
 				background-color: transparent;
 				color: @color-base--emphasized;
-				border: 0;
 
 				.mw-placeholder();
-
-				&:focus {
-					outline: 0; // Support: Chrome
-				}
 			}
 		}
 	}
@@ -781,7 +736,6 @@
 
 			&.oo-ui-tagMultiselectWidget-focus .oo-ui-tagMultiselectWidget-handle {
 				border-color: @border-color-base--focus;
-				outline: 0;
 				box-shadow: @box-shadow-widget--focus;
 			}
 		}
@@ -789,7 +743,6 @@
 		&.oo-ui-tagMultiselectWidget-outlined {
 			.oo-ui-tagMultiselectWidget-handle {
 				background-color: @background-color-base--read-only;
-				border-bottom: 0;
 			}
 
 			.oo-ui-tagItemWidget.oo-ui-widget-enabled {
@@ -819,7 +772,7 @@
 	textarea {
 		background-color: @background-color-base;
 		color: @color-base--emphasized;
-		border: @border-base;
+		border-color: @border-color-base;
 	}
 
 	.oo-ui-pendingElement-pending {
@@ -834,7 +787,6 @@
 			.mw-placeholder();
 
 			&:focus {
-				outline: 0;
 				border-color: @border-color-base--focus;
 				box-shadow: @box-shadow-widget--focus;
 			}
@@ -861,7 +813,7 @@
 		// doesn't understand `outline-offset`. All other browsers do. :/
 		@media screen and ( min-width: 0 ) {
 			textarea:focus {
-				outline: 1px solid @color-progressive;
+				outline-color: @color-progressive;
 			}
 		}
 
@@ -914,12 +866,12 @@
 
 .theme-oo-ui-toggleSwitchWidget () {
 	background-color: @background-color-framed;
-	border: @border-input-binary;
+	border-color: @border-color-input-binary;
 
 	&.oo-ui-widget-enabled {
 		.oo-ui-toggleSwitchWidget-grip {
 			background-color: @background-color-framed;
-			border: @border-input-binary;
+			border-color: @border-color-input-binary;
 		}
 
 		&:hover {
@@ -947,7 +899,6 @@
 		&:focus {
 			border-color: @color-progressive;
 			box-shadow: @box-shadow-widget--focus;
-			outline: 0;
 
 			.oo-ui-toggleSwitchWidget-grip {
 				border-color: @color-progressive;
@@ -986,10 +937,9 @@
 	&.oo-ui-widget-disabled {
 		background-color: @background-color-filled--disabled;
 		border-color: @border-color-base--disabled;
-		outline: 0; // Chrome when element has `tabindex` attribute
 
 		&.oo-ui-toggleWidget-off .oo-ui-toggleSwitchWidget-grip {
-			border: @border-filled--disabled;
+			border-color: @border-color-filled--disabled;
 			box-shadow: @box-shadow-filled--disabled;
 		}
 

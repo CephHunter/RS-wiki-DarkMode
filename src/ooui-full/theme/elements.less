@@ -4,214 +4,214 @@
 
 .theme-oo-ui-buttonElement () {
 
-	&.oo-ui-widget-enabled {
-		> .oo-ui-buttonElement-button {
-			> .oo-ui-iconElement-icon,
-			> .oo-ui-indicatorElement-indicator {
-				opacity: @opacity-icon-base;
+    &.oo-ui-widget-enabled {
+        > .oo-ui-buttonElement-button {
+            > .oo-ui-iconElement-icon,
+            > .oo-ui-indicatorElement-indicator {
+                opacity: @opacity-icon-base;
 
-				&.oo-ui-image-invert {
-					opacity: @opacity-icon-base--selected;
-				}
-			}
+                &.oo-ui-image-invert {
+                    opacity: @opacity-icon-base--selected;
+                }
+            }
 
-			&:hover {
-				> .oo-ui-iconElement-icon,
-				> .oo-ui-indicatorElement-indicator {
-					opacity: @opacity-icon-base--hover;
+            &:hover {
+                > .oo-ui-iconElement-icon,
+                > .oo-ui-indicatorElement-indicator {
+                    opacity: @opacity-icon-base--hover;
 
-					&.oo-ui-image-invert {
-						opacity: @opacity-icon-base--selected;
-					}
-				}
-			}
-		}
+                    &.oo-ui-image-invert {
+                        opacity: @opacity-icon-base--selected;
+                    }
+                }
+            }
+        }
 
-		&.oo-ui-buttonElement-pressed {
-			> .oo-ui-buttonElement-button {
-				> .oo-ui-iconElement-icon,
-				> .oo-ui-indicatorElement-indicator {
-					opacity: @opacity-icon-base--selected;
-				}
-			}
-		}
-	}
+        &.oo-ui-buttonElement-pressed {
+            > .oo-ui-buttonElement-button {
+                > .oo-ui-iconElement-icon,
+                > .oo-ui-indicatorElement-indicator {
+                    opacity: @opacity-icon-base--selected;
+                }
+            }
+        }
+    }
 
-	&-frameless {
-		// Icon (-only) frameless
-		&.oo-ui-iconElement {
-			> .oo-ui-buttonElement-button {
-				border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
-				border-color: @border-color-frameless;
-			}
-		}
+    &-frameless {
+        // Icon (-only) frameless
+        &.oo-ui-iconElement {
+            > .oo-ui-buttonElement-button {
+                border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
+                border-color: @border-color-frameless;
+            }
+        }
 
-		&.oo-ui-labelElement {
-			> .oo-ui-buttonElement-button {
-				border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
-				border-color: @border-color-frameless;
-			}
-		}
+        &.oo-ui-labelElement {
+            > .oo-ui-buttonElement-button {
+                border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
+                border-color: @border-color-frameless;
+            }
+        }
 
-		&.oo-ui-widget-enabled {
-			> .oo-ui-buttonElement-button {
-				color: @color-base;
+        &.oo-ui-widget-enabled {
+            > .oo-ui-buttonElement-button {
+                color: @color-base;
 
-				&:hover {
-					color: @color-base--hover;
-				}
-			}
+                &:hover {
+                    color: @color-base--hover;
+                }
+            }
 
-			&.oo-ui-iconElement,
-			&.oo-ui-labelElement {
-				> .oo-ui-buttonElement-button:focus {
-					border-color: @border-color-base--focus;
-					box-shadow: @box-shadow-widget--focus;
+            &.oo-ui-iconElement,
+            &.oo-ui-labelElement {
+                > .oo-ui-buttonElement-button:focus {
+                    border-color: @border-color-base--focus;
+                    box-shadow: @box-shadow-widget--focus;
 
-					&:active {
-						border-color: @border-color-frameless--fallback;
-						border-color: @border-color-frameless;
-						box-shadow: none;
-					}
-				}
-			}
+                    &:active {
+                        border-color: @border-color-frameless--fallback;
+                        border-color: @border-color-frameless;
+                        box-shadow: none;
+                    }
+                }
+            }
 
-			&.oo-ui-indicatorElement:not( .oo-ui-iconElement ):not( .oo-ui-labelElement ) { // IE 9+ only on non-critical design properties
-				> .oo-ui-buttonElement-button {
-					&:focus {
-						box-shadow: @box-shadow-frameless-indicator--focus;
+            &.oo-ui-indicatorElement:not( .oo-ui-iconElement ):not( .oo-ui-labelElement ) { // IE 9+ only on non-critical design properties
+                > .oo-ui-buttonElement-button {
+                    &:focus {
+                        box-shadow: @box-shadow-frameless-indicator--focus;
 
-						&:active {
-							box-shadow: none;
-						}
-					}
-				}
-			}
+                        &:active {
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
 
-			&.oo-ui-buttonElement-pressed > input.oo-ui-buttonElement-button,
-			& > .oo-ui-buttonElement-button:active {
-				color: @color-base--active;
-				border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
-				border-color: @border-color-frameless;
-				box-shadow: none;
-			}
+            &.oo-ui-buttonElement-pressed > input.oo-ui-buttonElement-button,
+            & > .oo-ui-buttonElement-button:active {
+                color: @color-base--active;
+                border-color: @border-color-frameless--fallback; // Support IE 6: `transparent` is not rendered correctly
+                border-color: @border-color-frameless;
+                box-shadow: none;
+            }
 
-			&.oo-ui-flaggedElement {
-				&-progressive {
-					.mw-frameless-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @color-progressive--hover, @color-progressive--active, @color-progressive--focus );
-				}
+            &.oo-ui-flaggedElement {
+                &-progressive {
+                    .mw-frameless-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @color-progressive--hover, @color-progressive--active, @color-progressive--focus );
+                }
 
-				&-destructive {
-					.mw-frameless-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive, @color-destructive--hover, @color-destructive--active, @color-destructive--focus );
-				}
-			}
+                &-destructive {
+                    .mw-frameless-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive, @color-destructive--hover, @color-destructive--active, @color-destructive--focus );
+                }
+            }
 
-			&[ class*='oo-ui-flaggedElement' ] {
-				> .oo-ui-buttonElement-button {
-					> .oo-ui-iconElement-icon,
-					> .oo-ui-indicatorElement-indicator {
-						opacity: @opacity-icon-base--selected;
-					}
-				}
+            &[ class*='oo-ui-flaggedElement' ] {
+                > .oo-ui-buttonElement-button {
+                    > .oo-ui-iconElement-icon,
+                    > .oo-ui-indicatorElement-indicator {
+                        opacity: @opacity-icon-base--selected;
+                    }
+                }
 
-				> .oo-ui-buttonElement-button:hover {
-					> .oo-ui-iconElement-icon,
-					> .oo-ui-indicatorElement-indicator {
-						opacity: @opacity-icon-base--hover;
-					}
-				}
-			}
-		}
+                > .oo-ui-buttonElement-button:hover {
+                    > .oo-ui-iconElement-icon,
+                    > .oo-ui-indicatorElement-indicator {
+                        opacity: @opacity-icon-base--hover;
+                    }
+                }
+            }
+        }
 
-		&.oo-ui-widget-disabled {
-			> .oo-ui-buttonElement-button {
-				color: @color-base--disabled;
+        &.oo-ui-widget-disabled {
+            > .oo-ui-buttonElement-button {
+                color: @color-base--disabled;
 
-				> .oo-ui-iconElement-icon,
-				> .oo-ui-indicatorElement-indicator {
-					opacity: @opacity-base--disabled;
-				}
-			}
-		}
-	}
+                > .oo-ui-iconElement-icon,
+                > .oo-ui-indicatorElement-indicator {
+                    opacity: @opacity-base--disabled;
+                }
+            }
+        }
+    }
 
-	&-framed {
-		&.oo-ui-widget-disabled {
-			> .oo-ui-buttonElement-button {
-				background-color: @background-color-filled--disabled;
-				color: @color-filled--disabled;
-				border-color: @border-color-base--disabled;
-			}
-		}
+    &-framed {
+        &.oo-ui-widget-disabled {
+            > .oo-ui-buttonElement-button {
+                background-color: @background-color-filled--disabled;
+                color: @color-filled--disabled;
+                border-color: @border-color-base--disabled;
+            }
+        }
 
-		&.oo-ui-widget-enabled {
-			> .oo-ui-buttonElement-button {
-				background-color: @background-color-framed;
-				color: @color-base;
-				border-color: @border-color-base;
+        &.oo-ui-widget-enabled {
+            > .oo-ui-buttonElement-button {
+                background-color: @background-color-framed;
+                color: @color-base;
+                border-color: @border-color-base;
 
-				&:hover {
-					background-color: @background-color-framed--hover;
-					color: @color-base--hover;
-					border-color: @border-color-base--hover;
-				}
+                &:hover {
+                    background-color: @background-color-framed--hover;
+                    color: @color-base--hover;
+                    border-color: @border-color-base--hover;
+                }
 
-				&:focus {
-					border-color: @border-color-base--focus;
-					box-shadow: @box-shadow-widget--focus;
-				}
-			}
+                &:focus {
+                    border-color: @border-color-base--focus;
+                    box-shadow: @box-shadow-widget--focus;
+                }
+            }
 
-			> .oo-ui-buttonElement-button:active,
-			> .oo-ui-buttonElement-button:active:focus,
-			&.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
-				background-color: @background-color-framed--active;
-				color: @color-base--active;
-				border-color: @border-color-base--active;
-				box-shadow: none;
-			}
+            > .oo-ui-buttonElement-button:active,
+            > .oo-ui-buttonElement-button:active:focus,
+            &.oo-ui-buttonElement-pressed > .oo-ui-buttonElement-button {
+                background-color: @background-color-framed--active;
+                color: @color-base--active;
+                border-color: @border-color-base--active;
+                box-shadow: none;
+            }
 
-			&.oo-ui-buttonElement-active > .oo-ui-buttonElement-button {
-				background-color: @color-progressive--active;
-				color: @color-base--inverted;
-				border-color: @border-color-input-binary--active;
+            &.oo-ui-buttonElement-active > .oo-ui-buttonElement-button {
+                background-color: @color-progressive--active;
+                color: @color-base--inverted;
+                border-color: @border-color-input-binary--active;
 
-				&:focus {
-					border-color: @color-progressive--focus;
-					box-shadow: @box-shadow-progressive--focus;
-				}
-			}
+                &:focus {
+                    border-color: @color-progressive--focus;
+                    box-shadow: @box-shadow-progressive--focus;
+                }
+            }
 
-			&.oo-ui-flaggedElement {
-				&-progressive {
-					.mw-framed-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @background-color-framed--hover, @border-color-framed-progressive--hover, @color-progressive--active, @color-progressive--focus );
-				}
+            &.oo-ui-flaggedElement {
+                &-progressive {
+                    .mw-framed-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @background-color-framed--hover, @border-color-framed-progressive--hover, @color-progressive--active, @color-progressive--focus );
+                }
 
-				&-destructive {
-					.mw-framed-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive-non-primary, @background-color-framed--hover, @border-color-framed-destructive--hover, @color-destructive--active, @color-destructive--focus );
-				}
-			}
+                &-destructive {
+                    .mw-framed-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive-non-primary, @background-color-framed--hover, @border-color-framed-destructive--hover, @color-destructive--active, @color-destructive--focus );
+                }
+            }
 
-			&.oo-ui-flaggedElement-primary {
-				&.oo-ui-flaggedElement {
-					&-progressive {
-						.mw-framed-primary-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @color-progressive--hover, @color-progressive--active, @color-progressive--focus );
-					}
+            &.oo-ui-flaggedElement-primary {
+                &.oo-ui-flaggedElement {
+                    &-progressive {
+                        .mw-framed-primary-button-colored( ~'.oo-ui-buttonElement-button', @color-progressive, @color-progressive--hover, @color-progressive--active, @color-progressive--focus );
+                    }
 
-					&-destructive {
-						.mw-framed-primary-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive, @color-destructive--hover, @color-destructive--active, @color-destructive--focus );
-					}
-				}
+                    &-destructive {
+                        .mw-framed-primary-button-colored( ~'.oo-ui-buttonElement-button', @color-destructive, @color-destructive--hover, @color-destructive--active, @color-destructive--focus );
+                    }
+                }
 
-				> .oo-ui-buttonElement-button {
-					> .oo-ui-iconElement-icon,
-					> .oo-ui-indicatorElement-indicator {
-						opacity: @opacity-icon-base--selected;
-					}
-				}
-			}
-		}
-	}
+                > .oo-ui-buttonElement-button {
+                    > .oo-ui-iconElement-icon,
+                    > .oo-ui-indicatorElement-indicator {
+                        opacity: @opacity-icon-base--selected;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .theme-oo-ui-clippableElement () {}
@@ -235,9 +235,9 @@
 .theme-oo-ui-lookupElement () {}
 
 .theme-oo-ui-pendingElement () {
-	// &-pending {
-	// 	.oo-ui-background-image( '@{ooui-default-image-path}/textures/pending.gif' );
-	// }
+    // &-pending {
+    //     .oo-ui-background-image( '@{ooui-default-image-path}/textures/pending.gif' );
+    // }
 }
 
 .theme-oo-ui-popupElement () {}

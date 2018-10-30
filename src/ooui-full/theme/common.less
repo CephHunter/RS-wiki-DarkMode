@@ -37,15 +37,15 @@
 //      Foreground Colors
 // ---------------------------
 // Base colors
-@color-base:             		  @wmui-color-base10;
-@color-base--hover:      		  #444;
-@color-base--active:     		  @wmui-color-base0;
-@color-base--inverted:   		  @wmui-color-base100;
-@color-base--emphasized: 		  @wmui-color-base0;
-@color-base--subtle:     		  @wmui-color-base30;
-@color-base--disabled:   		  @wmui-color-base30;
-@color-filled--disabled: 		  @color-base--inverted;
-@color-placeholder:      		  @wmui-color-base30;
+@color-base:                      @wmui-color-base10;
+@color-base--hover:               #444;
+@color-base--active:              @wmui-color-base0;
+@color-base--inverted:            @wmui-color-base100;
+@color-base--emphasized:          @wmui-color-base0;
+@color-base--subtle:              @wmui-color-base30;
+@color-base--disabled:            @wmui-color-base30;
+@color-filled--disabled:          @color-base--inverted;
+@color-placeholder:               @wmui-color-base30;
 
 // Progressive colors
 @color-progressive:               #36c;                // equals HSB 220°/75%/80%
@@ -169,74 +169,74 @@
 //      Theme mixins
 // ----------------------
 .mw-frameless-button-colored( @child, @link, @hover, @active, @focus ) { // following CSS Pseudo Classes
-	> @{child} {
-		color: @link;
-	}
+    > @{child} {
+        color: @link;
+    }
 
-	> @{child}:hover {
-		color: @hover;
-	}
+    > @{child}:hover {
+        color: @hover;
+    }
 
-	> @{child}:active,
-	> @{child}:active:focus,
-	&.oo-ui-buttonElement-pressed > @{child} {
-		color: @active;
-		box-shadow: none;
-	}
+    > @{child}:active,
+    > @{child}:active:focus,
+    &.oo-ui-buttonElement-pressed > @{child} {
+        color: @active;
+        box-shadow: none;
+    }
 }
 
 .mw-framed-button-colored( @child, @link, @hover, @border-color--hover, @active, @focus ) {
-	> @{child} {
-		color: @link;
-	}
+    > @{child} {
+        color: @link;
+    }
 
-	> @{child}:hover {
-		background-color: @hover;
-		border-color: @border-color--hover;
-	}
+    > @{child}:hover {
+        background-color: @hover;
+        border-color: @border-color--hover;
+    }
 
-	> @{child}:active,
-	> @{child}:active:focus,
-	&.oo-ui-buttonElement-pressed > @{child},
-	&.oo-ui-buttonElement-active > @{child},
-	&.oo-ui-popupToolGroup-active > @{child} {
-		background-color: lighten( @active, 60% );
-		color: @active;
-		border-color: @active;
-		box-shadow: none;
-	}
+    > @{child}:active,
+    > @{child}:active:focus,
+    &.oo-ui-buttonElement-pressed > @{child},
+    &.oo-ui-buttonElement-active > @{child},
+    &.oo-ui-popupToolGroup-active > @{child} {
+        background-color: lighten( @active, 60% );
+        color: @active;
+        border-color: @active;
+        box-shadow: none;
+    }
 
-	> @{child}:focus {
-		border-color: @focus;
-		box-shadow: inset 0 0 0 1px @focus;
-	}
+    > @{child}:focus {
+        border-color: @focus;
+        box-shadow: inset 0 0 0 1px @focus;
+    }
 }
 
 .mw-framed-primary-button-colored( @child, @link, @hover, @active, @focus ) {
-	> @{child} {
-		color: @color-base--inverted;
-		background-color: @link;
-		border-color: @link;
-	}
+    > @{child} {
+        color: @color-base--inverted;
+        background-color: @link;
+        border-color: @link;
+    }
 
-	> @{child}:hover {
-		background-color: @hover;
-		border-color: @hover;
-	}
+    > @{child}:hover {
+        background-color: @hover;
+        border-color: @hover;
+    }
 
-	> @{child}:active,
-	> @{child}:active:focus,
-	&.oo-ui-buttonElement-pressed > @{child},
-	&.oo-ui-buttonElement-active > @{child},
-	&.oo-ui-popupToolGroup-active > @{child} {
-		color: @color-base--inverted;
-		background-color: @active;
-		border-color: @active;
-		box-shadow: none;
-	}
+    > @{child}:active,
+    > @{child}:active:focus,
+    &.oo-ui-buttonElement-pressed > @{child},
+    &.oo-ui-buttonElement-active > @{child},
+    &.oo-ui-popupToolGroup-active > @{child} {
+        color: @color-base--inverted;
+        background-color: @active;
+        border-color: @active;
+        box-shadow: none;
+    }
 
-	> @{child}:focus {
-		border-color: @focus;
-		box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
-	}
+    > @{child}:focus {
+        border-color: @focus;
+        box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
+    }
 }

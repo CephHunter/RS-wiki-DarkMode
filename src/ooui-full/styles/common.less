@@ -12,24 +12,24 @@
 // Mixins
 
 // .oo-ui-background-image( @url ) {
-// 	background-image: e( '/* @embed */' ) url( ~'@{url}' ); // stylelint-disable-line function-url-quotes
+//     background-image: e( '/* @embed */' ) url( ~'@{url}' ); // stylelint-disable-line function-url-quotes
 // }
 
 // .oo-ui-background-image-svg-internal( @svg, @fallback ) when ( @ooui-distribution = mixed ) {
-// 	background-image: url( @fallback );
-// 	background-image: linear-gradient( transparent, transparent ), e( '/* @embed */' ) url( @svg );
+//     background-image: url( @fallback );
+//     background-image: linear-gradient( transparent, transparent ), e( '/* @embed */' ) url( @svg );
 // }
 // .oo-ui-background-image-svg-internal( @svg, @fallback ) when ( @ooui-distribution = vector ) {
-// 	.oo-ui-background-image( @svg );
+//     .oo-ui-background-image( @svg );
 // }
 // .oo-ui-background-image-svg-internal( @svg, @fallback ) when ( @ooui-distribution = raster ) {
-// 	.oo-ui-background-image( @fallback );
+//     .oo-ui-background-image( @fallback );
 // }
 
 // .oo-ui-background-image-svg( @url-without-extension ) {
-// 	@svg: '@{url-without-extension}.svg';
-// 	@fallback: '@{url-without-extension}.@{ooui-default-image-ext}';
-// 	.oo-ui-background-image-svg-internal( @svg, @fallback );
+//     @svg: '@{url-without-extension}.svg';
+//     @fallback: '@{url-without-extension}.@{ooui-default-image-ext}';
+//     .oo-ui-background-image-svg-internal( @svg, @fallback );
 // }
 
 // Support Webkit/Blink: Force element on own GPU composite layer
@@ -37,35 +37,35 @@
 // in connection with CSS animations or tame `opacity` bug. Use sparely & wisely!
 // See T154460 & T182257
 // .oo-ui-force-gpu-composite-layer() {
-// 	-webkit-transform: translateZ( 0 );
-// 	transform: translateZ( 0 );
+//     -webkit-transform: translateZ( 0 );
+//     transform: translateZ( 0 );
 // }
 
 // .oo-ui-animation( @value1, @value2: X, ... ) {
-// 	// @value: ~`"@{arguments}".replace( /[\[\]]|\,\sX/g, '' )`; // stylelint-disable-line function-comma-space-after, function-whitespace-after, string-quotes, value-keyword-case
-// 	// -webkit-animation: @value;
-// 	// -moz-animation: @value;
-// 	// animation: @value;
+//     // @value: ~`"@{arguments}".replace( /[\[\]]|\,\sX/g, '' )`; // stylelint-disable-line function-comma-space-after, function-whitespace-after, string-quotes, value-keyword-case
+//     // -webkit-animation: @value;
+//     // -moz-animation: @value;
+//     // animation: @value;
 // }
 
 // .oo-ui-transition( @value1, @value2: X, ... ) {
-// 	// @value: ~`"@{arguments}".replace( /[\[\]]|\,\sX/g, '' )`; // stylelint-disable-line function-comma-space-after, function-whitespace-after, string-quotes, value-keyword-case
-// 	// -webkit-transition: @value;
-// 	// -moz-transition: @value;
-// 	// transition: @value;
+//     // @value: ~`"@{arguments}".replace( /[\[\]]|\,\sX/g, '' )`; // stylelint-disable-line function-comma-space-after, function-whitespace-after, string-quotes, value-keyword-case
+//     // -webkit-transition: @value;
+//     // -moz-transition: @value;
+//     // transition: @value;
 // }
 
 // .oo-ui-transform( @string ) {
-// 	-webkit-transform: @string;
-// 	-moz-transform: @string;
-// 	-ms-transform: @string; // IE 9 only
-// 	transform: @string;
+//     -webkit-transform: @string;
+//     -moz-transform: @string;
+//     -ms-transform: @string; // IE 9 only
+//     transform: @string;
 // }
 
 // .oo-ui-box-sizing( @type: border-box ) {
-// 	-webkit-box-sizing: @type;
-// 	-moz-box-sizing: @type;
-// 	box-sizing: @type;
+//     -webkit-box-sizing: @type;
+//     -moz-box-sizing: @type;
+//     box-sizing: @type;
 // }
 
 // `.oo-ui-box-shadow()` in contrast to `.oo-ui-box-sizing` unprefixed only
@@ -74,72 +74,72 @@
 // See T125925
 
 // .oo-ui-vertical-gradient( @start: #eee, @stop: #fff ) {
-// 	background-color: average( @start, @stop );
-// 	background-image: -webkit-gradient( linear, right top, right bottom, color-stop( 0, @start ), color-stop( 100%, @stop ) );
-// 	background-image: -webkit-linear-gradient( top, @start 0, @stop 100% );
-// 	background-image: -moz-linear-gradient( top, @start 0, @stop 100% );
-// 	background-image: linear-gradient( to bottom, @start 0, @stop 100% );
-// 	// Maximize tolerance of color values input.
-// 	// Also expand shorthands like `#abc` to `#ffaabbcc`, as IE's proprietary gradient filter doesn't
-// 	// accept them.
-// 	@start-ie: argb( rgba( red( @start ), green( @start ), blue( @start ), alpha( @start ) ) );
-// 	@stop-ie: argb( rgba( red( @stop ), green( @stop ), blue( @stop ), alpha( @stop ) ) );
-// 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='@{start-ie}', endColorstr='@{stop-ie}' )"; // stylelint-disable-line string-quotes
+//     background-color: average( @start, @stop );
+//     background-image: -webkit-gradient( linear, right top, right bottom, color-stop( 0, @start ), color-stop( 100%, @stop ) );
+//     background-image: -webkit-linear-gradient( top, @start 0, @stop 100% );
+//     background-image: -moz-linear-gradient( top, @start 0, @stop 100% );
+//     background-image: linear-gradient( to bottom, @start 0, @stop 100% );
+//     // Maximize tolerance of color values input.
+//     // Also expand shorthands like `#abc` to `#ffaabbcc`, as IE's proprietary gradient filter doesn't
+//     // accept them.
+//     @start-ie: argb( rgba( red( @start ), green( @start ), blue( @start ), alpha( @start ) ) );
+//     @stop-ie: argb( rgba( red( @stop ), green( @stop ), blue( @stop ), alpha( @stop ) ) );
+//     -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='@{start-ie}', endColorstr='@{stop-ie}' )"; // stylelint-disable-line string-quotes
 // }
 
 // .oo-ui-unselectable() {
-// 	-webkit-touch-callout: none;
-// 	-webkit-user-select: none;
-// 	-moz-user-select: none;
-// 	-ms-user-select: none;
-// 	user-select: none;
+//     -webkit-touch-callout: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     user-select: none;
 // }
 
 // .oo-ui-selectable() {
-// 	-webkit-touch-callout: default;
-// 	-webkit-user-select: text;
-// 	-moz-user-select: text;
-// 	-ms-user-select: text;
-// 	user-select: text;
+//     -webkit-touch-callout: default;
+//     -webkit-user-select: text;
+//     -moz-user-select: text;
+//     -ms-user-select: text;
+//     user-select: text;
 // }
 
 // .oo-ui-inline-spacing( @spacing, @cancelled-spacing: 0 ) {
-// 	margin-right: @spacing;
-// 	&:last-child {
-// 		margin-right: @cancelled-spacing;
-// 	}
+//     margin-right: @spacing;
+//     &:last-child {
+//         margin-right: @cancelled-spacing;
+//     }
 // }
 
 // Clear floats after the element.
 // .oo-ui-clearfix() {
-// 	&:after {
-// 		content: ' ';
-// 		display: block;
-// 		clear: both;
-// 	}
+//     &:after {
+//         content: ' ';
+//         display: block;
+//         clear: both;
+//     }
 // }
 
 // stylelint-disable selector-no-vendor-prefix, at-rule-no-unknown
 .oo-ui-placeholder( @rules ) {
-	// WebKit, Blink, Edge
-	&::-webkit-input-placeholder {
-		@rules();
-	}
-	// Internet Explorer 10-11
-	&:-ms-input-placeholder {
-		@rules();
-	}
-	// Firefox 19-
-	&::-moz-placeholder {
-		@rules();
-	}
-	// Firefox 4-18
-	&:-moz-placeholder {
-		@rules();
-	}
-	// W3C Standard Selectors Level 4
-	&::placeholder {
-		@rules();
-	}
+    // WebKit, Blink, Edge
+    &::-webkit-input-placeholder {
+        @rules();
+    }
+    // Internet Explorer 10-11
+    &:-ms-input-placeholder {
+        @rules();
+    }
+    // Firefox 19-
+    &::-moz-placeholder {
+        @rules();
+    }
+    // Firefox 4-18
+    &:-moz-placeholder {
+        @rules();
+    }
+    // W3C Standard Selectors Level 4
+    &::placeholder {
+        @rules();
+    }
 }
 // stylelint-enable selector-no-vendor-prefix, at-rule-no-unknown

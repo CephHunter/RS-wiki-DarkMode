@@ -81,3 +81,13 @@ div.vectorTabs {
 .mw-echo-notifications-badge::before {
     filter: invert(1);
 }
+
+//----- Sticky header -----//
+#mw-head.sticky-hidden {
+    background: @sidebar;
+
+    .vectorTabs ul li.selected {
+        background-color: @mw-page-bg;
+        border: 0;
+    }
+}

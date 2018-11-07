@@ -118,21 +118,29 @@ blockquote {
 // ==================
 //      <Tabber>
 // ==================
-#content .tabberlive {
-    ul.tabbernav {
-        li.tabberactive a {
-            .button-styling();
-            border: none;
+
+#content .tabber {
+    .tabbernav {
+        .tabberactive a {
+            &,
+            &:hover,
+            &:active {
+                color: @button-text-base;
+                background-color: @tabber-bg;
+                border-color: @theme-borders;
+                border-bottom-color: @tabber-bg;
+            }
         }
 
         li a {
             .button-styling("grey");
-            border: none;
+            border-width: 1px;
         }
     }
 
-    div.tabbertab {
-        background-color: lighten(@mw-page-bg, 3%);
+    .tabbertab {
+        background-color: @tabber-bg;
+        border-color: @theme-borders;
     }
 }
 

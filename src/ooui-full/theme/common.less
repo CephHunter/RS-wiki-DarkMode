@@ -37,47 +37,56 @@
 //      Foreground Colors
 // ---------------------------
 // Base colors
-@color-base:                      @wmui-color-base10;
-@color-base--hover:               #444;
-@color-base--active:              @wmui-color-base0;
-@color-base--inverted:            @wmui-color-base100;
-@color-base--emphasized:          @wmui-color-base0;
-@color-base--subtle:              @wmui-color-base30;
-@color-base--disabled:            @wmui-color-base30;
-@color-filled--disabled:          @color-base--inverted;
-@color-placeholder:               @wmui-color-base30;
+@color-base:                      @button-text-base;//@wmui-color-base10;
+@color-base--hover:               @button-text-base--hover;//#444;
+@color-base--active:              @button-text-base--active;//@wmui-color-base0;
+@color-base--inverted:            @button-text-primary;//@wmui-color-base100;
+@color-base--emphasized:          @theme-text-highlight;//@wmui-color-base0;
+@color-base--subtle:              @theme-text-subtle;//@wmui-color-base30;
+@color-base--disabled:            @theme-text-diabled;//@wmui-color-base30;
+@color-filled--disabled:          @button-text-disabled;//@color-base--inverted;
+@color-placeholder:               @placeholder-text;//@wmui-color-base30;
 
 // Progressive colors
-@color-progressive:               #36c;                // equals HSB 220°/75%/80%
-@color-progressive--hover:        #447ff5;             // equals HSB 220°/72%/96%
-@color-progressive--active:       #2a4b8d;             // equals HSB 220°/70%/55%
-@color-progressive--active-hover: @color-progressive;
+@color-progressive:               @button-text-progressive;//#36c;                // equals HSB 220°/75%/80%
+@color-progressive--hover:        @button-text-progressive--hover;//#447ff5;             // equals HSB 220°/72%/96%
+@color-progressive--active:       @button-text-progressive--active;//#2a4b8d;             // equals HSB 220°/70%/55%
+@color-progressive--active-hover: @color-progressive--active;
 @color-progressive--focus:        @color-progressive;
 
 // Destructive colors
-@color-destructive:               @wmui-color-red50;
-@color-destructive--hover:        #ff4242;
-@color-destructive--active:       @wmui-color-red30;
+@color-destructive:               @button-text-destructive;//@wmui-color-red50;
+@color-destructive--hover:        @button-text-destructive--hover;//#ff4242;
+@color-destructive--active:       @button-text-destructive--active;//@wmui-color-red30;
 @color-destructive--focus:        @color-destructive;
-@color-destructive-non-primary:   #d73333;             // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
+@color-destructive-non-primary:   @button-text-destructive;//#d73333;             // Exemption for non-primary buttons, foremost used in VE, lightened up R50 to align to AA contrast ratio
 
 // Validation error feedback
-@color-erroneous:                 @wmui-color-red50;
+@color-erroneous:                 @error-message-text;//@wmui-color-red50;
 
 // ---------------------------
 //      Background colors
 // ---------------------------
-@background-color-base:               @wmui-color-base100;
-@background-color-base--hover:        #eaecf0;
-@background-color-base--read-only:    #f8f9fa;
+@background-color-base:               @input-fields-bg;//@wmui-color-base100;
+@background-color-base--hover:        @input-fields-bg;//#eaecf0;
+@background-color-base--read-only:    @input-fields-bg-readonly;//#f8f9fa;
 @background-color-progressive:        #eaf3ff;
 @background-color-progressive--hover: rgba( 41, 98, 204, 0.1 );
 @background-color-destructive:        @wmui-color-red90;
 
 // 'Framed' UI elements (Framed Buttons, Dropdowns, ToggleSwitches...)
-@background-color-framed:             @wmui-color-base90;
-@background-color-framed--hover:      @wmui-color-base100;
-@background-color-framed--active:     @wmui-color-base70;
+@background-color-framed:                      @button-bg-base;                 //@wmui-color-base90;
+@background-color-framed--hover:               @button-bg-base--hover;          //@wmui-color-base100;
+@background-color-framed--active:              @button-bg-base--active;         //@wmui-color-base70;
+@background-color-framed--focus:               @button-bg-base;                 //@wmui-color-base70;
+@background-color-framed-progressive:          @button-bg-progressive;
+@background-color-framed-progressive--hover:   @button-bg-progressive--hover;
+@background-color-framed-progressive--active:  @button-bg-progressive--active;
+@background-color-framed-progressive--focus:   @button-bg-progressive;
+@background-color-framed-desetructive:         @button-bg-destructive;
+@background-color-framed-desetructive--hover:  @button-bg-destructive--hover;
+@background-color-framed-desetructive--active: @button-bg-destructive--active;
+@background-color-framed-desetructive--focus:  @button-bg-destructive;
 
 // Tabs Navigation Background Color
 @background-color-tabs:               @wmui-color-base80;
@@ -85,8 +94,8 @@
 // --------------------------
 //      Disabled Widgets
 // --------------------------
-@background-color-base--disabled:   #eaecf0;
-@background-color-filled--disabled: #c8ccd1;
+@background-color-base--disabled:   @input-fields-bg;//#eaecf0;
+@background-color-filled--disabled: @button-bg-disabled;//#c8ccd1;
 @opacity-filled--disabled:          1;
 @opacity-indicator--disabled:       0.15;     // equals `#c7c8cc` on background-color `#fff`
 @opacity-tool--disabled:            0.34;     // equals `#a9a9a9` on background-color `#fff`
@@ -115,11 +124,11 @@
 // -----------------
 //      Borders
 // -----------------
-@border-color-base:                      @wmui-color-base50;
-@border-color-base--hover:               @wmui-color-base50;
-@border-color-base--active:              @wmui-color-base30;
-@border-color-base--focus:               @color-progressive--focus;
-@border-color-base--disabled:            @wmui-color-base70;
+@border-color-base:                      @theme-borders;//@wmui-color-base50;
+@border-color-base--hover:               @theme-borders;//@wmui-color-base50;
+@border-color-base--active:              @theme-borders;//@wmui-color-base30;
+@border-color-base--focus:               @theme-borders;//@color-progressive--focus;
+@border-color-base--disabled:            @theme-borders;//@wmui-color-base70;
 @border-color-framed-progressive--hover: @color-progressive--hover;
 @border-color-framed-destructive--hover: @color-destructive--hover;
 @border-color-frameless:                 transparent;
@@ -185,14 +194,14 @@
     }
 }
 
-.mw-framed-button-colored( @child, @link, @hover, @border-color--hover, @active, @focus ) {
+.mw-framed-button-colored( @child, @link, @hover, @active, @focus ) {
     > @{child} {
         color: @link;
     }
 
     > @{child}:hover {
         background-color: @hover;
-        border-color: @border-color--hover;
+        border-color: @border-color-base--hover;
     }
 
     > @{child}:active,
@@ -200,15 +209,16 @@
     &.oo-ui-buttonElement-pressed > @{child},
     &.oo-ui-buttonElement-active > @{child},
     &.oo-ui-popupToolGroup-active > @{child} {
-        background-color: lighten( @active, 60% );
-        color: @active;
-        border-color: @active;
+        background-color: @active;
+        color: @link;
+        border-color: @border-color-base--active;
         box-shadow: none;
     }
 
     > @{child}:focus {
         border-color: @focus;
-        box-shadow: inset 0 0 0 1px @focus;
+        // box-shadow: inset 0 0 0 1px @focus;
+        box-shadow: @box-shadow-widget--focus;
     }
 }
 
@@ -237,6 +247,7 @@
 
     > @{child}:focus {
         border-color: @focus;
-        box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
+        // box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base--inverted;
+        box-shadow: inset 0 0 0 1px @focus, inset 0 0 0 2px @color-base;
     }
 }

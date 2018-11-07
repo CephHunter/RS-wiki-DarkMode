@@ -1,6 +1,8 @@
 .oo-ui-icon-template-format-inline(@color: @ooui-icon-base) {
-    background-image: linear-gradient(transparent,transparent),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 2 20 20" fill="@{color}"> <g id="inline"> <path d="M8 9v7h1V9zm7 0v7h1V9zM4 11v3h3v-3zm6 0v3h4v-3zm7 0v3h3v-3z"/> </g> </svg>')
+  @escaped-svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 2 20 20" fill="@{color}"> <g id="inline"> <path d="M8 9v7h1V9zm7 0v7h1V9zM4 11v3h3v-3zm6 0v3h4v-3zm7 0v3h3v-3z"/> </g> </svg>');
+  background-image: linear-gradient(transparent,transparent), url('data:image/svg+xml,@{escaped-svg}')
 }
 .oo-ui-icon-template-format-block(@color: @ooui-icon-base) {
-    background-image: linear-gradient(transparent,transparent),url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 2 20 20" fill="@{color}"> <g id="block-rtl"> <path d="M19 6h-1v5h1zm-2 1H9v3h8zm2 6h-1v5h1zm-2 1H6v3h11z"/> </g> </svg>')
+  @escaped-svg: escape('<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="2 2 20 20" fill="@{color}"> <g id="block-rtl"> <path d="M19 6h-1v5h1zm-2 1H9v3h8zm2 6h-1v5h1zm-2 1H6v3h11z"/> </g> </svg>');
+  background-image: linear-gradient(transparent,transparent), url('data:image/svg+xml,@{escaped-svg}')
 }

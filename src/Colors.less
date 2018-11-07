@@ -62,29 +62,39 @@
 @theme-text:           @theme-gray80;
 @theme-text-subtle:    @theme-gray70;
 @theme-text-highlight: @theme-gray90;
+@theme-text-diabled:    #72777d;             // for ooui
 @list-indent-guide:    @theme-gray55;
 @positive-change:      #06df2e;
 @negative-change:      @theme-red-lighter;
-@base-text-diabled:    #72777d;             // for ooui
 @abusefilter-tag:      @theme-red-lighter;
+@error-message-text:   @theme-red-lighter;
 
 //----- Buttons -----//
-@button-bg-base:                @theme-gray35;
-@button-bg-base--hover:         lighten(@button-bg-base, 3%);
-@button-bg-base--active:        darken(@button-bg-base, 5%);
-@button-bg-progressive:         @theme-blue-lighter;
-@button-bg-progressive--hover:  lighten(@button-bg-progressive, 7%);
-@button-bg-progressive--active: darken(@button-bg-progressive, 5%);
-@button-bg-destructive:         @theme-red;
-@button-bg-destructive--hover:  lighten(@theme-red, 5%);
-@button-bg-destructive--active: darken(@theme-red, 5%);
-@button-bg-disabled:            @theme-gray21;
-@button-text-base:              @theme-gray90;
-@button-text-progressive:       @theme-blue-lightest;
-@button-text-destructive:       @theme-red-lighter;
-@button-text-primary:           @theme-gray95;
-@button-text-disabled:          @theme-gray55;
-@button-group-separator:        lighten(@button-bg-base, 15%);
+@button-bg-base:                  @theme-gray35;
+@button-bg-base--hover:           lighten(@button-bg-base, 3%);
+@button-bg-base--active:          darken(@button-bg-base, 5%);
+@button-bg-progressive:           @theme-blue-lighter;
+@button-bg-progressive--hover:    lighten(@button-bg-progressive, 7%);
+@button-bg-progressive--active:   darken(@button-bg-progressive, 5%);
+@button-bg-destructive:           @theme-red;
+@button-bg-destructive--hover:    lighten(@theme-red, 5%);
+@button-bg-destructive--active:   darken(@theme-red, 5%);
+@button-bg-disabled:              @theme-gray21;
+@button-text-base:                @theme-gray90;
+@button-text-base--hover:         @theme-gray90;
+@button-text-base--active:        @theme-gray90;
+@button-text-progressive:         @theme-blue-lightest;
+@button-text-progressive--hover:  @theme-blue-lightest;
+@button-text-progressive--active: @theme-blue-lightest;
+@button-text-destructive:         @theme-red-lighter;
+@button-text-destructive--hover:  @theme-red-lighter;
+@button-text-destructive--active: @theme-red-lighter;
+@button-text-primary:             @theme-gray95;
+@button-text-disabled:            @theme-gray55;
+@button-group-separator:          lighten(@button-bg-base, 15%);
+@button-border-base:              @button-bg-base;
+@button-border-base--hover:       @button-bg-base--hover;
+@button-border-base--active:      @button-bg-base--active;
 
 //----- Text input fields -----//
 @input-fields-bg:               @theme-gray21;
@@ -257,3 +267,5 @@
 @GEChart-date-graph-stroke:        lighten(rgb(69, 114, 167), 10%);
 
 @uses-material-list-selected: @theme-green;
+
+@tabber-bg: lighten(@mw-page-bg, 3%);
